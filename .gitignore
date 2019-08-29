@@ -1,2 +1,5 @@
 # Folders
 Shravan-Backend/node_modules/
+
+# Metadata Files
+.DS_Store

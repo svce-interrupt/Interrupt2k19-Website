@@ -1,0 +1,35 @@
+/********************/
+/* EVENTS-INDEX.CSS */
+/********************/
+
+/* CSS for the BODY and HTML. */
+body, html {
+	margin: 0;
+	padding: 0;
+}
+
+/* CSS for the SNAKE-XENZIA PIXELS. */
+
+.snake-xenzia {
+	display: block;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+
+	/* The following 2 props disenable spaces between pixels rows. */
+	font-size: 0%; 
+	line-height: 0;
+
+	background-color: black;
+}
+
+.snake-xenzia .pixels {
+	display: inline-block;
+	width: 2.5vw;
+	height: 2.5vw;
+
+	margin: 0;
+	padding: 0;
+
+	background-color: yellow;
+}
