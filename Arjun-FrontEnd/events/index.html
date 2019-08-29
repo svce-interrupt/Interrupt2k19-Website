@@ -1,0 +1,55 @@
+<!----------------------->
+<!-- EVENTS/INDEX.HTML -->
+<!-- -------------------->
+
+<!-- This page is inspired by the popular game, 'Snake Xenzia'. -->
+<!-- This will feature a snake running around a maze. Once events are hit, information pops up. -->
+
+<!DOCTYPE html>
+
+	<head>
+		<title>Events | Interrupt '19</title>
+		<style>
+
+			body, html {
+				margin: 0;
+				padding: 0;
+			}
+
+			.snake-xenzia {
+				position: fixed;
+				height: 100%;
+				width: 100%;
+
+				background-color: black;
+			}
+
+			.snake-xenzia .pixels {
+				display: inline-block;
+				width: 1%;
+				height: 1%;
+
+				margin: 0;
+				padding: 0;
+
+				background-color: white;
+			}
+
+		</style>
+	</head>
+
+	<body>
+
+		<!-- We will have to build a pixelated screen. The snake is made of coloured pixels. -->
+		<!-- Each 'pixel' will actually be a div. -->
+
+		<!-- This div will contain the divs necessary. -->
+		<div class="snake-xenzia">
+			
+			<div class="pixels" id="pixel-1"></div>
+			
+		</div>
+
+	</body>
+
+</html>
