@@ -8,15 +8,16 @@
 class Snake {
 
 	constructor() {
-		this.color = "green";
-		this.length = 5; /* 5 pixels */
-		
-		this.speed = 500; /* 1 pixel per 500ms */
+		this.color = "#D32F2F";
+		this.alternateColor = "#FFFF00";
+
+		this.length = 7; /* 5 pixels */
+		this.speed = 80; /* 1 pixel per 500ms */
 		this.direction = 2; /* 1 -> top; 2 -> right; 3 -> down; 4 -> left */
 		
 		this.mode = 0; /* 0 -> Non-game; 1 -> Game */
 	
-		this.snakeArray = [420,421,422,423,424];
+		this.snakeArray = [420,421,422,423,424,425,426];
 		this.lastPixel = 420;
 	}
 
@@ -76,7 +77,12 @@ class Snake {
 			var iter;
 			for(iter=0; iter<this.length; iter+=1) {
 				var idGen = "pixel-"+(this.snakeArray[iter]);
-				document.getElementById(idGen).style.backgroundColor = this.color;
+
+				if(iter % 2 == 0)
+					document.getElementById(idGen).style.backgroundColor = this.color;
+				else
+					document.getElementById(idGen).style.backgroundColor = this.alternateColor;
+
 				document.getElementById("pixel-"+this.lastPixel).style.backgroundColor = "black";
 			}
 		}
@@ -85,7 +91,7 @@ class Snake {
 }
 
 let mamba = new Snake();
-//window.setInterval( function(){ mamba.slither(); }, 90);
+window.setInterval( function(){ mamba.slither(); }, mamba.speed);
 
 /* We add an event-listener which detects directional arrows. */
 document.addEventListener("keyup", function() {
