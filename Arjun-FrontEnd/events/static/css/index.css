@@ -19,6 +19,7 @@ body, html {
 	/* The following 2 props disenable spaces between pixels rows. */
 	font-size: 0%; 
 	line-height: 0;
+	z-index: 10;
 
 	background-color: black;
 }
@@ -32,4 +33,26 @@ body, html {
 	padding: 0;
 
 	background-color: black;
+}
+
+.snake-xenzia img {
+	position: fixed;
+	width: 9%;
+
+	z-index: 11;
+}
+
+.snake-xenzia #book {
+	top: 5vw;
+	left: 10vw;
+}
+
+.snake-xenzia #computer {
+	top: 15vw;
+	left: 80vw;
+}
+
+.snake-xenzia #joystick {
+	top: 30vw;
+	left: 35vw;
 }
