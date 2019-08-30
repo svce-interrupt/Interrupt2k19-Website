@@ -34,6 +34,65 @@ body, html {
 	z-index: 11;
 }
 
+/* CSS for the SNAKE-POPUP BOX. */
+#snake-popup {
+	display: block;
+	position: fixed;
+	width: 95%;
+	height: 95%;
+
+	top: 2.5%;
+	left: 2.5%;
+
+	z-index: 12;
+	background-image: url('../img/popupbackground.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#snake-popup header {
+	display: block;
+	width: 100%;
+
+	margin: 1% 0% 5% 0%;
+
+	text-align: center;
+	font-family: "Barcade Brawl";
+	color: yellow;
+	font-size: 160%;
+}
+
+#snake-popup .event {
+	display: block;
+	width: 95%;
+
+	margin: 1% auto;
+}
+
+#snake-popup .event header {
+	width: 95%;
+
+	margin: 2% auto;
+
+	font-size: 140%;
+	text-align: left;
+}
+
+#snake-popup .event p {
+	width: 95%;
+
+	margin: 1% auto;
+
+	font-family: "BIT";
+	font-size: 140%;
+	text-align: left;
+	color: blue;
+}
+
+#snake-popup .event span {
+	color: white;
+}
+
 /* CSS for the SNAKE-XENZIA PIXELS. */
 .snake-xenzia {
 	display: block;
