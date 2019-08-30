@@ -45,9 +45,13 @@ body, html {
 	left: 2.5%;
 
 	z-index: 12;
+	overflow-y: scroll;
+
 	background-image: url('../img/popupbackground.png');
 	background-size: cover;
 	background-repeat: no-repeat;
+
+	display: none;
 }
 
 #snake-popup header {
@@ -62,11 +66,33 @@ body, html {
 	font-size: 160%;
 }
 
+#snake-popup button {
+	display: block;
+	width: 20%;
+
+	margin: 1% auto;
+	padding: 1%;
+
+	border: none;
+	border: 2px solid yellow;
+	font-family: "Barcade Brawl";
+	font-size: 120%;
+
+	background-color: transparent;
+	color: yellow;
+	cursor: pointer;
+}
+
+#snake-popup button:hover {
+	background-color: yellow;
+	color: blue;
+}
+
 #snake-popup .event {
 	display: block;
 	width: 95%;
 
-	margin: 1% auto;
+	margin: 5% auto;
 }
 
 #snake-popup .event header {
@@ -75,6 +101,7 @@ body, html {
 	margin: 2% auto;
 
 	font-size: 140%;
+	color: yellow;
 	text-align: left;
 }
 
@@ -86,11 +113,11 @@ body, html {
 	font-family: "BIT";
 	font-size: 140%;
 	text-align: left;
-	color: blue;
+	color: white;
 }
 
 #snake-popup .event span {
-	color: white;
+	color: orange;
 }
 
 /* CSS for the SNAKE-XENZIA PIXELS. */

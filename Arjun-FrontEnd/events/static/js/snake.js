@@ -91,7 +91,7 @@ class Snake {
 }
 
 let mamba = new Snake();
-window.setInterval( function(){ mamba.slither(); }, mamba.speed);
+//window.setInterval( function(){ mamba.slither(); }, mamba.speed);
 
 /* We add an event-listener which detects directional arrows. */
 document.addEventListener("keyup", function() {
