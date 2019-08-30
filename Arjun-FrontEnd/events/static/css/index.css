@@ -8,8 +8,33 @@ body, html {
 	padding: 0;
 }
 
-/* CSS for the SNAKE-XENZIA PIXELS. */
+@font-face {
+	font-family: "Barcade Brawl";
+	src: url('../fonts/barcade.ttf');
+}
 
+@font-face {
+	font-family: "BIT";
+	src: url('../fonts/bit.otf');
+}
+
+/* CSS for the SNAKE-HEADER. */
+#snake-header {
+	display: block;
+	position: fixed;
+	width: 100%;
+
+	top: 0;
+	left: 0;
+
+	text-align: center;
+	font-family: "Barcade Brawl";
+	font-size: 165%;
+	color: white;
+	z-index: 11;
+}
+
+/* CSS for the SNAKE-XENZIA PIXELS. */
 .snake-xenzia {
 	display: block;
 	position: fixed;
@@ -35,24 +60,29 @@ body, html {
 	background-color: black;
 }
 
-.snake-xenzia img {
-	position: fixed;
-	width: 9%;
+.snake-xenzia .food {
+	display: block;
+	width: 1vw;
+	height: 1vw;
 
-	z-index: 11;
+	margin: 0 auto;
+	vertical-align: middle;
+
+	background-color: white;
 }
 
-.snake-xenzia #book {
-	top: 5vw;
-	left: 10vw;
+.snake-xenzia .food-one {
+	background-color: green;
 }
 
-.snake-xenzia #computer {
-	top: 15vw;
-	left: 80vw;
+.snake-xenzia .food-two {
+	background-color: purple;
 }
 
-.snake-xenzia #joystick {
-	top: 30vw;
-	left: 35vw;
+.snake-xenzia .food-three {
+	background-color: yellow;
+}
+
+.snake-xenzia .food-four {
+	background-color: blue;
 }
