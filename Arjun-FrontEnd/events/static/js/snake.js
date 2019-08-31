@@ -1,5 +1,5 @@
 /*******************/
-/* EVENTS-INDEX.JS */
+/* EVENTS-SNAKE.JS */
 /*******************/
 
 /* This script concerns itself with the creation of the snake and its actions. */

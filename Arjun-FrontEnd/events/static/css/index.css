@@ -8,8 +8,92 @@ body, html {
 	padding: 0;
 }
 
-/* CSS for the SNAKE-XENZIA PIXELS. */
+@font-face {
+	font-family: "Barcade Brawl";
+	src: url('../fonts/barcade.ttf');
+}
 
+@font-face {
+	font-family: "BIT";
+	src: url('../fonts/bit.otf');
+}
+
+/* CSS for the SNAKE-HEADER. */
+#snake-header {
+	display: block;
+	position: fixed;
+	width: 100%;
+
+	top: 0;
+	left: 0;
+
+	text-align: center;
+	font-family: "Barcade Brawl";
+	font-size: 165%;
+	color: white;
+	z-index: 11;
+}
+
+/* CSS for the SNAKE-POPUP BOX. */
+#snake-popup {
+	display: block;
+	position: fixed;
+	width: 95%;
+	height: 95%;
+
+	top: 2.5%;
+	left: 2.5%;
+
+	z-index: 12;
+	background-image: url('../img/popupbackground.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#snake-popup header {
+	display: block;
+	width: 100%;
+
+	margin: 1% 0% 5% 0%;
+
+	text-align: center;
+	font-family: "Barcade Brawl";
+	color: yellow;
+	font-size: 160%;
+}
+
+#snake-popup .event {
+	display: block;
+	width: 95%;
+
+	margin: 1% auto;
+}
+
+#snake-popup .event header {
+	width: 95%;
+
+	margin: 2% auto;
+
+	font-size: 140%;
+	text-align: left;
+}
+
+#snake-popup .event p {
+	width: 95%;
+
+	margin: 1% auto;
+
+	font-family: "BIT";
+	font-size: 140%;
+	text-align: left;
+	color: blue;
+}
+
+#snake-popup .event span {
+	color: white;
+}
+
+/* CSS for the SNAKE-XENZIA PIXELS. */
 .snake-xenzia {
 	display: block;
 	position: fixed;
@@ -35,24 +119,29 @@ body, html {
 	background-color: black;
 }
 
-.snake-xenzia img {
-	position: fixed;
-	width: 9%;
+.snake-xenzia .food {
+	display: block;
+	width: 1vw;
+	height: 1vw;
 
-	z-index: 11;
+	margin: 0 auto;
+	vertical-align: middle;
+
+	background-color: white;
 }
 
-.snake-xenzia #book {
-	top: 5vw;
-	left: 10vw;
+.snake-xenzia .food-one {
+	background-color: green;
 }
 
-.snake-xenzia #computer {
-	top: 15vw;
-	left: 80vw;
+.snake-xenzia .food-two {
+	background-color: purple;
 }
 
-.snake-xenzia #joystick {
-	top: 30vw;
-	left: 35vw;
+.snake-xenzia .food-three {
+	background-color: yellow;
+}
+
+.snake-xenzia .food-four {
+	background-color: blue;
 }
