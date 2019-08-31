@@ -3,21 +3,22 @@ const express          =    require('express');
 const app              =    express();
 const methodOverride   =    require('method-override');
 const expressSanitizer =    require('express-sanitizer');
+const cookieParser     =    require('cookie-parser');
 const session          =    require('express-session');
 
 // Environment settings
-const dotenv           =    require('dotenv').config();
+const env              =    require('dotenv').config();
 
 // Other required packages
 const path             =    require('path');
 const hbs              =    require('hbs');
-const cookieParser     =    require('cookie-parser');
 
+const passport         =    require('passport');
 
 // Database connection
 const db               =    require(__dirname + '/src/database/config/connection');
 db.authenticate()
-  .then(() => console.log("Connected to database"))
+  .then(() => console.log("Server is connected to database"))
   .catch(err => console.log(err));
 
 // Session management
@@ -42,6 +43,11 @@ app.use(session({
 }));
 sessionStore.sync();
 
+// Passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 // express settings
 app.set('view engine', 'hbs');
 hbs.registerPartials(path.join(__dirname,'views/templates'));
@@ -53,16 +59,6 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(expressSanitizer());
 app.use(methodOverride("_method"));
-app.use((req, res, next) => {
-    if(!req.session.visited)  
-        req.session.visited = true;
-    else {
-        console.log("session has expired");
-        res.redirect("back");
-    }
-    return next();
-})
-
 
 // Routes
 app.use("/", require('./src/route/home'));
