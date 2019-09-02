@@ -16,9 +16,14 @@ class Snake {
 		this.direction = 2; /* 1 -> top; 2 -> right; 3 -> down; 4 -> left */
 		
 		this.mode = 0; /* 0 -> Non-game; 1 -> Game */
+		this.joystickAppear = 0; /* Joystick hasn't appeared as of yet. */
 	
-		this.snakeArray = [420,421,422,423,424,425,426];
+		this.snakeArray = [420,421,422,423,424,425,426]; /* The pixel array that is the snake. */
 		this.lastPixel = 420;
+
+		this.eventsPixels = [44,195,724,780]; /* The pixels containing the events. */
+		this.foodPixel = 0; /* The pixel with the food when in game mode. */
+		this.collision = 0; /* Has there been a collision with a food/event or not? */
 	}
 
 	/* This function updates the Snake array. */
@@ -70,28 +75,68 @@ class Snake {
 
 	/* This function updates the snake on screen every second.  */
 	slither() {
-		if(this.mode == 0) { /* If current mode is non-game. */
-			this.updateSnakeArray(); /* We update the snakeArray. */
+		this.updateSnakeArray(); /* We update the snakeArray. */
 
-			/* We change the colour of the snake's pixels. */
-			var iter;
-			for(iter=0; iter<this.length; iter+=1) {
-				var idGen = "pixel-"+(this.snakeArray[iter]);
+		/* We change the colour of the snake's pixels. */
+		var iter;
+		for(iter=0; iter<this.length; iter+=1) {
+			var idGen = "pixel-"+(this.snakeArray[iter]);
 
-				if(iter % 2 == 0)
-					document.getElementById(idGen).style.backgroundColor = this.color;
-				else
-					document.getElementById(idGen).style.backgroundColor = this.alternateColor;
+			if(iter % 2 == 0)
+				document.getElementById(idGen).style.backgroundColor = this.color;
+			else
+				document.getElementById(idGen).style.backgroundColor = this.alternateColor;
 
-				document.getElementById("pixel-"+this.lastPixel).style.backgroundColor = "black";
+			document.getElementById("pixel-"+this.lastPixel).style.backgroundColor = "black";
+		}
+	
+		if(this.mode == 0) { /*  */
+			/* If there is a collision, we flag a variable. */
+			if(this.eventsPixels.includes(this.snakeArray[this.length-1])) this.collision = 1;
+			/* We now check if the game controller*/
+			if(this.snakeArray[this.length-1] == 386 && this.joystickAppear == 1) {
+
+				/* We first remove all the 'events-related' elements. */
+				this.removeEventsPixels();
 			}
 		}
+			
+	}
+
+	/* This function removes the events-pixels and empties the eventsPixelsArray. */
+	removeEventsPixels() {
+		var elements = document.getElementsByClassName('events');
+		var iter=0;
+
+		for(iter=0; iter<this.eventsPixels.length; iter++)
+			document.getElementById("pixel-"+this.eventsPixels[iter]).innerHTML = "";
+
+		document.getElementById("pixel-386").innerHTML = "";
+
+		this.eventsPixels = [];
 	}
 
 }
 
 let mamba = new Snake();
-//window.setInterval( function(){ mamba.slither(); }, mamba.speed);
+//let snakeSlither = window.setInterval( function(){ mamba.slither(); }, mamba.speed );
+
+/* This is the timeout function which displays the game controller on the screen.  */
+let joystickAppear = window.setTimeout( function(){ 
+	document.getElementById('pixel-386').innerHTML = "<img src='static/img/gamecontroller.png'>";
+	mamba.joystickAppear = 1;
+}, 10000);
+
+/* This is the event-listener for the popup with the events info. */
+let popupEvent = window.setInterval(function(){
+	if(mamba.collision == 1) {
+		document.getElementById('snake-popup').style.visibility = "visible";
+		document.getElementById('closeButton').addEventListener("click", function(){
+			document.getElementById('snake-popup').style.visibility = "hidden";
+		});
+		mamba.collision = 0;
+	}
+}, mamba.speed);
 
 /* We add an event-listener which detects directional arrows. */
 document.addEventListener("keyup", function() {
