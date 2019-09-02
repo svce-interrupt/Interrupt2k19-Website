@@ -2,7 +2,7 @@
 /* EVENTS-SNAKE.JS */
 /*******************/
 
-/* This script concerns itself with the creation of the snake and its actions. */
+/* This script concerns itself with the creation of the snake and its actions. NO STUPID LIBRARIES USED.*/
 
 /* We define the snake as an object with certain properties and functions. */
 class Snake {
@@ -27,6 +27,10 @@ class Snake {
 		this.food = 0; /* The pixel with the food when in game mode. */
 		this.collision = 0; /* Has there been a collision with a food/event or not? */
 	}
+
+	/*--------------------------*/
+	/* INITIALISATION FUNCTIONS */
+	/*--------------------------*/
 
 	/* This function adds the timer functions necessary for the object. */
 	start() {
@@ -67,7 +71,11 @@ class Snake {
 		this.start();
 	}
 
-	/* This function updates the snake on screen every second.  */
+	/*--------------------------------------*/
+	/* PIXEL (UPDATION, GENERATION) METHODS */
+	/*--------------------------------------*/
+
+	/* This function updates the snake on screen every second. */
 	slither() {
 		this.updateSnakeArray(); /* We update the snakeArray (pixels on which snake is drawn on). */
 
@@ -80,11 +88,10 @@ class Snake {
 		}
 
 		/* The snake's previous last pixel, now out, is painted black. */
-		/* If in game mode, we paint the food pixel green. */
 		document.getElementById("pixel-"+this.lastPixel).style.backgroundColor = "black";
-		if(this.mode == 1) document.getElementById("pixel-"+this.food).style.backgroundColor = "green";
 	
-		if(this.mode == 0) { /*  */
+		if(this.mode == 0) { /* If we are in non-game mode... */
+
 			/* If there is a collision, we flag a variable. */
 			if(this.eventsPixels.includes(this.snakeArray[this.length-1])) this.collision = 1;
 			/* We now check if the game controller*/
@@ -101,8 +108,9 @@ class Snake {
 				/* We then generate a random food pixel. */
 				this.food = Math.floor(Math.random() * 700 + 100);
 			}
+
 		}
-		else if(this.mode == 1) {
+		else if(this.mode == 1) { /* If we are in game mode... */
 			
 			/* If there is a collision with the food pixel... */
 			if(this.food == this.snakeArray[this.length-1]) {
@@ -133,11 +141,14 @@ class Snake {
 				clearInterval(this.slithering);
 				document.getElementById("snake-header").innerHTML = "GAME OVER (PRESS ENTER)";
 			}
+
+			/* We paint the food pixel green. */
+			if(this.mode == 1) document.getElementById("pixel-"+this.food).style.backgroundColor = "green";
 		}
 			
 	}
 
-	/* This function updates the Snake array. */
+	/* This function updates the snake array. */
 	/* This array sets pixel positions (and movement) of snake on screen. */
 	updateSnakeArray() {
 	
@@ -203,6 +214,10 @@ class Snake {
 let mamba = new Snake();
 mamba.start();
 
+/*------------------*/
+/* TIMER DECLRATION */
+/*------------------*/
+
 /* This is the timeout function which displays the game controller on the screen.  */
 let joystickAppear = window.setTimeout( function(){ 
 	document.getElementById('pixel-386').innerHTML = "<img src='static/img/gamecontroller.png'>";
@@ -219,6 +234,10 @@ let popupEvent = window.setInterval(function(){
 		mamba.collision = 0;
 	}
 }, mamba.speed);
+
+/*----------------------------*/
+/* EVENT-LISTENER DECLARATION */
+/*----------------------------*/
 
 /* We add an Event-Listener to listen for arrow keys which are pressed to change the snake's direction. */
 /* Also, we add one for the 'Enter' button to restart the game (Only if in game mode). */
