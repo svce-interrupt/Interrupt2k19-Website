@@ -18,13 +18,13 @@ class Snake {
 		this.mode = 0; /* 0 -> Non-game; 1 -> Game */
 
 		this.joystickAppear = 0; /* Joystick hasn't appeared as of yet. */
-		this.score = 0;
+		this.score = 0; /* The score of the player when in game mode. */
 	
 		this.snakeArray = [420,421,422,423,424,425,426]; /* The pixel array that is the snake. */
 		this.lastPixel = 420;
 
 		this.eventsPixels = [44,195,724,780]; /* The pixels containing the events. */
-		this.foodPixel = 0; /* The pixel with the food when in game mode. */
+		this.food = 0; /* The pixel with the food when in game mode. */
 		this.collision = 0; /* Has there been a collision with a food/event or not? */
 	}
 
@@ -34,27 +34,55 @@ class Snake {
 
 		/* We first set the timer for the 'movement' of the snake on screen. */
 		var startSlithering = function() {
-			thisSnake.slither()
+			thisSnake.slither();
 		}
 		this.slithering = window.setInterval(startSlithering,this.speed);
 	}
 
+	/* This function restarts the game and restores the settings to defaults. */
+	restart() {
+		/* We paint all colored pixels to their default black. */
+		var iter;
+		for(iter=0; iter<this.snakeArray.length; iter++)
+			document.getElementById("pixel-"+this.snakeArray[iter]).style.backgroundColor = "black";
+
+		document.getElementById("pixel-"+this.food).style.backgroundColor = "black";
+
+		/* We clear all existing timers related to the snake. */
+		clearInterval(this.slithering);
+
+		/* We display the required messages on the SNAKE-HEADER. */
+		document.getElementById('snake-header').innerHTML = "EVENTS";
+
+		/* We assign all attributes to their default value. */
+		this.length = 7;
+		this.speed = 80;
+		this.direction = 2;
+		this.score = 0;
+		this.snakeArray = [420,421,422,423,424,425,426];
+		this.lastPixel = 420;
+		this.food = 567;
+		
+		/* We now call start() and restore to default. */
+		this.start();
+	}
+
 	/* This function updates the snake on screen every second.  */
 	slither() {
-		this.updateSnakeArray(); /* We update the snakeArray. */
+		this.updateSnakeArray(); /* We update the snakeArray (pixels on which snake is drawn on). */
 
-		/* We change the colour of the snake's pixels. */
+		/* We paint the pixels of the snake in alternating colors. */
 		var iter;
 		for(iter=0; iter<this.length; iter+=1) {
 			var idGen = "pixel-"+(this.snakeArray[iter]);
-
-			if(iter % 2 == 0)
-				document.getElementById(idGen).style.backgroundColor = this.color;
-			else
-				document.getElementById(idGen).style.backgroundColor = this.alternateColor;
-
-			document.getElementById("pixel-"+this.lastPixel).style.backgroundColor = "black";
+			if(iter % 2 == 0) document.getElementById(idGen).style.backgroundColor = this.color;
+			else document.getElementById(idGen).style.backgroundColor = this.alternateColor;
 		}
+
+		/* The snake's previous last pixel, now out, is painted black. */
+		/* If in game mode, we paint the food pixel green. */
+		document.getElementById("pixel-"+this.lastPixel).style.backgroundColor = "black";
+		if(this.mode == 1) document.getElementById("pixel-"+this.food).style.backgroundColor = "green";
 	
 		if(this.mode == 0) { /*  */
 			/* If there is a collision, we flag a variable. */
@@ -72,10 +100,10 @@ class Snake {
 
 				/* We then generate a random food pixel. */
 				this.food = Math.floor(Math.random() * 700 + 100);
-				document.getElementById("pixel-"+this.food).style.backgroundColor = "green";
 			}
 		}
 		else if(this.mode == 1) {
+			
 			/* If there is a collision with the food pixel... */
 			if(this.food == this.snakeArray[this.length-1]) {
 				/* We first remove the food pixel. */
@@ -98,9 +126,9 @@ class Snake {
 
 				/* We then generate a random food pixel again. */
 				this.food = Math.floor(Math.random() * 700 + 100);
-				document.getElementById("pixel-"+this.food).style.backgroundColor = "green";
 			}
 
+			/* If there is a collision with the snake itself, then the game is over... */
 			else if(this.snakeArray.slice(0,this.length-1).includes(this.snakeArray[this.length-1])) {
 				clearInterval(this.slithering);
 				document.getElementById("snake-header").innerHTML = "GAME OVER (PRESS ENTER)";
@@ -193,6 +221,7 @@ let popupEvent = window.setInterval(function(){
 }, mamba.speed);
 
 /* We add an Event-Listener to listen for arrow keys which are pressed to change the snake's direction. */
+/* Also, we add one for the 'Enter' button to restart the game (Only if in game mode). */
 document.addEventListener("keyup", function() {
 	/* Depending upon the arrow button pressed, we change the snake's direction. */
 	/* If the snake is going in a particular direction, it can't go in the opposite direction. */
@@ -200,4 +229,5 @@ document.addEventListener("keyup", function() {
 	else if(event.which == 39 && mamba.direction != 4) mamba.direction = 2; /* 'Right' is pressed. */
 	else if(event.which == 40 && mamba.direction != 1) mamba.direction = 3; /* 'Down' is pressed. */
 	else if(event.which == 37 && mamba.direction != 2) mamba.direction = 4; /* 'Left' is pressed. */
+	else if(event.which == 13 && mamba.mode == 1) mamba.restart(); /* 'Enter' is pressed. */
 });
