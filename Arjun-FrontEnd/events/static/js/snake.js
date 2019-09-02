@@ -17,6 +17,7 @@ class Snake {
 		
 		this.mode = 0; /* 0 -> Non-game; 1 -> Game */
 		this.joystickAppear = 0; /* Joystick hasn't appeared as of yet. */
+		this.score = 0;
 	
 		this.snakeArray = [420,421,422,423,424,425,426]; /* The pixel array that is the snake. */
 		this.lastPixel = 420;
@@ -24,6 +25,19 @@ class Snake {
 		this.eventsPixels = [44,195,724,780]; /* The pixels containing the events. */
 		this.foodPixel = 0; /* The pixel with the food when in game mode. */
 		this.collision = 0; /* Has there been a collision with a food/event or not? */
+
+		this.snake = this;
+	}
+
+	start() {
+
+		var thisSnake = this;
+		var startSlithering = function() {
+			thisSnake.slither()
+		}
+
+		this.slithering = window.setInterval(startSlithering,this.speed);
+
 	}
 
 	/* This function updates the Snake array. */
@@ -98,6 +112,41 @@ class Snake {
 
 				/* We first remove all the 'events-related' elements. */
 				this.removeEventsPixels();
+				this.mode = 1;
+
+				/* We then add all the 'games-related' elements. */
+				document.getElementById("score").style.display = "block";
+				//We also need to generate a pop-up box.
+
+				/* We then generate a random food pixel. */
+				this.food = Math.floor((Math.random() * 920) + 1);
+				document.getElementById("pixel-"+this.food).style.backgroundColor = "green";
+			}
+		}
+		else if(this.mode == 1) {
+			/* If there is a collision with the food pixel... */
+			if(this.food == this.snakeArray[this.length-1]) {
+				/* We first remove the food pixel. */
+				document.getElementById("pixel-"+this.food).style.backgroundColor = "black";
+
+				/* We increment the score and then reflect it in the score field. */
+				this.score += 1;
+				document.getElementById("score").innerHTML = this.score;
+
+				/* We also decrease speed each time score is a multiple of 7.*/
+				if(this.score % 7 == 0) {
+					clearInterval(this.slithering);
+					this.speed -= 10;
+					this.start();
+				}
+
+				/* We then elongate the snake. */
+				this.length += 1;
+				this.snakeArray.unshift(this.food-this.length-1);
+
+				/* We then generate a random food pixel again. */
+				this.food = Math.floor((Math.random() * 920) + 1);
+				document.getElementById("pixel-"+this.food).style.backgroundColor = "green";
 			}
 		}
 			
@@ -119,7 +168,7 @@ class Snake {
 }
 
 let mamba = new Snake();
-//let snakeSlither = window.setInterval( function(){ mamba.slither(); }, mamba.speed );
+mamba.start();
 
 /* This is the timeout function which displays the game controller on the screen.  */
 let joystickAppear = window.setTimeout( function(){ 
