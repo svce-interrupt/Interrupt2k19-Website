@@ -18,7 +18,7 @@ body, html {
 	src: url('../fonts/bit.otf');
 }
 
-/* CSS for the SNAKE-HEADER. */
+/* CSS for the SNAKE-HEADERS. */
 .snake-headers {
 	display: block;
 	position: fixed;
@@ -35,7 +35,7 @@ body, html {
 	z-index: 11;
 }
 
-#score {
+#snake-score {
 	display: none;
 	top: 6%;
 

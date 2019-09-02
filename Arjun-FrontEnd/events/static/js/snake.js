@@ -115,7 +115,7 @@ class Snake {
 				this.mode = 1;
 
 				/* We then add all the 'games-related' elements. */
-				document.getElementById("score").style.display = "block";
+				document.getElementById("snake-score").style.display = "block";
 				//We also need to generate a pop-up box.
 
 				/* We then generate a random food pixel. */
@@ -131,12 +131,12 @@ class Snake {
 
 				/* We increment the score and then reflect it in the score field. */
 				this.score += 1;
-				document.getElementById("score").innerHTML = this.score;
+				document.getElementById("snake-score").innerHTML = this.score;
 
 				/* We also decrease speed each time score is a multiple of 7.*/
-				if(this.score % 7 == 0) {
+				if(this.score % 5 == 0) {
 					clearInterval(this.slithering);
-					this.speed -= 10;
+					this.speed -= 5;
 					this.start();
 				}
 
@@ -147,6 +147,11 @@ class Snake {
 				/* We then generate a random food pixel again. */
 				this.food = Math.floor((Math.random() * 920) + 1);
 				document.getElementById("pixel-"+this.food).style.backgroundColor = "green";
+			}
+
+			else if(this.snakeArray.slice(0,this.length-1).includes(this.snakeArray[this.length-1])) {
+				clearInterval(this.slithering);
+				document.getElementById("snake-header").innerHTML = "GAME OVER (PRESS ENTER)";
 			}
 		}
 			
