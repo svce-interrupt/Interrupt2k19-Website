@@ -1,7 +1,7 @@
 # Folders
 Shravan-Backend/node_modules/
 Shravan-Backend/.env
-Shravan-Backend/config
+Shravan-Backend/src/database/config/config.json
 
 # Metadata Files
 .DS_Store

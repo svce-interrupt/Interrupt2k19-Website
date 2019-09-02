@@ -1,8 +1,9 @@
 // Site model
 const Sequelize =     require('sequelize');
+const bcrypt    =     require('bcryptjs');
 const db        =     require('../config/connection');
 
-const Student  =  db.define('student', {
+const Student  =  db.define('students', {
 
     student_name : {
         type : Sequelize.STRING
@@ -17,13 +18,41 @@ const Student  =  db.define('student', {
     },
 
     email : {
-        type : Sequelize.STRING
+        type : Sequelize.STRING,
+        unique : true,
+        allowNull : false,
+        validate: {
+            isEmail: true
+        }
     },
 
     ph_number : {
-        type : Sequelize.STRING
+        type : Sequelize.STRING,
+        unique : true
     },
 
+    password : {
+        type : Sequelize.STRING,
+        allowNull : false
+    }
+
+}, {
+    freezeTableName : true,
+
+    hooks : {
+        beforeCreate : (student) => {
+            const salt = bcrypt.genSaltSync();
+            student.password = bcrypt.hashSync(student.password, salt);
+        }
+    },
+
+    instanceMethods : {
+        validPassword : (password) => {
+            return bcrypt.compareSync(password, this.passwd)
+        }
+    }
 });
+Student.sync();
+
 
 module.exports = Student;
