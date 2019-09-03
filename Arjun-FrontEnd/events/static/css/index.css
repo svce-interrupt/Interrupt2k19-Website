@@ -142,22 +142,8 @@ body, html {
 	z-index: 13;
 }
 
-#rules-popup button {
-	display: block;
-	width: 20%;
-
-	margin: 0 auto 3% auto;
-	padding: 1%;
-
-	border: none;
-	border:
-
-	font-family: "Barcade Brawl";
-	font-size: 105%;
-}
-
 #rules-popup header {
-	margin: 1% 0% 4% 0%;
+	margin: 3% 0% 3% 0%;
 
 	text-align: center;
 
@@ -165,12 +151,40 @@ body, html {
 	font-size: 140%;
 }
 
+#rules-popup button {
+	display: block;
+	width: 17%;
+
+	margin: 0 auto 4% auto;
+	padding: 1%;
+
+	border: none;
+	border: 2px solid white;
+
+	font-family: "Barcade Brawl";
+	font-size: 100%;
+
+	background-color: transparent;
+	color: white;
+
+	cursor: pointer;
+}
+
+#rules-popup button:hover {
+	background-color: white;
+	color: purple;
+}
+
 #rules-popup p {
 	width: 95%;
 	margin: 2% 2.5%;
 
 	font-family: "BIT";
-	font-size: 115%;
+	font-size: 145%;
+}
+
+#rules-popup span {
+	color: yellow;
 }
 
 /* CSS for the SNAKE-XENZIA PIXELS. */

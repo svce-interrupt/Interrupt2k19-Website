@@ -57,6 +57,7 @@ class Snake {
 
 		/* We display the required messages on the SNAKE-HEADER. */
 		document.getElementById('snake-header').innerHTML = "EVENTS";
+		document.getElementById('score').innerHTML = "0";
 
 		/* We assign all attributes to their default value. */
 		this.length = 7;
@@ -212,7 +213,7 @@ class Snake {
 }
 
 let mamba = new Snake();
-//mamba.start();
+mamba.start();
 
 /*------------------*/
 /* TIMER DECLRATION */
@@ -238,6 +239,12 @@ let popupEvent = window.setInterval(function(){
 /*----------------------------*/
 /* EVENT-LISTENER DECLARATION */
 /*----------------------------*/
+
+/* We add an Event-Listener for the close button of the rules-popup box. */
+/* When it is closed, we start the game. */
+document.getElementById("rules-close").addEventListener("click", function() {
+	document.getElementById("rules-popup").style.display = "none";
+});
 
 /* We add an Event-Listener to listen for arrow keys which are pressed to change the snake's direction. */
 /* Also, we add one for the 'Enter' button to restart the game (Only if in game mode). */
