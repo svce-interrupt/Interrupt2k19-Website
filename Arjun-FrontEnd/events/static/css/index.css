@@ -127,7 +127,7 @@ body, html {
 /* CSS for the RULES-POPUP. */
 
 #rules-popup {
-	display: block;
+	display: none;
 	position: fixed;
 	width: 60%;
 	height: 60%;

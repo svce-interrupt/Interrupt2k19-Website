@@ -26,6 +26,8 @@ class Snake {
 		this.eventsPixels = [44,195,214,780]; /* The pixels containing the events. */
 		this.food = 0; /* The pixel with the food when in game mode. */
 		this.collision = 0; /* Has there been a collision with a food/event or not? */
+
+		displayRulesForMode(this.mode);
 	}
 
 	/*--------------------------*/
@@ -57,7 +59,7 @@ class Snake {
 
 		/* We display the required messages on the SNAKE-HEADER. */
 		document.getElementById('snake-header').innerHTML = "EVENTS";
-		document.getElementById('score').innerHTML = "0";
+		document.getElementById('snake-score').innerHTML = "0";
 
 		/* We assign all attributes to their default value. */
 		this.length = 7;
@@ -104,7 +106,7 @@ class Snake {
 
 				/* We then add all the 'games-related' elements. */
 				document.getElementById("snake-score").style.display = "block";
-				//We also need to generate a pop-up box.
+				displayRulesForMode(this.mode);	
 
 				/* We then generate a random food pixel. */
 				this.food = Math.floor(Math.random() * 700 + 100);
@@ -215,8 +217,40 @@ class Snake {
 let mamba = new Snake();
 mamba.start();
 
+/*----------------*/
+/* LONE FUNCTIONS */
+/*----------------*/
+
+/* This function initialises the rules-popup box when in game mode. */
+function displayRulesForMode(mode) {
+	
+	var rulesPopup = document.getElementById("rules-popup");
+	var rulesClose = document.getElementById("rules-close");
+	var closePopup = function() {
+		rulesPopup.style.display = "none";
+	}
+
+	/* If we are in normal, non-game mode. */
+	if(mode == 0) {
+		rulesPopup.style.display = "block";
+		rulesClose.addEventListener("click", closePopup);
+	}
+	/* If we are in game mode. */
+	else {
+		var html = "<header>YOU ARE NOW IN GAME MODE</header>"+
+			   "<button id='rules-close'>CLOSE</button>"+
+			   "<p style='text-align: center;'>Eat as much food as possible and do not eat yourself!</p>"+
+		 	   "<p style='text-align: center;'>If you can score <span>above 60</span>, WE'LL TREAT YOU!</p>"+
+			   "<p style='text-align: center;'>To go back to <span>'NORMAL'</span> mode, refresh the page.</p>";
+		
+		rulesPopup.style.display = "block";
+		rulesPopup.innerHTML = html;
+		document.getElementById("rules-close").addEventListener("click", closePopup);
+	}
+}
+
 /*------------------*/
-/* TIMER DECLRATION */
+/* TIMER DECLARATION */
 /*------------------*/
 
 /* This is the timeout function which displays the game controller on the screen.  */
@@ -239,12 +273,6 @@ let popupEvent = window.setInterval(function(){
 /*----------------------------*/
 /* EVENT-LISTENER DECLARATION */
 /*----------------------------*/
-
-/* We add an Event-Listener for the close button of the rules-popup box. */
-/* When it is closed, we start the game. */
-document.getElementById("rules-close").addEventListener("click", function() {
-	document.getElementById("rules-popup").style.display = "none";
-});
 
 /* We add an Event-Listener to listen for arrow keys which are pressed to change the snake's direction. */
 /* Also, we add one for the 'Enter' button to restart the game (Only if in game mode). */
