@@ -127,7 +127,7 @@ class Snake {
 				/* We also decrease speed each time score is a multiple of 7.*/
 				if(this.score % 5 == 0) {
 					clearInterval(this.slithering);
-					this.speed -= 5;
+					this.speed -= 8;
 					this.start();
 				}
 
