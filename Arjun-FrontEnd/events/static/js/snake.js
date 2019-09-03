@@ -23,7 +23,7 @@ class Snake {
 		this.snakeArray = [420,421,422,423,424,425,426]; /* The pixel array that is the snake. */
 		this.lastPixel = 420;
 
-		this.eventsPixels = [44,195,724,780]; /* The pixels containing the events. */
+		this.eventsPixels = [44,195,214,780]; /* The pixels containing the events. */
 		this.food = 0; /* The pixel with the food when in game mode. */
 		this.collision = 0; /* Has there been a collision with a food/event or not? */
 	}
@@ -212,7 +212,7 @@ class Snake {
 }
 
 let mamba = new Snake();
-mamba.start();
+//mamba.start();
 
 /*------------------*/
 /* TIMER DECLRATION */
