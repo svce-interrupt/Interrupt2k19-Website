@@ -5,4 +5,9 @@ router.get('/', (req, res) => {
     res.sendStatus(200);
 });
 
+router.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/');
+})
+
 module.exports = router;
