@@ -41,17 +41,17 @@ const Student  =  db.define('students', {
 
     hooks : {
         beforeCreate : (student) => {
-            const salt = bcrypt.genSaltSync();
+            const salt = bcrypt.genSaltSync(8);
             student.password = bcrypt.hashSync(student.password, salt);
         }
     },
-
-    instanceMethods : {
-        validPassword : (password) => {
-            return bcrypt.compareSync(password, this.passwd)
-        }
-    }
 });
+
+//Instance methods
+Student.prototype.validatePassword = (password) => {
+    return bcrypt.compareSync(password, this.password);
+}
+
 Student.sync();
 
 

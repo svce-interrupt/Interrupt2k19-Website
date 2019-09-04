@@ -44,6 +44,7 @@ app.use(session({
 sessionStore.sync();
 
 // Passport
+require('./src/auth/passport')(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -71,4 +72,3 @@ app.use("/register", require('./src/route/registration'));
 app.listen(process.env.PORT, process.env.IP, (err) => {
     console.log("Server is running on port",process.env.PORT);
 });
-

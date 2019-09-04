@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+
+    <style>
+        label {
+            padding: 10px;
+        }
+        input {
+            margin: 5px;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <form action="/login" method="POST" id="tetris">
+        <label for="email">Email</label>
+            <input type="email" id="email" name="student[email]">
+            <br>
+        <label for="password">Password</label>
+            <input type="password" id="password" name="student[password]">
+            <br>
+        <button id="login">Login</button>
+
+    </form>
+
+    <script>
+
+        document.querySelector('#login').addEventListener("click", (event) => {
+            
+            event.preventDefault();
+
+            var inputFieldIsNotNull = true;
+
+            document.querySelectorAll('input').forEach((element) => {
+              if (element.value==="") inputFieldIsNull = true;
+            });
+
+            if(inputFieldIsNotNull) document.querySelector('#tetris').submit();
+
+        });
+
+    </script>
+    
+</body>
+</html>
