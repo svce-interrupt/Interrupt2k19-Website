@@ -30,9 +30,9 @@ const verifyData = async (req, res, next) => {
     next();
 };
 
-const isLoggedin = (req, res, next) => {
+const isAuthenticated = (req, res, next) => {
     
-    if (req.isAuthenticated())         
+    if(req.isAuthenticated())         
         return next();
     res.redirect('/login');
     
@@ -40,5 +40,5 @@ const isLoggedin = (req, res, next) => {
 
 module.exports = {
     verifyData,
-    isLoggedin
+    isAuthenticated
 };
