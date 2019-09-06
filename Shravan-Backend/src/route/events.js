@@ -7,7 +7,7 @@ const EventList    = require('../database/models/EventList');
 const { isAuthenticated } = require('../middleware/verify');
 
 router.get("/", (req, res) => {
-    res.render('event');
+    res.render('events');
 });
 
 router.route('/add')
@@ -23,13 +23,13 @@ router.route('/add')
                 eventlist.update(events).then(() => {
                     console.log("updated");
                     res.sendStatus(200);
-                })
+                });
             else
                 EventList.create(events).then(event => {
                     req.user.setEventList(event);
                     console.log("Added");
                     res.sendStatus(200);
-                })
+                });
             
           })
           .catch(err => console.log(err))
