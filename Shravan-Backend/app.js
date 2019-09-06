@@ -21,6 +21,9 @@ db.authenticate()
   .then(() => console.log("Server is connected to database"))
   .catch(err => console.log(err));
 
+// Create tables and sync 
+require('./src/database/bootstrap')();
+
 // Session management
 const SequelizeStore   =    require('connect-session-sequelize')(session.Store);
 const sessionStore     =    new SequelizeStore({
@@ -35,11 +38,12 @@ app.use(session({
     store : sessionStore,
     resave : false,
     saveUninitialized : true,
-    cookie : {
+    /*cookie : {
         path : '/',
-        secure : true,
+        secure : false,
         sameSite : false
     }
+    */
 }));
 sessionStore.sync();
 
@@ -50,6 +54,7 @@ app.use(passport.session());
 
 
 // express settings
+app.set('trust proxy', 1)
 app.set('view engine', 'hbs');
 hbs.registerPartials(path.join(__dirname,'views/templates'));
 
@@ -60,6 +65,19 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(expressSanitizer());
 app.use(methodOverride("_method"));
+
+app.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    next();
+});
+
+app.use((req, res, next) => {
+    res.locals.isAuthenticated = req.isAuthenticated();
+    res.locals.studentName  = req.user ? req.user.dataValues.student_name : undefined
+    next();
+});
 
 // Routes
 app.use("/", require('./src/route/home'));
