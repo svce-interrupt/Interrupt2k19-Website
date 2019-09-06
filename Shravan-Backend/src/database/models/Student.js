@@ -48,11 +48,8 @@ const Student  =  db.define('students', {
 });
 
 //Instance methods
-Student.prototype.validatePassword = (password) => {
-    return bcrypt.compareSync(password, this.password);
+Student.prototype.validatePassword = (password, passwordGiven) => {
+    return bcrypt.compareSync(password, passwordGiven);
 }
-
-Student.sync();
-
 
 module.exports = Student;
