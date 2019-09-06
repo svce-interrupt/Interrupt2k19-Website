@@ -1,21 +1,19 @@
 const LocalStrategy     =    require('passport-local').Strategy;
 const Student           =    require('../database/models/Student');
+const EventList         =    require('../database/models/EventList');
 
 module.exports = (passport) => {
     
     console.log("Passport is connected");
 
     passport.serializeUser((student, done)=>{
-        console.log("Serialized");
         return done(null, student.id);
     });
 
     passport.deserializeUser((id, done) => {
-        console.log("Deserialized");
         
-        Student.findById(id)
+        Student.findOne({where : {id}})
           .then((student) => {
-            console.log(student);
             return done(null, student);
           })
     })
@@ -23,20 +21,24 @@ module.exports = (passport) => {
     passport.use(new LocalStrategy({
       usernameField : "student[email]",
       passwordField : "student[password]",
+      passReqToCallback : true
     },
-      (email, password, done) => {
+      (req, email, password, done) => {
       Student.findOne({
         where : {email : email}
       })
         .then((student) => {
-          if(!student)
+          if(!student){
+            console.log("Email has not been registered");
             return done(null, false, {message : 'Email has not been registered'});
-          else if(student){
-            console.log(student.validatePassword(password, student.password));
-            console.log(password, student.password);
-            return done(null, false, {message : 'Password is incorrect'});
           }
-            return done(null, student)
+          else if(student){
+            if(!student.validatePassword(password, student.password)){
+              console.log("Password is incorrect");
+              return done(null, false, {message : 'Password is incorrect'});
+            }
+          }
+          return done(null, student);
         })
         .catch(err => done(err))
     }));
