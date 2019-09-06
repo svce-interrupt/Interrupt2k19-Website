@@ -125,9 +125,14 @@ class Snake {
 				document.getElementById("snake-score").innerHTML = this.score;
 
 				/* We also decrease speed each time score is a multiple of 7.*/
-				if(this.score % 5 == 0) {
+				if(this.score % 5 == 0 && this.score < 31) {
 					clearInterval(this.slithering);
-					this.speed -= 8;
+					this.speed -= 7;
+					this.start();
+				}
+				else if(this.score % 10 == 0) {
+					clearInterval(this.slithering);
+					this.speed -= 7;
 					this.start();
 				}
 
@@ -169,7 +174,7 @@ class Snake {
 
 				/* We check for directions and then for boundaries. */
 				if(this.direction == 1) { /* If snake is slithering up... */
-					if((this.snakeArray[iter] - 40) < 0)
+					if((this.snakeArray[iter] - 40) <= 0)
 						this.snakeArray[iter] += 880;
 					else
 						this.snakeArray[iter] -= 40;
