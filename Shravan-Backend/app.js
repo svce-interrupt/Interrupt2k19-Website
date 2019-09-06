@@ -84,6 +84,7 @@ app.use("/", require('./src/route/home'));
 app.use("/about", require('./src/route/about'));
 app.use("/login", require('./src/route/login'));
 app.use("/events", require('./src/route/events'));
+app.use('/challenge', require('./src/route/challenge'));
 app.use("/register", require('./src/route/registration'));
 
 // Server
