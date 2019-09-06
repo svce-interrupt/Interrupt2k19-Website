@@ -4,17 +4,17 @@ const router    =   express.Router({mergeParams : true, strict : true});
 const db        =   require('../database/config/connection');
 const Student   =   require('../database/models/Student');
 
-const {isLoggedin, verifyData} = require(__dirname + '/../middleware/verify');
+const {verifyData} = require(__dirname + '/../middleware/verify');
 
 router.route('/')
-    .get(isLoggedin, (req, res) => {
+    .get((req, res) => {
         res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
         res.header('Expires', '-1');
         res.header('Pragma', 'no-cache');
         res.set('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
         res.render('register');
     })
-    .post(isLoggedin, verifyData, (req, res) => {
+    .post(verifyData, (req, res) => {
 
         const {name, email, number, password, college, year} = req.body.student;
 

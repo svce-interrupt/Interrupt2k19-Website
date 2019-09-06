@@ -2,16 +2,13 @@ const express  =  require('express');
 const passport =  require('passport');
 const router   =  express.Router({mergeParams : true, strict : true});
 
-const { authenticate } = require('../middleware/authenticate');
-const { isLoggedin } = require('../middleware/verify');
+const { isAuthenticated } = require('../middleware/verify');
 
 router.route("/")
-  .get(isLoggedin, (req, res) => {
+  .get((req, res) => {
     res.render('login');
   })
-  .post(passport.authenticate('local', {failureRedirect : '/login', successRedirect: '/'}), (req, res) => {
-    res.redirect('/');
-  })
+  .post(passport.authenticate('local', {failureRedirect : '/login', successRedirect: '/'}))
 
 
 module.exports = router;

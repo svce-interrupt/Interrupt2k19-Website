@@ -1,13 +1,20 @@
 const express =  require('express');
 const router  =  express.Router({strict : true, mergeParams : true});
 
+const { isAuthenticated } = require('../middleware/verify');
+
 router.get('/', (req, res) => {
-    res.sendStatus(200);
+
+    res.render('home');
 });
 
-router.get('/logout', (req, res) => {
+router.get('/logout', isAuthenticated, (req, res) => {
     req.logout();
-    res.redirect('/');
+    req.session.destroy(() => {
+        console.log("logged out");
+        res.clearCookie("Interrupt_session");
+        res.redirect('/');
+    });
 })
 
 module.exports = router;
