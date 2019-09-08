@@ -7,19 +7,10 @@ module.exports = async () => {
     const Challenge     =   require('./models/Challenge');
     const LeaderBoard   =   require('./models/LeaderBoard');
 
+
     await EventList.belongsTo(Student, {
         as : "Student",
         foreignKey : 'studentId'
-    });
-
-    await Student.hasOne(EventList, {
-        as : "EventList",
-        foreignKey : "studentId"
-    });
-
-    await Student.hasOne(Challenge, {
-        as : "Game",
-        foreignKey : "studentId"
     });
 
     await Challenge.belongsTo(Student, {
@@ -27,11 +18,10 @@ module.exports = async () => {
         foreignKey : "studentId"
     });
 
-    await LeaderBoard.hasMany(Student, {
+    await LeaderBoard.belongsTo(Student, {
         as : "Student",
-        foreignKey : "id"
+        foreignKey : "studentId"
     });
-
 
     Challenge.sync();
     EventList.sync();
