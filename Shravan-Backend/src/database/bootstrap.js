@@ -7,14 +7,13 @@ module.exports = async () => {
     const Challenge     =   require('./models/Challenge');
     const LeaderBoard   =   require('./models/LeaderBoard');
 
-
-    await EventList.belongsTo(Student, {
-        as : "Student",
-        foreignKey : 'studentId'
+    await Student.hasOne(EventList,{
+        as : "EventList",
+        foreignKey : "studentId"
     });
 
-    await Challenge.belongsTo(Student, {
-        as : "Student",
+    await Student.hasOne(Challenge, {
+        as : "Challenge",
         foreignKey : "studentId"
     });
 
