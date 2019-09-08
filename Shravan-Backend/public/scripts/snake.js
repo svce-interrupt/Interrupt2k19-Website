@@ -159,7 +159,7 @@ class Snake {
 	/* This function updates the snake array. */
 	/* This array sets pixel positions (and movement) of snake on screen. */
 	updateSnakeArray() {
-	
+
 		this.lastPixel = this.snakeArray[0];
 		var iter;
 
@@ -197,11 +197,32 @@ class Snake {
 					else
 						this.snakeArray[iter] -= 1;
 				}
-				/* End of the if block. */	
 			}
-			/* End of the for loop. */
+			/* End of the if block. */
 		}
-		/* End of the function. */	
+		/* End of the for loop. */
+	}
+	/* End of the function. */
+
+	/* This function checks if a 'fast turn' is occurring or not. More on this inside. */
+	fastTurn(direction) {
+		/* A 'fast turn' is a turn which occurs when the snake is moving, turned right/left... */
+		/* really fast and then again turned 'right/left' really fast. When this happens ..... */
+		/* before the snake is updated on screen, this causes the snake to eat itself. */
+
+		var firstPixel = this.snakeArray[this.length-1];
+		var secondPixel = this.snakeArray[this.length-2];
+
+		if(direction == 1 && (firstPixel - 40) == secondPixel) return false;
+		else if(direction == 2 && (firstPixel + 1) == secondPixel) return false;
+		else if(direction == 3 && (firstPixel + 40) == secondPixel) return false;
+		else if(direction == 4 && (firstPixel - 1) == secondPixel) return false;
+		else return true;
+
+		/* Before changing direction, we check if the to-happen movement will cause the snake ...*/
+		/* to eat itself. If yes, we return false and the movement will not happen. If no, we ...*/
+		/* return true and the movement is allowed to happen. */
+
 	}
 
 	/* This function removes the events-pixels and empties the eventsPixelsArray. */
@@ -284,9 +305,9 @@ let popupEvent = window.setInterval(function(){
 document.addEventListener("keyup", function() {
 	/* Depending upon the arrow button pressed, we change the snake's direction. */
 	/* If the snake is going in a particular direction, it can't go in the opposite direction. */
-	if(event.which == 38 && mamba.direction != 3) mamba.direction = 1; /* 'Up' is pressed. */
-	else if(event.which == 39 && mamba.direction != 4) mamba.direction = 2; /* 'Right' is pressed. */
-	else if(event.which == 40 && mamba.direction != 1) mamba.direction = 3; /* 'Down' is pressed. */
-	else if(event.which == 37 && mamba.direction != 2) mamba.direction = 4; /* 'Left' is pressed. */
-	else if(event.which == 13 && mamba.mode == 1) mamba.restart(); /* 'Enter' is pressed. */
+	if(event.which == 38 && mamba.direction != 3 && mamba.fastTurn(1) == true) mamba.direction = 1;
+	else if(event.which == 39 && mamba.direction != 4 && mamba.fastTurn(2) == true) mamba.direction = 2;
+	else if(event.which == 40 && mamba.direction != 1 && mamba.fastTurn(3) == true) mamba.direction = 3;
+	else if(event.which == 37 && mamba.direction != 2 && mamba.fastTurn(4) == true) mamba.direction = 4;
+	else if(event.which == 13 && mamba.mode == 1) mamba.restart();
 });
