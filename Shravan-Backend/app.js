@@ -22,7 +22,8 @@ db.authenticate()
   .catch(err => console.log(err));
 
 // Create tables and sync 
-require('./src/database/bootstrap')();
+const bootstrap        =    require('./src/database/bootstrap');
+bootstrap();
 
 // Session management
 const SequelizeStore   =    require('connect-session-sequelize')(session.Store);
@@ -38,7 +39,8 @@ app.use(session({
     store : sessionStore,
     resave : false,
     saveUninitialized : true,
-    /*cookie : {
+    /*
+    cookie : {
         path : '/',
         secure : false,
         sameSite : false
@@ -75,12 +77,13 @@ app.use(function (req, res, next) {
 
 app.use((req, res, next) => {
     res.locals.isAuthenticated = req.isAuthenticated();
-    res.locals.studentName  = req.user ? req.user.dataValues.student_name : undefined
+    res.locals.studentName  = req.user ? req.user.dataValues.student_name : undefined;
     next();
 });
 
 // Routes
 app.use("/", require('./src/route/home'));
+app.use("/admin", require('./src/route/admin'));    
 app.use("/about", require('./src/route/about'));
 app.use("/login", require('./src/route/login'));
 app.use("/events", require('./src/route/events'));
