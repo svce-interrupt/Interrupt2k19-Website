@@ -20,45 +20,90 @@
 			}
 
 			@font-face {
-				font-family: "Pacman";
-				src: url('static/fonts/CrackMan.ttf');	
+				font-family: "Barcade Brawl";
+				src: url('../events/static/fonts/barcade.ttf');	
+			}
+
+
+			@font-face {
+				font-family: "Atari";
+				src: url('static/fonts/pixellari.ttf');
 			}
 
 			/*********************************/
 			/* CSS for the INTERRUPT HEADER. */
 			/*********************************/
 
-			header {
+			.header {
 				display: block;
-				position: fixed;
-				width: 50%;
-
-				margin: 15% 24%;
-				padding: 1% 2%;
-
-				border-radius: 10px;
-				border: 3px solid #1B03A3;
-
-				font-size: 500%;
-				font-family: "Pacman";
-				color: orange;
-				text-align: center;
-			}
-
-			header img {
-				display: block;
-
 				width: 100%;
 
-				vertical-align: middle;
+				margin-top: 10%;
+			}
+
+			.header header {
+				display: block;
+				width: 100%;
+
+				text-align: center;
+				font-family: "Barcade Brawl";
+				font-size: 350%;
+				color: white;
+			}
+
+			.header p {
+				width: 85%;
+
+				margin: 4% 7.5% 2% 7.5%;
+
+				text-align: center;
+				font-family: "Atari";
+				font-size: 155%;
+				color: white;
+			}
+
+			/*****************************/
+			/*CSS for the GAME ELEMENTS. */
+			/*****************************/
+
+			.game-elements {
+				display: block;
+				width: 100%;
+	
+				margin: 1% 0% 0% 0%;
+
+				text-align: right;
+			}
+
+			.game-elements .hearts {
+				display: inline-block;
+				width: 30%;
+
+				text-align: right;
+			}
+
+			.game-elements .hearts img {
+				display: inline-block;
+				width: 22%;
+				margin: 0% 1%;
 			}
 		</style>
 	</head>
 
 	<body>
 
-		<header><img src="header.png"></header>
+		<div class="game-elements">
+			<div class="hearts">
+				<img src="heart.png"><img src="heart.png"><img src="heart.png">
+			</div>
+		</div>
+
+		<div class="header">
+			<header id="header">Interrupt 2k19</header>
+			<p>Interrupt is a National-Level Technical Symposium conducted by the students of the Computer Science department of Sri Venkateswara College of Engineering. It is a place where engineers showcase their talent and ideas in a plethora of events across various domains of the computer world. Now in its 28th year, Interrupt is back and it's bigger and better than ever!<p>
+		</div>
 
 	</body>
+	<script src="static/js/flicker.js"></script>
 
 </html>
