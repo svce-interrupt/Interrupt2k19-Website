@@ -281,7 +281,7 @@ function displayRulesForMode(mode) {
 
 /* This is the timeout function which displays the game controller on the screen.  */
 let joystickAppear = window.setTimeout( function(){ 
-	document.getElementById('pixel-386').innerHTML = "<img src='static/img/gamecontroller.png'>";
+	document.getElementById('pixel-386').innerHTML = "<i class='material-icons'>sports_esports</i>";
 	mamba.joystickAppear = 1;
 }, 10000);
 

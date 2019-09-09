@@ -210,6 +210,7 @@ body, html {
 	margin: 0;
 	padding: 0;
 
+	vertical-align: top;
 	background-color: black;
 }
 
@@ -217,35 +218,7 @@ body, html {
 	width: 100%;
 }
 
-.snake-xenzia .events {
-	display: block;
-	width: 1vw;
-	height: 1vw;
-
-	margin: 0 auto;
-	vertical-align: middle;
-
-	border-radius: 100px;
-	background-color: white;
-	transition: all 3s;
-}
-
-.snake-xenzia .events:hover {
-	background-color: transparent;
-}
-
-.snake-xenzia .events-one {
-	background-color: green;
-}
-
-.snake-xenzia .events-two {
-	background-color: purple;
-}
-
-.snake-xenzia .events-three {
-	background-color: yellow;
-}
-
-.snake-xenzia .events-four {
-	background-color: blue;
+.snake-xenzia .material-icons {
+	color: white;
+	font-size: 35px;
 }
