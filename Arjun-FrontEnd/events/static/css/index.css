@@ -14,8 +14,8 @@ body, html {
 }
 
 @font-face {
-	font-family: "BIT";
-	src: url('../fonts/bit.otf');
+	font-family: "Pixellari";
+	src: url('../../../home/static/fonts/pixellari.ttf');
 }
 
 /* CSS for the SNAKE-HEADERS. */
@@ -114,7 +114,7 @@ body, html {
 
 	margin: 1% auto;
 
-	font-family: "BIT";
+	font-family: "Pixellari";
 	font-size: 140%;
 	text-align: left;
 	color: white;
@@ -179,7 +179,7 @@ body, html {
 	width: 95%;
 	margin: 2% 2.5%;
 
-	font-family: "BIT";
+	font-family: "Pixellari";
 	font-size: 145%;
 }
 

@@ -15,7 +15,7 @@ body, html {
 
 
 @font-face {
-	font-family: "Atari";
+	font-family: "Pixellari";
 	src: url('../fonts/pixellari.ttf');
 }
 
@@ -47,7 +47,7 @@ body, html {
 	margin: 4% 7.5% 2% 7.5%;
 
 	text-align: center;
-	font-family: "Atari";
+	font-family: "Pixellari";
 	font-size: 155%;
 	color: white;
 }
@@ -88,13 +88,13 @@ body, html {
 	margin-right: 54%;
 
 	color: white;
-	font-family: "Atari";
+	font-family: "Pixellari";
 	vertical-align: middle;
 }
 
 .game-elements .score .title {
 	text-align: center;
-	font-family: "Atari";
+	font-family: "Pixellari";
 	font-size: 120%;
 
 	color: white;
@@ -137,7 +137,7 @@ body, html {
 	margin: 0% 8% 0% 32%;
 
 	text-align: center;
-	font-family: "Atari";
+	font-family: "Pixellari";
 	font-size: 120%;
 
 	color: white;
