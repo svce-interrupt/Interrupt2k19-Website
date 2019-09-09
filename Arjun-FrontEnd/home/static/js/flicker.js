@@ -2,8 +2,9 @@
 /* EVENTS-FLICKER.JS  */
 /**********************/
 
-/* This script takes care of the flickering that happens in the event header. */
+/* This script takes care of the flickering that happens in the event header and in the hearts elements. */
 
+/* We make the Interrupt Event-Header flicker with different colors. */
 var flickerIterator=0;
 var snakeHeader = document.getElementById("header");
 
@@ -20,3 +21,19 @@ function flicker() {
 }
 
 window.setInterval( flicker, 1000 );
+
+/* We make half of the heart in the game elements flicker. */
+var heartIterator = 0;
+
+function heartFlicker() {
+	if(heartIterator == 0) {
+		document.getElementsByClassName("reverse")[0].style.display = "none";
+		heartIterator = 1;
+	}
+	else if(heartIterator == 1) {
+		document.getElementsByClassName("reverse")[0].style.display = "inline-block";
+		heartIterator = 0;
+	}
+}
+
+window.setInterval( heartFlicker, 500 );
