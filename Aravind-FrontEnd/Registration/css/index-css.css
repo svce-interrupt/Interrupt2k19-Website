@@ -17,6 +17,7 @@ body{
 	 font-family: myFirstFont;
 	 margin-left: 21%;
 	 font-size: 400%;
+	 color: green;
 }
 
 #p2{
@@ -50,7 +51,7 @@ body{
 	margin-top: 1%;
 	display: block;
 	text-align: center;
-	border: 1px dashed #29B6F6;
+	border: 3px dashed #29B6F6;
 	padding: 1% 0%;
 	font-size: 80%;
 	font-family: myFirstFont;
@@ -58,7 +59,7 @@ body{
 }
 .home-links:hover{
 	color: #ffd881;
-	border: 1px dashed #ffd881;
+	border: 3px dashed #ffd881;
 }
 .top-links{
 	margin-top: 1%;
@@ -67,28 +68,34 @@ body{
 }
 
 .orange {
-    color: #fa5c18;
-    border: 1px dashed #fa5c18;
+    color: black;
+    border: 3px dashed #fa5c18;
+    background-color: #556B2F;
 }
 
 .lilac {
-    color: #edd5cd
-    border: 1px dashed #edd5cd;
+    color: black
+    border: 3px dashed #edd5cd;
+    background-color: #556B2F;
 }
 
 .yellow {
 	color: yellow !important;
-	border: 1px dashed yellow !important;
+	border: 3px dashed yellow !important;
+	background-color: #556B2F;
 }
 
 .light-red {
-    color: #d97b7a;
-    border: 1px dashed #d97b7a;
+    color: black;
+    border: 3px dashed #d97b7a;
+    background-color: #556B2F;
+
 }
 
 .cyan {
-    color: #7189bf;
-    border: 1px dashed #7189bf;
+    color: black;
+    border: 3px dashed #7189bf;
+    background-color: #556B2F;
 }
 
 .below{
@@ -111,7 +118,7 @@ body{
 	background-color: transparent;
 }
 .form-input:hover{
-	border: 1px dashed #29b6f6;
+	border: 3px dashed #29b6f6;
 	color: #29b6f6;
 }
 .long{
@@ -141,7 +148,7 @@ body{
 	border: none;
 	background-color: black;
 	color: white;
-	border: 1px dashed white;
+	border: 3px dashed white;
 	width: 25%;
 	margin-left: 37%;
 	margin-top: 6%;
