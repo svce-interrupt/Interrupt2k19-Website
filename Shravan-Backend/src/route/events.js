@@ -14,9 +14,9 @@ router.route('/add')
     .post(isAuthenticated, (req, res) => {
 
         const events = req.body.events;
-        console.log(req.user.dataValues.id);
+        console.log(req.user.id);
 
-        EventList.findOne({where : {studentId : req.user.dataValues.id}})
+        EventList.findOne({where : {studentId : req.user.id}})
           .then(eventlist => {
             
             if(eventlist)

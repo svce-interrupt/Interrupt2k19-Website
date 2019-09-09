@@ -9,10 +9,13 @@ router.get('/', (req, res) => {
 });
 
 router.get('/logout', isAuthenticated, (req, res) => {
+
+    const redirectPath  =   req.user.isAdmin ? '/login/admin' : '/login' ;
+
     req.logout();
     req.session.destroy(() => {
         res.clearCookie("Interrupt_session");
-        res.redirect('/');
+        res.redirect(redirectPath);
     });
 })
 

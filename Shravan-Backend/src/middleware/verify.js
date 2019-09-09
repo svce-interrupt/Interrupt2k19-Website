@@ -30,6 +30,14 @@ const verifyData = async (req, res, next) => {
     next();
 };
 
+const notLoggedIn = (req, res, next) => {
+
+    if(req.isAuthenticated())
+        return res.redirect('back');
+    return next();
+
+}
+
 const isAuthenticated = (req, res, next) => {
     
     if(req.isAuthenticated())         
@@ -49,5 +57,6 @@ const hasAdminAccess = (req, res, next) => {
 module.exports = {
     verifyData,
     isAuthenticated,
+    notLoggedIn,
     hasAdminAccess
 };

@@ -76,8 +76,8 @@ app.use(function (req, res, next) {
 });
 
 app.use((req, res, next) => {
-    res.locals.isAuthenticated = req.isAuthenticated();
-    res.locals.studentName  = req.user ? req.user.dataValues.student_name : undefined;
+    res.locals.isAuthenticated  =   req.isAuthenticated();
+    res.locals.studentName      =   req.user ? req.user.student_name : undefined;
     next();
 });
 
