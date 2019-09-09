@@ -4,11 +4,18 @@ const db        =     require('../config/connection');
 
 const LeaderBoard  =  db.define('leaderboard', {
 
-    level : {
+    score : {
         type : Sequelize.INTEGER,
         defaultValue : 1,
         allowNull : false
+    },
+
+    attempts : {
+        type : Sequelize.INTEGER,
+        defaultValue : 0,
     }
+
+
 
 }, {
     freezeTableName : true,

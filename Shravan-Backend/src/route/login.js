@@ -10,5 +10,10 @@ router.route("/")
   })
   .post(passport.authenticate('local', {failureRedirect : '/login', successRedirect: '/'}))
 
+router.route('/admin')
+  .get((req, res) => {
+      res.render('login');
+  })
+  .post(passport.authenticate('admin-local', {failureRedirect : '/login', successRedirect: '/'}))
 
 module.exports = router;

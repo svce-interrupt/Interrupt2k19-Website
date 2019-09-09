@@ -34,6 +34,11 @@ const Student  =  db.define('students', {
     password : {
         type : Sequelize.STRING,
         allowNull : false
+    },
+
+    isAdmin : {
+        type : Sequelize.BOOLEAN,
+        defaultValue : false
     }
 
 }, {
@@ -50,6 +55,10 @@ const Student  =  db.define('students', {
 //Instance methods
 Student.prototype.validatePassword = (password, passwordGiven) => {
     return bcrypt.compareSync(password, passwordGiven);
+}
+
+Student.prototype.hasAdminAccess = (student) => {
+    return student.isAdmin;
 }
 
 module.exports = Student;

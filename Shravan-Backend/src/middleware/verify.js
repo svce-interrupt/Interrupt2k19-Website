@@ -38,7 +38,16 @@ const isAuthenticated = (req, res, next) => {
     
 }
 
+const hasAdminAccess = (req, res, next) => {
+    
+    if(req.isAuthenticated() && req.user.dataValues.isAdmin)
+        next();
+    else
+        res.status(401).send('Unauthorized');
+}
+
 module.exports = {
     verifyData,
-    isAuthenticated
+    isAuthenticated,
+    hasAdminAccess
 };
