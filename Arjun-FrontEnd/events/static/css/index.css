@@ -222,3 +222,19 @@ body, html {
 	color: white;
 	font-size: 35px;
 }
+
+.snake-xenzia .event-one {
+	color: red;
+}
+
+.snake-xenzia .event-two {
+	color: #2196f3;
+}
+
+.snake-xenzia .event-three {
+	color: yellow;
+}
+
+.snake-xenzia .event-four {
+	color: #E1BEE7;
+}

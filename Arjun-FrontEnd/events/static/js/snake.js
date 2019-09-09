@@ -23,7 +23,7 @@ class Snake {
 		this.snakeArray = [420,421,422,423,424,425,426]; /* The pixel array that is the snake. */
 		this.lastPixel = 420;
 
-		this.eventsPixels = [44,195,214,780]; /* The pixels containing the events. */
+		this.eventsPixels = [183,327,654,754]; /* The pixels containing the events. */
 		this.food = 0; /* The pixel with the food when in game mode. */
 		this.collision = 0; /* Has there been a collision with a food/event or not? */
 
@@ -98,7 +98,7 @@ class Snake {
 			/* If there is a collision, we flag a variable. */
 			if(this.eventsPixels.includes(this.snakeArray[this.length-1])) this.collision = 1;
 			/* We now check if the game controller*/
-			if(this.snakeArray[this.length-1] == 386 && this.joystickAppear == 1) {
+			if(this.snakeArray[this.length-1] == 275 && this.joystickAppear == 1) {
 
 				/* We first remove all the 'events-related' elements. */
 				this.removeEventsPixels();
@@ -233,7 +233,7 @@ class Snake {
 		for(iter=0; iter<this.eventsPixels.length; iter++)
 			document.getElementById("pixel-"+this.eventsPixels[iter]).innerHTML = "";
 
-		document.getElementById("pixel-386").innerHTML = "";
+		document.getElementById("pixel-275").innerHTML = "";
 
 		this.eventsPixels = [];
 	}	
@@ -281,7 +281,7 @@ function displayRulesForMode(mode) {
 
 /* This is the timeout function which displays the game controller on the screen.  */
 let joystickAppear = window.setTimeout( function(){ 
-	document.getElementById('pixel-386').innerHTML = "<i class='material-icons'>sports_esports</i>";
+	document.getElementById('pixel-275').innerHTML = "<i class='material-icons'>sports_esports</i>";
 	mamba.joystickAppear = 1;
 }, 10000);
 
