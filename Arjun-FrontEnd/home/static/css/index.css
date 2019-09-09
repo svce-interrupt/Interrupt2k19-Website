@@ -27,7 +27,8 @@ body, html {
 	display: block;
 	width: 100%;
 
-	margin-top: 10%;
+	margin-top: 7%;
+	margin-bottom: 4%;
 }
 
 .header header {
@@ -51,6 +52,14 @@ body, html {
 	color: white;
 }
 
+.header .additional-info {
+	margin: 0.5% 7.5% 0.5% 7.5%;
+}
+
+.header .additional-info span {
+	color: red;
+}
+
 /*****************************/
 /*CSS for the GAME ELEMENTS. */
 /*****************************/
@@ -62,20 +71,51 @@ body, html {
 	margin: 0.5% 0% 0% 0%;
 }
 
+/* CSS for the TITLE elements. */
+
 .game-elements .hearts {
 	display: inline-block;
 	width: 30%;
 
 	text-align: right;
+	vertical-align: middle;
 }
 
 .game-elements .score {
 	display: inline-block;
-	width: 30%;
+	width: 15%;
+
+	margin-right: 54%;
+
+	color: white;
+	font-family: "Atari";
+	vertical-align: middle;
+}
+
+.game-elements .score .title {
+	text-align: center;
+	font-family: "Atari";
+	font-size: 120%;
 
 	color: white;
 }
 
+.game-elements .score .number {
+	text-align: center;
+	font-family: "Barcade Brawl";
+	font-size: 150%;
+	color: yellow;
+}
+
+.game-elements .score-number {
+	vertical-align: top;
+}
+
+.game-elements .score-number p {
+	margin: 2% 0% 0% 0%;
+}
+
+/* CSS for the HEARTS. */
 .game-elements .hearts img {
 	display: inline-block;
 	width: 22%;
@@ -101,4 +141,45 @@ body, html {
 	font-size: 120%;
 
 	color: white;
+}
+
+/**********************/
+/* CSS for the LINKS. */
+/**********************/
+
+.links {
+	display: block;
+	width: 100%;
+
+	margin: 0.5% 0%;
+}
+
+.links a {
+	display: inline-block;
+	width: 12%;
+
+	margin: 0;
+	padding: 0.3% 0%;
+
+	text-decoration: none;
+	font-family: "Barcade Brawl";
+	color: #42A5F5;
+	text-align: left;
+}
+
+.links a:hover {
+	text-decoration: underline;
+	font-size: 105%;
+	color: yellow;
+}
+
+.links .material-icons {
+	width: 2%;
+	display: inline-block;
+
+	margin: 0% 1% 0% 42%;
+
+	color: red;
+	vertical-align: top;
+	visibility: hidden;
 }
