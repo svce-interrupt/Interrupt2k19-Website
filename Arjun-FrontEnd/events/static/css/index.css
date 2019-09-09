@@ -153,10 +153,10 @@ body, html {
 
 #rules-popup button {
 	display: block;
-	width: 17%;
+	width: 50%;
 
 	margin: 0 auto 4% auto;
-	padding: 1%;
+	padding: 1.5% 0.5%;
 
 	border: none;
 	border: 2px solid white;

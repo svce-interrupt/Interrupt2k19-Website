@@ -250,28 +250,55 @@ mamba.start();
 /* This function initialises the rules-popup box when in game mode. */
 function displayRulesForMode(mode) {
 	
+	/* Objects necessary for the function. */
 	var rulesPopup = document.getElementById("rules-popup");
 	var rulesClose = document.getElementById("rules-close");
-	var closePopup = function() {
+
+	/* Iterator and storage variables. */
+	var flickerIter = 0;
+	var intervalStorage;
+
+	/* Functions that we are defining for events/timers, etc. */
+	var closePopup = function() { /* Function closes the popup box and related events. */
 		rulesPopup.style.display = "none";
+		document.removeEventListener( "keypress", closePopup );
+		clearInterval( intervalStorage );
+	}
+	var closePopupFlicker = function() { /* Function makes the rules-close box flicker. */
+		if(flickerIter == 0) {
+			rulesClose.style.backgroundColor = "white";
+			rulesClose.style.color = "purple";
+			flickerIter = 1;
+		}
+		else {
+			rulesClose.style.backgroundColor = "transparent";
+			rulesClose.style.color = "white";
+			flickerIter = 0;
+		}
 	}
 
 	/* If we are in normal, non-game mode. */
 	if(mode == 0) {
 		rulesPopup.style.display = "block";
-		rulesClose.addEventListener("click", closePopup);
+		document.addEventListener( "keypress", closePopup );
+		intervalStorage = window.setInterval( closePopupFlicker, 700 );
 	}
 	/* If we are in game mode. */
 	else {
 		var html = "<header>YOU ARE NOW IN GAME MODE</header>"+
-			   "<button id='rules-close'>CLOSE</button>"+
+			   "<button id='rules-close'>PRESS SPACE TO CLOSE</button>"+
 			   "<p style='text-align: center;'>Eat as much food as possible and do not eat yourself!</p>"+
 		 	   "<p style='text-align: center;'>If you can score <span>above 60</span>, WE'LL TREAT YOU!</p>"+
 			   "<p style='text-align: center;'>To go back to <span>'NORMAL'</span> mode, refresh the page.</p>";
 		
 		rulesPopup.style.display = "block";
 		rulesPopup.innerHTML = html;
-		document.getElementById("rules-close").addEventListener("click", closePopup);
+
+		document.addEventListener( "keypress", closePopup );
+
+		rulesClose = document.getElementById("rules-close");
+		intervalStorage = window.setInterval( closePopupFlicker, 700 );
+		alert(rulesClose.style.color);
 	}
 }
 
