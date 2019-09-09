@@ -1026,33 +1026,38 @@
 
 		</div>
 
+	<script>
+        
+		document.querySelectorAll('button').forEach((button) => {
+
+			button.addEventListener('click', (event) => {
+				event.preventDefault();
+
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = () => {
+						if (this.readyState == 4 && this.status == 200) {
+							console.log("Working")
+					}
+					};
+
+				xhttp.open("POST", "/events/add", true);
+				xhttp.setRequestHeader("Content-type", "application/json; charset=utf-8");
+				xhttp.withCredentials = true;
+				xhttp.send(JSON.stringify({
+					events : {
+						ev1 : true,
+						ev2 : true,
+						ev3 : false
+					}
+				}));
+        	});
+		});
+
+    </script> 
+
 	</body>
 	<script src="scripts/snake.js"></script>
 	<script src="scripts/flicker.js"></script>
 
-<!-- 
-	<script>
-        document.querySelector('button').addEventListener('click', (event) => {
-            event.preventDefault();
-
-            var xhttp = new XMLHttpRequest();
-               xhttp.onreadystatechange = () => {
-                    if (this.readyState == 4 && this.status == 200) {
-                        console.log("Working")
-                   }
-                 };
-
-            xhttp.open("POST", "/events/add", true);
-            xhttp.setRequestHeader("Content-type", "application/json; charset=utf-8");
-            xhttp.withCredentials = true;
-            xhttp.send(JSON.stringify({
-                events : {
-                    ev1 : true,
-                    ev2 : true,
-                    ev3 : false
-                }
-            }));
-        })
-    </script> -->
 
 </html>
