@@ -27,7 +27,7 @@ body, html {
 	display: block;
 	width: 100%;
 
-	margin-top: 7%;
+	margin-top: 6.5%;
 	margin-bottom: 4%;
 }
 
@@ -156,7 +156,7 @@ body, html {
 
 .links a {
 	display: inline-block;
-	width: 12%;
+	width: 20%;
 
 	margin: 0;
 	padding: 0.3% 0%;
