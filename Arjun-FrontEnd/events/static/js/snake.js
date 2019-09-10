@@ -298,7 +298,6 @@ function displayRulesForMode(mode) {
 
 		rulesClose = document.getElementById("rules-close");
 		intervalStorage = window.setInterval( closePopupFlicker, 700 );
-		alert(rulesClose.style.color);
 	}
 }
 
