@@ -35,6 +35,12 @@ body, html {
 	z-index: 11;
 }
 
+#snake-header {
+	animation-name: flicker;
+	animation-duration: 6s;
+	animation-iteration-count: infinite;
+}
+
 #snake-score {
 	display: none;
 	top: 6%;
@@ -237,4 +243,25 @@ body, html {
 
 .snake-xenzia .event-four {
 	color: #E1BEE7;
+}
+
+/***********************/
+/* CSS for ANIMATIONS. */
+/***********************/
+
+@keyframes flicker {
+
+	0% { color: white; }
+	15% { color: white; }
+	16% { color: red; }
+	31% { color: red; }
+	32% { color: yellow; }
+	47% { color: yellow; }
+	48% { color: blue; }
+	63% { color: blue; }
+	64% { color: orange; }
+	81% { color: orange; }
+	82% { color: purple; }
+	100% { color: purple; }
+
 }
