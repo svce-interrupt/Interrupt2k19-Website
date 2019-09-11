@@ -1,0 +1,233 @@
+/******************************/
+/* CSS for the BODY and HTML. */
+/******************************/
+body, html {
+	margin: 0;
+	padding: 0;
+
+	background-color: black;
+}
+
+@font-face {
+	font-family: "Barcade Brawl";
+	src: url('../../../events/static/fonts/barcade.ttf');
+}
+
+@font-face {
+	font-family: "Pixellari";
+	src: url('../../../home/static/fonts/pixellari.ttf');
+}
+
+/************************/
+/* CSS for the HEADERS. */
+/************************/
+
+h2 {
+	display: block;
+	width: 100%;
+
+	margin: 3% 0%;
+
+	font-family: "Barcade Brawl";
+	font-size: 180%;
+	color: yellow;
+	text-align: center;
+}
+
+/*************************/
+/* CSS for the SPONSORS. */
+/*************************/
+
+.sponsors {
+	display: block;
+	width: 100%;
+
+	text-align: center;
+}
+
+.sponsor-txt {
+	font-family: "Pixellari";
+	font-size: 170%;
+	color: yellow;
+}
+
+.sponsor {
+	display: inline-block;
+	width: 15%;
+
+	margin: 2% 0.75%;
+
+	text-decoration: none;
+	background-color: purple;
+	color: yellow;
+
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+
+.sponsor:hover {
+	background-color: yellow;
+	color: purple;
+}
+
+.sponsor img {
+	display: block;
+	width: 100%;
+
+	margin: 0 auto;
+}
+
+.sponsor p {
+	width: 90%;
+
+	margin: 0 auto;
+	padding: 5% 0%;
+
+	font-family: "Pixellari";
+	font-size: 160%;
+}
+
+/**********************/
+/* CSS for the TEAMS. */
+/**********************/
+
+.team {
+	animation-duration: 3s;
+}
+
+.team .post {
+	padding: 0% 0% 4% 0%;
+	font-size: 110%;
+}
+
+/***************************/
+/* CSS for the ANIMATIONS. */
+/***************************/
+
+@keyframes colorChange1 {
+	10% {
+		background-color: purple;
+		color: yellow;
+	}
+	11% {
+		background-color: yellow;
+		color: purple;
+	}
+
+	100% {
+		background-color: yellow;
+		color: purple;
+	}
+}
+
+@keyframes colorChange2 {
+	21% {
+		background-color: purple;
+		color: yellow;
+	}
+	22% {
+		background-color: yellow;
+		color: purple;
+	}
+
+	100% {
+		background-color: yellow;
+		color: purple;
+	}
+}
+
+@keyframes colorChange3 {
+	32% {
+		background-color: purple;
+		color: yellow;
+	}
+	33% {
+		background-color: yellow;
+		color: purple;
+	}
+
+	100% {
+		background-color: yellow;
+		color: purple;
+	}
+}
+
+@keyframes colorChange4 {
+	43% {
+		background-color: purple;
+		color: yellow;
+	}
+	44% {
+		background-color: yellow;
+		color: purple;
+	}
+
+	100% {
+		background-color: yellow;
+		color: purple;
+	}
+}
+
+@keyframes colorChange5 {
+	54% {
+		background-color: purple;
+		color: yellow;
+	}
+	55% {
+		background-color: yellow;
+		color: purple;
+	}
+
+	100% {
+		background-color: yellow;
+		color: purple;
+	}
+}
+
+@keyframes colorChange6 {
+	65% {
+		background-color: purple;
+		color: yellow;
+	}
+	66% {
+		background-color: yellow;
+		color: purple;
+	}
+
+	100% {
+		background-color: yellow;
+		color: purple;
+	}
+}
+
+@keyframes colorChange7 {
+	76% {
+		background-color: purple;
+		color: yellow;
+	}
+	77% {
+		background-color: yellow;
+		color: purple;
+	}
+
+	100% {
+		background-color: yellow;
+		color: purple;
+	}
+}
+
+@keyframes colorChange8 {
+	87% {
+		background-color: purple;
+		color: yellow;
+	}
+	88% {
+		background-color: yellow;
+		color: purple;
+	}
+
+	100% {
+		background-color: yellow;
+		color: purple;
+	}
+}
