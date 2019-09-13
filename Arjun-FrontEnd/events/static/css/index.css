@@ -228,6 +228,8 @@ body, html {
 .snake-xenzia .material-icons {
 	color: white;
 	font-size: 35px;
+
+	cursor: pointer;
 }
 
 .snake-xenzia .event-one {

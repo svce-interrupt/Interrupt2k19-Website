@@ -238,7 +238,7 @@ class Snake {
 		document.getElementById("pixel-275").innerHTML = "";
 
 		this.eventsPixels = [];
-	}	
+	}
 
 }
 
@@ -339,3 +339,15 @@ document.addEventListener("keyup", function() {
 	else if(event.which == 37 && mamba.direction != 2 && mamba.fastTurn(4) == true) mamba.direction = 4;
 	else if(event.which == 13 && mamba.mode == 1) mamba.restart();
 });
+
+/* We add event-listeners for the event icons so that the popup shows when they are clicked.  */
+/* This is done by changing the mamba.collision variable to 1. The event-listener declared... */
+/* before will detect this and show the popup. */
+let eventIcons = document.getElementsByClassName("event-links");
+let eventIconsFunc = function() {
+	mamba.collision = 1;
+}
+
+eventIcons[0].addEventListener("click", eventIconsFunc);
+eventIcons[1].addEventListener("click", eventIconsFunc);
+eventIcons[2].addEventListener("click", eventIconsFunc);
