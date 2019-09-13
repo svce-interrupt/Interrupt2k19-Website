@@ -98,9 +98,9 @@ class Snake {
 			/* If the snake collides with the home icon, we redirect. */	
 			if(this.snakeArray[this.length-1] == 327) window.location.href="../home/index.html";
 			/* If there is a collision, we flag a variable. */
-			if(this.eventsPixels.includes(this.snakeArray[this.length-1])) this.collision = 1;
+			else if(this.eventsPixels.includes(this.snakeArray[this.length-1])) this.collision = 1;
 			/* We now check if the game controller*/
-			if(this.snakeArray[this.length-1] == 275 && this.joystickAppear == 1) {
+			else if(this.snakeArray[this.length-1] == 275 && this.joystickAppear == 1) {
 
 				/* We first remove all the 'events-related' elements. */
 				this.removeEventsPixels();
