@@ -266,6 +266,11 @@ function displayRulesForMode(mode) {
 		document.removeEventListener( "keypress", closePopup );
 		clearInterval( intervalStorage );
 	}
+	var mobileClosePopup = function() {
+		rulesPopup.style.display = "none";
+		rulesClose.removeEventListener( "click", mobileClosePopup );
+		clearInterval( intervakStorage );
+	}
 	var closePopupFlicker = function() { /* Function makes the rules-close box flicker. */
 		if(flickerIter == 0) {
 			rulesClose.style.backgroundColor = "white";
@@ -279,10 +284,25 @@ function displayRulesForMode(mode) {
 		}
 	}
 
-	/* If we are in normal, non-game mode. */
-	if(mode == 0) {
+	/* If we are in normal, non-game mode and on desktop. */
+	if(mode == 0 && screen.width > 1000) {
 		rulesPopup.style.display = "block";
 		document.addEventListener( "keypress", closePopup );
+		intervalStorage = window.setInterval( closePopupFlicker, 700 );
+	}
+	/* If we are in normal, non-game mode and on mobile. */
+	else if(mode == 0 && screen.width <= 1000) {
+		var html = "<header>HOW TO PLAY</header>"+
+			   "<button id='rules-close'>TOUCH HERE TO CLOSE</button>"+
+			   "<p><span>1.</span> Slide to control the snake's direction. </p>"+
+		 	   "<p><span>2.</span> Navigate the snake onto the icons to get information about events.</p>"+
+			   "<p><span>3.</span> For a surprise, navigate the snake to eat the <i class='material-icons'>sports_esports</i> which appears randomly on the screen! <span>Can you get the high score?</span></p>";
+		
+		rulesPopup.style.display = "block";
+		rulesPopup.innerHTML = html;
+
+		rulesClose = document.getElementById("rules-close");
+		rulesClose.addEventListener( "click", mobileClosePopup );
 		intervalStorage = window.setInterval( closePopupFlicker, 700 );
 	}
 	/* If we are in game mode. */
