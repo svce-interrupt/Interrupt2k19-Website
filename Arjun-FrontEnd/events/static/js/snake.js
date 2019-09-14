@@ -26,6 +26,7 @@ class Snake {
 		this.eventsPixels = [183,327,654,754]; /* The pixels containing the events. */
 		this.food = 0; /* The pixel with the food when in game mode. */
 		this.collision = 0; /* Has there been a collision with a food/event or not? */
+		this.gameOver = 0; /* Is the game over or not? */
 
 		displayRulesForMode(this.mode);
 	}
@@ -149,7 +150,11 @@ class Snake {
 			/* If there is a collision with the snake itself, then the game is over... */
 			else if(this.snakeArray.slice(0,this.length-1).includes(this.snakeArray[this.length-1])) {
 				clearInterval(this.slithering);
-				document.getElementById("snake-header").innerHTML = "GAME OVER (PRESS ENTER)";
+				this.gameOver = 1;
+				var snakeHeader = document.getElementById("snake-header");
+
+				if(screen.width <= 1000) snakeHeader.innerHTML = "GAME OVER (TOUCH SCREEN)";
+				else snakeHeader.innerHTML = "GAME OVER (PRESS ENTER)";
 			}
 
 			/* We paint the food pixel green. */
@@ -305,12 +310,12 @@ function displayRulesForMode(mode) {
 		rulesClose.addEventListener( "click", mobileClosePopup );
 		intervalStorage = window.setInterval( closePopupFlicker, 700 );
 	}
-	/* If we are in game mode. */
-	else {
+	/* If we are in game mode and on desktop. */
+	else if(mode == 1 && screen.width > 1000) {
 		var html = "<header>YOU ARE NOW IN GAME MODE</header>"+
 			   "<button id='rules-close'>PRESS SPACE TO CLOSE</button>"+
 			   "<p style='text-align: center;'>Eat as much food as possible and do not eat yourself!</p>"+
-		 	   "<p style='text-align: center;'>If you can score <span>above 60</span>, WE'LL TREAT YOU!</p>"+
+		 	   "<p style='text-align: center;'>If you can score <span>above 60</span>, <span>we'll treat you!</span></p>"+
 			   "<p style='text-align: center;'>To go back to <span>'NORMAL'</span> mode, refresh the page.</p>";
 		
 		rulesPopup.style.display = "block";
@@ -319,6 +324,20 @@ function displayRulesForMode(mode) {
 		document.addEventListener( "keypress", closePopup );
 
 		rulesClose = document.getElementById("rules-close");
+		intervalStorage = window.setInterval( closePopupFlicker, 700 );
+	}
+	else if(mode == 1 && screen.width <= 1000) {
+		var html = "<header>YOU ARE NOW IN GAME MODE</header>"+
+			   "<button id='rules-close'>TOUCH HERE TO CLOSE</button>"+
+			   "<p style='text-align: center;'>Eat as much food as possible and do not eat yourself!</p>"+
+		 	   "<p style='text-align: center;'>If you can score <span>above 60</span>, <span>we'll treat you!</span></p>"+
+			   "<p style='text-align: center;'>To go back to <span>'NORMAL'</span> mode, refresh the page.</p>";
+		
+		rulesPopup.style.display = "block";
+		rulesPopup.innerHTML = html;
+
+		rulesClose = document.getElementById("rules-close");
+		rulesClose.addEventListener( "click", mobileClosePopup );
 		intervalStorage = window.setInterval( closePopupFlicker, 700 );
 	}
 }
@@ -383,6 +402,12 @@ if(screen.width <= 1000) { /* If the device is a mobile device. */
 
 	/* We get the coordinates when the user starts to touch the screen. */
 	document.addEventListener("touchstart", function() {
+		
+		if(mamba.gameOver == 1) { /* If game is over, then touching screen will restart the game. */
+			mamba.restart();
+			mamba.gameOver = 0;
+		}
+
 		xStart = event.touches[0].clientX;
 		yStart = event.touches[0].clientY;
 	});
