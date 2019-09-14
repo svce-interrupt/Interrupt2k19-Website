@@ -348,17 +348,81 @@ let popupEvent = window.setInterval(function(){
 /* EVENT-LISTENER DECLARATION */
 /*----------------------------*/
 
-/* We add an Event-Listener to listen for arrow keys which are pressed to change the snake's direction. */
-/* Also, we add one for the 'Enter' button to restart the game (Only if in game mode). */
-document.addEventListener("keyup", function() {
-	/* Depending upon the arrow button pressed, we change the snake's direction. */
-	/* If the snake is going in a particular direction, it can't go in the opposite direction. */
-	if(event.which == 38 && mamba.direction != 3 && mamba.fastTurn(1) == true) mamba.direction = 1;
-	else if(event.which == 39 && mamba.direction != 4 && mamba.fastTurn(2) == true) mamba.direction = 2;
-	else if(event.which == 40 && mamba.direction != 1 && mamba.fastTurn(3) == true) mamba.direction = 3;
-	else if(event.which == 37 && mamba.direction != 2 && mamba.fastTurn(4) == true) mamba.direction = 4;
-	else if(event.which == 13 && mamba.mode == 1) mamba.restart();
-});
+
+
+if(screen.width > 1000) { /* If the device is a desktop or laptop. */
+
+	/* Event-Listener for arrow keys to change the snake's direction. */
+	/* Event-Listener for 'Enter' key when in game mode to restart game. */
+
+	document.addEventListener("keyup", function() {
+		/* Depending upon the arrow button pressed, we change the snake's direction. */
+		/* If the snake is going in a particular direction, it can't go in the opposite direction. */
+		if(event.which == 38 && mamba.direction != 3 && mamba.fastTurn(1) == true) mamba.direction = 1;
+		else if(event.which == 39 && mamba.direction != 4 && mamba.fastTurn(2) == true) mamba.direction = 2;
+		else if(event.which == 40 && mamba.direction != 1 && mamba.fastTurn(3) == true) mamba.direction = 3;
+		else if(event.which == 37 && mamba.direction != 2 && mamba.fastTurn(4) == true) mamba.direction = 4;
+		else if(event.which == 13 && mamba.mode == 1) mamba.restart();
+	});
+
+}
+
+if(screen.width <= 1000) { /* If the device is a mobile device. */
+	
+	/* Event-Listeners for 'touch sliding' to change the snake's direction. */
+	/* This is only if the device is a mobile device. */
+
+	/* We calculate the direction by the following process. */
+	/* We get the coordinates when the finger touches the screen and when it leaves it. */
+	/* Depending on the value, we change the direction. More below. */
+
+	var xStart = 0;
+	var yStart = 0;
+	var xEnd = 0;
+	var yEnd = 0;
+
+	/* We get the coordinates when the user starts to touch the screen. */
+	document.addEventListener("touchstart", function() {
+		xStart = event.touches[0].clientX;
+		yStart = event.touches[0].clientY;
+	});
+
+	/* The coordinates are updated continously while the user is touching the screen. */
+	document.addEventListener("touchmove", function() {
+		xEnd = event.touches[0].clientX;
+		yEnd = event.touches[0].clientY;
+	});
+
+	/* We get the coordinates when the user lifts the finger from the screen. */
+	document.addEventListener("touchend", function() {
+		var xDiff = xEnd - xStart; // We get the x-difference.
+		var yDiff = yEnd - yStart; // We get the y-difference.
+
+		var xReverse = 0;
+		var yReverse = 0;
+
+		if(xDiff < 0) { // If x-difference < 0, then we flag the x-reverse variable.
+			xDiff *= -1;
+			xReverse = 1;
+		}
+		if(yDiff < 0) { //If the y-difference < 0, then we flag the y-reverse variable.
+			yDiff *= -1;
+			yReverse = 1;
+		}
+
+		/* If x-difference is more than y-difference, then snake's going left/right. */
+		/* If y-difference is more than x-difference, then snake's going up/down. */
+		/* If x-diff is negative, then it is going left. Else, it is going right. */
+		/* If y-diff is negative, then it going up. Else it is going down.  */
+
+
+		if((xDiff >= yDiff) && xReverse == 0 && mamba.direction != 4) mamba.direction = 2; //Going right.
+		else if((xDiff >= yDiff) && xReverse == 1 && mamba.direction != 2) mamba.direction = 4; //Going left.
+		else if((xDiff < yDiff) && yReverse == 0 && mamba.direction != 1) mamba.direction = 3; //Going down.
+		else if((xDiff < yDiff) && yReverse == 1 && mamba.direction != 3) mamba.direction = 1; //Going up.
+	});
+
+}
 
 /* We add event-listeners for the event icons so that the popup shows when they are clicked.  */
 /* This is done by changing the mamba.collision variable to 1. The event-listener declared... */
