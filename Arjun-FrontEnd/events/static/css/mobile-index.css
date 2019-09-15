@@ -4,6 +4,10 @@
 /* MOBILE-EVENTS-INDEX.CSS */
 /***************************/
 
+body, html {
+	background-color: black;
+}
+
 /******************************/
 /* CSS for the SNAKE-HEADERS. */
 /******************************/
@@ -74,6 +78,24 @@
 /************************************/
 /* CSS for the SNAKE-XENZIA PIXELS. */
 /************************************/
+
+.snake-xenzia {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+
+	-webkit-overflow-scrolling: auto;
+
+	top: 0;
+	left: 0;
+
+	/* The following 2 props disenable spaces between pixels rows. */
+	font-size: 0%; 
+	line-height: 0;
+	z-index: 10;
+
+	background-color: black;
+}
 
 .snake-xenzia .material-icons {
 	font-size: 17px;

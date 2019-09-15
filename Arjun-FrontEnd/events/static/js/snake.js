@@ -402,12 +402,6 @@ if(screen.width <= 1000) { /* If the device is a mobile device. */
 
 	/* We get the coordinates when the user starts to touch the screen. */
 	document.addEventListener("touchstart", function() {
-		
-		if(mamba.gameOver == 1) { /* If game is over, then touching screen will restart the game. */
-			mamba.restart();
-			mamba.gameOver = 0;
-		}
-
 		xStart = event.touches[0].clientX;
 		yStart = event.touches[0].clientY;
 	});
@@ -420,6 +414,15 @@ if(screen.width <= 1000) { /* If the device is a mobile device. */
 
 	/* We get the coordinates when the user lifts the finger from the screen. */
 	document.addEventListener("touchend", function() {
+
+		if(mamba.gameOver == 1) { /* If game is over, then touching screen will restart the game. */
+			window.setTimeout( function() {
+				//Nothing happens here.
+			}, 2000);
+			mamba.restart();
+			mamba.gameOver = 0;
+		}
+
 		var xDiff = xEnd - xStart; // We get the x-difference.
 		var yDiff = yEnd - yStart; // We get the y-difference.
 
