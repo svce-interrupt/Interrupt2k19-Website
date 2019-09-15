@@ -1,104 +1,172 @@
-@media only screen and (max-width: 1000px) and (orientation: landscape) {
-
 /***************************/
 /* MOBILE-EVENTS-INDEX.CSS */
 /***************************/
 
-body, html {
-	background-color: black;
-}
+/*********************************/
+/* This is the CSS for the iPad. */
+/*********************************/
 
-/******************************/
-/* CSS for the SNAKE-HEADERS. */
-/******************************/
-.snake-headers {
-	font-size: 110%;
-}
+@media only screen and (min-width: 10px) and (max-width: 767px) and (orientation: landscape),
+       only screen and (min-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
 
-#snake-score {
-	top: 10%;
+	body, html {
+		background-color: black;
+	}
 
-	font-size: 90%;
-}
+	/******************************/
+	/* CSS for the SNAKE-HEADERS. */
+	/******************************/
+	.snake-headers {
+		font-size: 110%;
+	}
 
-/********************************/
-/* CSS for the SNAKE-POPUP BOX. */
-/********************************/
-#snake-popup header {
-	font-size: 130%;
-}
+	#snake-score {
+		top: 10%;
 
-#snake-popup button {
-	width: 30%;
+		font-size: 90%;
+	}
 
-	margin: 1% auto;
-	padding: 2%;
+	/********************************/
+	/* CSS for the SNAKE-POPUP BOX. */
+	/********************************/
+	#snake-popup header {
+		font-size: 130%;
+	}
 
-	font-size: 100%;
-}
+	#snake-popup button {
+		width: 30%;
 
-#snake-popup .event header {
-	margin: 2% auto;
+		margin: 1% auto;
+		padding: 2%;
 
-	font-size: 80%;
-}
+		font-size: 100%;
+	}
 
-#snake-popup .event p {
-	margin: 2% auto;
+	#snake-popup .event header {
+		margin: 2% auto;
 
-	font-size: 70%;
-}
+		font-size: 80%;
+	}
 
-/****************************/
-/* CSS for the RULES-POPUP. */
-/****************************/
+	#snake-popup .event p {
+		margin: 2% auto;
 
-#rules-popup {
-	width: 100%;
-	height: 100%;
+		font-size: 70%;
+	}
 
-	top: 0%;
-	left: 0%;
-}
+	/****************************/
+	/* CSS for the RULES-POPUP. */
+	/****************************/
 
-#rules-popup header {
-	font-size: 135%;
-}
+	#rules-popup {
+		width: 100%;
+		height: 100%;
 
-#rules-popup button {
-	width: 60%;
-	
-	padding: 2% 0.5%;
-}
+		top: 0%;
+		left: 0%;
+	}
 
-#rules-popup p {
-	font-size: 78%;
-}
+	#rules-popup header {
+		font-size: 135%;
+	}
 
-/************************************/
-/* CSS for the SNAKE-XENZIA PIXELS. */
-/************************************/
+	#rules-popup button {
+		width: 60%;
+		
+		padding: 2% 0.5%;
+	}
 
-.snake-xenzia {
-	position: fixed;
-	height: 100%;
-	width: 100%;
+	#rules-popup p {
+		font-size: 78%;
+	}
 
-	-webkit-overflow-scrolling: auto;
+	/************************************/
+	/* CSS for the SNAKE-XENZIA PIXELS. */
+	/************************************/
 
-	top: 0;
-	left: 0;
+	.snake-xenzia {
+		position: fixed;
+		height: 100%;
+		width: 100%;
 
-	/* The following 2 props disenable spaces between pixels rows. */
-	font-size: 0%; 
-	line-height: 0;
-	z-index: 10;
+		-webkit-overflow-scrolling: auto;
 
-	background-color: black;
-}
+		top: 0;
+		left: 0;
 
-.snake-xenzia .material-icons {
-	font-size: 17px;
-}
+		/* The following 2 props disenable spaces between pixels rows. */
+		font-size: 0%; 
+		line-height: 0;
+		z-index: 10;
+
+		background-color: black;
+	}
+
+	.snake-xenzia .material-icons {
+		font-size: 17px;
+	}
+
+	}
+
+/*********************************/
+/* This is the CSS for the iPad. */
+/*********************************/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+
+	/********************************/
+	/* CSS for the RULES-POPUP BOX. */
+	/********************************/
+
+	#rules-popup p {
+		width: 60%;
+		margin-left: 20%;
+		font-size: 150%;
+	}
+
+	#rules-popup button {
+		width: 60%;
+		padding: 2% 0.5%;
+		margin-bottom: 9%;
+	}
+
+	/********************************/
+	/* CSS for the SNAKE-POPUP BOX. */
+	/********************************/
+	#snake-popup header {
+		font-size: 130%;
+	}
+
+	#snake-popup button {
+		width: 30%;
+
+		margin: 1% auto;
+		padding: 2%;
+
+		font-size: 100%;
+	}
+
+	#snake-popup .event header {
+		margin: 2% auto;
+
+		font-size: 120%;
+	}
+
+	#snake-popup .event p {
+		margin: 2% auto;
+
+		font-size: 120%;
+	}
+
+	/************************************/
+	/* CSS for the SNAKE-XENZIA PIXELS. */
+	/************************************/
+
+	.snake-xenzia {
+		border-bottom: 2px solid #2196f3;
+	}
+
+	.snake-xenzia .material-icons {
+		font-size: 22px;
+	}
 
 }

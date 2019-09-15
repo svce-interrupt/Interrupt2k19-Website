@@ -153,7 +153,7 @@ class Snake {
 				this.gameOver = 1;
 				var snakeHeader = document.getElementById("snake-header");
 
-				if(screen.width <= 1000) snakeHeader.innerHTML = "GAME OVER (TOUCH SCREEN)";
+				if(screen.width <= 1000) snakeHeader.innerHTML = "GAME OVER (CLICK HERE)";
 				else snakeHeader.innerHTML = "GAME OVER (PRESS ENTER)";
 			}
 
@@ -414,15 +414,6 @@ if(screen.width <= 1000) { /* If the device is a mobile device. */
 
 	/* We get the coordinates when the user lifts the finger from the screen. */
 	document.addEventListener("touchend", function() {
-
-		if(mamba.gameOver == 1) { /* If game is over, then touching screen will restart the game. */
-			window.setTimeout( function() {
-				//Nothing happens here.
-			}, 2000);
-			mamba.restart();
-			mamba.gameOver = 0;
-		}
-
 		var xDiff = xEnd - xStart; // We get the x-difference.
 		var yDiff = yEnd - yStart; // We get the y-difference.
 
@@ -448,6 +439,20 @@ if(screen.width <= 1000) { /* If the device is a mobile device. */
 		else if((xDiff >= yDiff) && xReverse == 1 && mamba.direction != 2) mamba.direction = 4; //Going left.
 		else if((xDiff < yDiff) && yReverse == 0 && mamba.direction != 1) mamba.direction = 3; //Going down.
 		else if((xDiff < yDiff) && yReverse == 1 && mamba.direction != 3) mamba.direction = 1; //Going up.
+	});
+
+}
+
+if(screen.width <= 1000) { /* If the device is a mobile device. */
+
+	/* Event-Listeners for the snake-header when restarting the game. */
+	/* This only executes if the mode is in game mode. */
+
+	document.getElementById("snake-header").addEventListener("click", function() {
+		if(mamba.mode == 1 && mamba.gameOver == 1) {
+			mamba.restart();
+			mamba.gameOver = 0;
+		}
 	});
 
 }
