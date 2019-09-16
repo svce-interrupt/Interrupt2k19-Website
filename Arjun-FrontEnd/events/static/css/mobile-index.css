@@ -228,4 +228,19 @@
 
 }
 
+/* Media queries for the iPhone series. */
+@media only screen and (min-width: 375px) and (max-width: 667pc) and (orientation: landscape) {
+
+	/********************************/
+	/* CSS for the RULES-POPUP BOX. */
+	/********************************/
+
+	#rules-popup p {
+		width: 65%;
+		margin-left: 22%;
+		font-size: 120%;
+	}
+
+}
+
 /* The above media queries work for the Redmi Note series, Samsung S8+ and, hopefully, other series as well. */

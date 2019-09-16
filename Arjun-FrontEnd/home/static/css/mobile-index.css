@@ -166,6 +166,15 @@
 
 }
 
+/* Media query for the iPhone series. */
+@media only screen and (min-width: 375px) and (max-width: 667px) and (orientation: landscape) {
+
+	.header p {
+		font-size: 65%;
+	}
+
+}
+
 /* Media query for the iPad. */
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
 
