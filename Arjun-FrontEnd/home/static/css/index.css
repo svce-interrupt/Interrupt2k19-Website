@@ -54,6 +54,8 @@ body, html {
 	font-family: "Pixellari";
 	font-size: 155%;
 	color: white;
+
+	max-height: 999999px;
 }
 
 .header .additional-info {
