@@ -23,7 +23,7 @@ class Snake {
 		this.snakeArray = [420,421,422,423,424,425,426]; /* The pixel array that is the snake. */
 		this.lastPixel = 420;
 
-		this.eventsPixels = [183,327,654,754]; /* The pixels containing the events. */
+		this.eventsPixels = [187,327,133,500]; /* The pixels containing the events. */
 		this.food = 0; /* The pixel with the food when in game mode. */
 		this.collision = 0; /* Has there been a collision with a food/event or not? */
 		this.gameOver = 0; /* Is the game over or not? */
