@@ -314,9 +314,9 @@ function displayRulesForMode(mode) {
 	else if(mode == 1 && screen.width > 1000) {
 		var html = "<header>YOU ARE NOW IN GAME MODE</header>"+
 			   "<button id='rules-close'>PRESS SPACE TO CLOSE</button>"+
-			   "<p style='text-align: center;'>Eat as much food as possible and do not eat yourself!</p>"+
-		 	   "<p style='text-align: center;'>If you can score <span>above 60</span>, <span>we'll treat you!</span></p>"+
-			   "<p style='text-align: center;'>To go back to <span>'NORMAL'</span> mode, refresh the page.</p>";
+			   "<p>Eat as much food as possible and do not eat yourself!</p>"+
+		 	   "<p>If you can score <span>above 60</span>, <span>we'll treat you!</span></p>"+
+			   "<p>To go back to <span>'NORMAL'</span> mode, refresh the page.</p>";
 		
 		rulesPopup.style.display = "block";
 		rulesPopup.innerHTML = html;
@@ -329,9 +329,9 @@ function displayRulesForMode(mode) {
 	else if(mode == 1 && screen.width <= 1000) {
 		var html = "<header>YOU ARE NOW IN GAME MODE</header>"+
 			   "<button id='rules-close'>TOUCH HERE TO CLOSE</button>"+
-			   "<p style='text-align: center;'>Eat as much food as possible and do not eat yourself!</p>"+
-		 	   "<p style='text-align: center;'>If you can score <span>above 60</span>, <span>we'll treat you!</span></p>"+
-			   "<p style='text-align: center;'>To go back to <span>'NORMAL'</span> mode, refresh the page.</p>";
+			   "<p><span>1. </span>Eat as much food as possible and do not eat yourself!</p>"+
+		 	   "<p><span>2. </span>If you can score <span>above 60</span>, <span>we'll treat you!</span></p>"+
+			   "<p><span>3. </span>To go back to <span>'NORMAL'</span> mode, refresh the page.</p>";
 		
 		rulesPopup.style.display = "block";
 		rulesPopup.innerHTML = html;

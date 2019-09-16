@@ -170,3 +170,62 @@
 	}
 
 }
+
+/* Media query for the Redmi Note series. */
+@media only screen and (min-width: 393px) and (max-width: 786px) and (orientation: landscape) {
+
+	/********************************/
+	/* CSS for the RULES-POPUP BOX. */
+	/********************************/
+
+	#rules-popup p {
+		width: 60%;
+		margin-left: 22%;
+		font-size: 120%;
+	}
+
+	#rules-popup button {
+		margin-bottom: 4%;
+	}
+
+}
+
+/* Media query for the Nexus 7. */
+@media only screen and (min-width: 600px) and (max-width: 960px) and (orientation: landscape) {
+
+	/********************************/
+	/* CSS for the RULES-POPUP BOX. */
+	/********************************/
+
+	#rules-popup p {
+		width: 55%;
+		margin-left: 26%;
+		font-size: 140%;
+	}
+
+	#rules-popup button {
+		margin-bottom: 4%;
+	}
+
+}
+
+/* Media queries for the Galaxy series. */
+@media only screen and (min-width: 360px) and (max-width: 640px) and (orientation: landscape) {
+
+	/********************************/
+	/* CSS for the RULES-POPUP BOX. */
+	/********************************/
+
+	#rules-popup p {
+		width: 65%;
+		margin-left: 22%;
+		font-size: 120%;
+	}
+
+	#rules-popup button {
+		margin-bottom: 5%;
+	}
+
+}
+
+/* The above media queries work for the Redmi Note series, Samsung S8+ and, hopefully, other series as well. */
