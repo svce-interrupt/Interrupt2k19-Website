@@ -148,6 +148,13 @@ a:hover {
 	animation: pacman-eating 0.3s infinite, pacman-moving 30s 2 steps(20,end) 10s;
 }
 
+.pacman-jr {
+	margin-left: 5%;
+	margin-top: 100%;
+
+	animation: pacman-eating 0.3s infinite, pacman-moving 30s 2 steps(20,end) 20s;
+}
+
 /***************************/
 /* CSS for the ANIMATIONS. */
 /***************************/
