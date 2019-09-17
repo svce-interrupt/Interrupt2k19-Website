@@ -148,25 +148,16 @@
 
 }
 
-/* Media queries for the Galaxy series. */
-@media only screen and (min-width: 360px) and (max-width: 640px) and (orientation: landscape) {
-
-	.header p {
-		font-size: 80%;		
-	}
-
-}
-
 /* Media query for the Nexus 7. */
 @media only screen and (min-width: 600px) and (max-width: 960px) and (orientation: landscape) {
 
 	.header p {
-		font-size: 100%;
+		font-size: 120%;
 	}
 
 }
 
-/* Media query for the iPhone series. */
+/* Media query for the iPhone 5/6/7 series. */
 @media only screen and (min-width: 375px) and (max-width: 667px) and (orientation: landscape) {
 
 	.header p {
@@ -175,11 +166,46 @@
 
 }
 
+/* Media query for the iPhone Plus series. */
+@media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: landscape) {
+
+	.header p {
+		font-size: 65%;
+	}
+
+}
+
+/* Media queries for the Nexus series. */
+@media only screen and (min-width: 411px) and (max-width: 731px) and (orientation: landscape) {
+
+	.header p {
+		font-size: 95%;
+	}
+
+}
+
 /* Media query for the iPad. */
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
 
+	.header header {
+		font-size: 300%;
+	}
+
+	.header p {
+		font-size: 130%;
+	}
+
 	.links a {
 		width: 50%;
+	}
+
+}
+
+/* Media queries for the Galaxy series. */
+@media only screen and (min-width: 360px) and (max-width: 640px) and (orientation: landscape) {
+
+	.header p {
+		font-size: 85%;		
 	}
 
 }

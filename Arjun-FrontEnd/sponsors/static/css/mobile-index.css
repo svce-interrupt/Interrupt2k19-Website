@@ -89,6 +89,69 @@ h2 {
 
 }
 
+/* Media queries for the Samsung S8+. */
+@media only screen and (min-width: 360px) and (max-width: 740px) and (orientation: landscape) {
+
+	h2 {
+		font-size: 150%;
+	}
+
+	.sponsor-txt {
+		font-size: 125%;
+	}
+
+}
+
+/* Media queries for the iPhone 5/6 series. */
+@media only screen and (min-width: 375px) and (max-width: 667px) and (orientation: landscape) {
+
+	h2 {
+		font-size: 110%;
+	}
+
+	.sponsor-txt {
+		font-size: 75%;
+	}
+
+	.sponsor {
+		width: 22%;
+	}
+
+	.sponsor p {
+		font-size: 102%;
+	}
+
+	.team .post {
+		font-size: 70%;
+	}
+
+}
+
+/* Media queries for the iPhone 5/6 series. */
+@media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: landscape) {
+
+	h2 {
+		font-size: 95%;
+	}
+
+	.sponsor-txt {
+		font-size: 70%;
+	}
+
+	.sponsor {
+		width: 22%;
+	}
+
+	.sponsor p {
+		font-size: 102%;
+	}
+
+	.team .post {
+		font-size: 70%;
+	}
+
+}
+
 /* Media queries for the Galaxy series. */
 @media only screen and (min-width: 360px) and (max-width: 640px) and (orientation: landscape) {
 
@@ -102,6 +165,27 @@ h2 {
 
 	.sponsor p {
 		font-size: 97%;
+	}
+
+}
+
+/* The following media queries are for the iPad. */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+	h2 {
+		font-size: 145%;
+	}
+
+	.sponsor-txt {
+		font-size: 125%;
+	}
+
+	.sponsor p {
+		font-size: 110%;
+	}
+
+	.team .post {
+		font-size: 95%;
 	}
 
 }
