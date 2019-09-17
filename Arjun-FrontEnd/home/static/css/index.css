@@ -27,7 +27,7 @@ body, html {
 	display: block;
 	width: 100%;
 
-	margin-top: 7%;
+	margin-top: 6.5%;
 	margin-bottom: 4%;
 }
 
@@ -39,6 +39,10 @@ body, html {
 	font-family: "Barcade Brawl";
 	font-size: 350%;
 	color: white;
+
+	animation-name: flicker;
+	animation-duration: 6s;
+	animation-iteration-count: infinite;
 }
 
 .header p {
@@ -50,6 +54,8 @@ body, html {
 	font-family: "Pixellari";
 	font-size: 155%;
 	color: white;
+
+	max-height: 999999px;
 }
 
 .header .additional-info {
@@ -127,8 +133,12 @@ body, html {
 	margin-left: 0%;
 }
 
-.game-elements .hearts .reverse {
+.game-elements .hearts #reverse {
 	margin-right: 0%;
+
+	animation-name: heartFlicker;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
 }
 
 .game-elements .hearts p {
@@ -156,7 +166,7 @@ body, html {
 
 .links a {
 	display: inline-block;
-	width: 12%;
+	width: 20%;
 
 	margin: 0;
 	padding: 0.3% 0%;
@@ -177,9 +187,40 @@ body, html {
 	width: 2%;
 	display: inline-block;
 
-	margin: 0% 1% 0% 42%;
+	margin: 0% 1% 0% 41%;
 
 	color: red;
 	vertical-align: top;
 	visibility: hidden;
+}
+
+/***********************/
+/* CSS for ANIMATIONS. */
+/***********************/
+
+@keyframes flicker {
+
+	0% { color: white; }
+	15% { color: white; }
+	16% { color: red; }
+	31% { color: red; }
+	32% { color: yellow; }
+	47% { color: yellow; }
+	48% { color: blue; }
+	63% { color: blue; }
+	64% { color: orange; }
+	81% { color: orange; }
+	82% { color: purple; }
+	100% { color: purple; }
+
+}
+
+@keyframes heartFlicker {
+
+	0% { opacity: 0; }
+	49% { opacity: 0; }
+	50% { opacity: 1; }
+	100% { opacity: 1; }
+
+
 }

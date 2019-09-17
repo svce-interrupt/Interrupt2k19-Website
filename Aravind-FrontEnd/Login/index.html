@@ -1,0 +1,401 @@
+<html>
+	<head>
+		<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+		<title>Interrupt '19 | Login</title>
+		<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet"> 
+		<link href="css/index-css.css" rel="stylesheet">
+		<link rel="icon" href="../img/favicon.jpeg">
+		<link rel="apple-touch-icon" href="img/favicon.jpeg">
+
+		<meta charset="UTF-8">
+                <meta name="description" content="Interrupt 2019 Official Website">
+                <meta name="keywords" content="interrupt,2019,2k19,svce,symposium,event,tech">
+                <meta name="author" content="SVCE Interrupt Web Team 2019">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	
+	<body>
+		<p id="p1">		
+		Login
+		</p>
+		<span id="changeHere">
+			
+			<form id='register-form' method="post" action="signup.php">
+				
+				<input id ='form1' type='email' name='emailInput' required class='home-links form-input' id='account-email' placeholder='Email'>
+				<input type='password' name='passInput' required class='home-links form-input' id='account-password' placeholder='Password'><br>
+				
+				
+				<span class='start-btn'>Login</span>
+				<span class='start-btn'>SignUp</span>	
+				<span class='start-btn'>Home</span>
+
+
+		
+				
+			</form>
+			
+		</span>
+
+
+	</body>
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script>
+		/*===================================================================*/
+		/* Functions for selecting and un-selecting the checkboxes for events */
+		/*=================================================================== */
+		var check1=0;
+		document.getElementById("check1").addEventListener("click", function(){
+			if(check1==0){
+				document.getElementById("check1").classList.add("yellow");
+				check1=1;
+			}
+			else{
+				document.getElementById("check1").classList.remove("yellow");
+				check1=0;
+			}
+		});
+	
+		var check2=0;
+		document.getElementById("check2").addEventListener("click", function(){
+			if(check2==0){
+				document.getElementById("check2").classList.add("yellow");
+				check2=1;
+			}
+			else{
+				document.getElementById("check2").classList.remove("yellow");
+				check2=0;
+			}
+		});
+	
+		var check3=0;
+		document.getElementById("check3").addEventListener("click", function(){
+			if(check3==0){
+				document.getElementById("check3").classList.add("yellow");
+				check3=1;
+			}
+			else{
+				document.getElementById("check3").classList.remove("yellow");
+				check3=0;
+			}
+		});
+	
+		var check4=0;
+		document.getElementById("check4").addEventListener("click", function(){
+			if(check4==0){
+				document.getElementById("check4").classList.add("yellow");
+				check4=1;
+			}
+			else{
+				document.getElementById("check4").classList.remove("yellow");
+				check4=0;
+			}
+		});
+	
+		var check5=0;
+		document.getElementById("check5").addEventListener("click", function(){
+			if(check5==0){
+				document.getElementById("check5").classList.add("yellow");
+				check5=1;
+			}
+			else{
+				document.getElementById("check5").classList.remove("yellow");
+				check5=0;
+			}
+		});
+	
+		var check6=0;
+		document.getElementById("check6").addEventListener("click", function(){
+			if(check6==0){
+				document.getElementById("check6").classList.add("yellow");
+				check6=1;
+			}
+			else{
+				document.getElementById("check6").classList.remove("yellow");
+				check6=0;
+			}
+		});
+	
+		var check7=0;
+		document.getElementById("check7").addEventListener("click", function(){
+			if(check7==0){
+				document.getElementById("check7").classList.add("yellow");
+				check7=1;
+			}
+			else{
+				document.getElementById("check7").classList.remove("yellow");
+				check7=0;
+			}
+		});
+	
+		var check8=0;
+		document.getElementById("check8").addEventListener("click", function(){
+			if(check8==0){
+				document.getElementById("check8").classList.add("yellow");
+				check8=1;
+			}
+			else{
+				document.getElementById("check8").classList.remove("yellow");
+				check8=0;
+			}
+		});
+	
+		var check9=0;
+		document.getElementById("check9").addEventListener("click", function(){
+			if(check9==0){
+				document.getElementById("check9").classList.add("yellow");
+				check9=1;
+			}
+			else{
+				document.getElementById("check9").classList.remove("yellow");
+				check9=0;
+			}
+		});
+	
+		var check10=0;
+		document.getElementById("check10").addEventListener("click", function(){
+			if(check10==0){
+				document.getElementById("check10").classList.add("yellow");
+				check10=1;
+			}
+			else{
+				document.getElementById("check10").classList.remove("yellow");
+				check10=0;
+			}
+		});
+
+		var check11=0;
+		document.getElementById("check11").addEventListener("click", function(){
+			if(check11==0){
+				document.getElementById("check11").classList.add("yellow");
+				check11=1;
+			}
+			else{
+				document.getElementById("check11").classList.remove("yellow");
+				check11=0;
+			}
+		});
+
+		var check12=0;
+		document.getElementById("check12").addEventListener("click", function(){
+			if(check12==0){
+				document.getElementById("check12").classList.add("yellow");
+				check12=1;
+			}
+			else{
+				document.getElementById("check12").classList.remove("yellow");
+				check12=0;
+			}
+		});
+		
+		window.setInterval(blink,500);
+		
+		var blinkNum=0;
+		function blink(){
+			if(blinkNum==0){
+				document.getElementById("cursor-blink").style.backgroundColor="white";
+				document.getElementById("cursor-blink").style.color="white";
+				blinkNum=1;
+			}
+			else{
+				document.getElementById("cursor-blink").style.backgroundColor="black";
+				document.getElementById("cursor-blink").style.color="black";
+				blinkNum=0;
+			}
+		} //This function changed the background of the <span> character from black to white, making the 'cursor' blink.
+		
+		/* The things that we need are a function to check email validity, mobile number validity, etc. We need to display the errors on the same page */
+		/*=============================*/
+		/* Functions for form-checking */
+		/*=============================*/
+		/* These are functions for checking if the email is valid or not. */
+		function checkEmail(email){
+			var len=email.length;
+			var i=0;
+			
+			if(len==0){
+				return false;
+			}
+			
+			while(i<len){
+				if(email[i]=='@'){ //If an @ is encountered, then we must check the string before it and the string after it
+					var username=email.substring(0,i);
+					var domain=email.substring(i+1,len);
+					if(checkEmailUsername(username)==false || checkDomain(domain)==false){
+						return false;
+					}
+					return true;
+				}
+				i+=1;
+			}
+			
+			return false;
+		}
+		
+		function checkEmailUsername(str){
+            var len=str.length;
+            var i=0;
+            while(i<len){ //The else-if statements are ordered in terms of frequency to make this block more efficient while comparing
+            	if(str[i]>='a' && str[i]<='z'){
+                	//We do nothing
+                }
+                else if(str[i]>='0' && str[i]<='9'){
+                	//We do nothing
+                }
+                else if(str[i]=='.' || str[i]=='_'){
+                       	//We do nothing
+                }
+                else if(str[i]>='A' && str[i]<='Z'){
+                       	//We do nothing
+                }
+                else{
+                  	return false;
+			                                
+				}
+				i+=1;
+			}
+			return true;
+		}
+		
+		function checkDomain(str){
+			var len=str.length;
+			var i=0;
+			var dotIsThere=0;
+			
+			while(i<len){
+				if(str[i]>='0' && str[i]<='9'){
+					return false;
+				}
+				else if(str[i]=='.'){
+					dotIsThere=1;
+				}
+				i+=1;
+			}
+			if(dotIsThere==1){
+				return true;
+			}
+			
+			return false;
+		}
+		
+		function checkEmpty(){
+			var nameInp=document.getElementById("account-name").value;
+			var collegeInp=document.getElementById("account-college").value;
+			var emailInp=document.getElementById("account-email").value;
+			var numberInp=document.getElementById("account-number").value;
+			var passInp=document.getElementById("account-password").value;
+			var conPassInp=document.getElementById("confirmPassword").value;
+			
+			if(nameInp==""){
+				alert("Please fill in your name!");
+				return false;
+			}
+			else if(collegeInp==""){
+				alert("Please fill in your college!");
+				return false;
+			}
+			else if(emailInp==""){
+				alert("Please fill in your email!");
+				return false;
+			}
+			else if(numberInp==""){
+				alert("Please fill in your number!");
+				return false;
+			}
+			else if(passInp==""){
+				alert("Please fill in a password!");
+				return false;
+			}
+			else if(passInp!=conPassInp){
+				alert("The passwords do not match!");
+				return false;
+			}
+			
+			return true;
+		}
+		/* The functions end here. */
+		
+		
+		/* This functions are for other input forms */
+		function checkMobileNumber(number){ //This function checks if the number is a valid mobile number
+			var len=number.length;
+			var i=0;
+			
+			if(len==0){
+				return false;
+			}
+			while(i<len){
+				if(number[i]>='0' && number[i]<='9'){
+					//We do nothing
+				}
+				else{
+					return false;
+				}
+				i+=1;
+			}
+			if(len==10){
+				return true;
+			}
+			return false;	
+		}
+		function checkIfNumberUnique(num1){ //This function checks if the number has already been used. Returns true if already there, false if not
+			var xmlhttp = new XMLHttpRequest();
+	       	xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					var result=this.responseText;
+					if(result=="true"){
+						alert("There is an existing account with this mobile number. Please re-enter your number or login using that account.")
+					}
+					else{
+						document.getElementById("register-form").submit();
+					}
+				}
+			};
+	        xmlhttp.open("GET", "uniqueNumber.php?number="+num1, true);
+	        xmlhttp.send();
+		}
+		
+		/* These functions are the eventListener functions for the create-account button */
+		
+		document.getElementById("create-account").addEventListener("click", function(){ //When the button is clicked, we check if the email and mobile number are valid. we then check if the mobile number already exists in the db. We generate the required error messages.
+			var email_input=document.getElementById("account-email").value;
+			var mobile_input=document.getElementById("account-number").value;
+			
+			if(checkEmail(email_input)!=true){
+				alert("Oops! Your email seems to be invalid. Please enter a valid ID.");
+			}
+			else{
+				if(checkEmpty()!=true){
+					//Well, we do nothing here
+					var dummy=0;
+				}
+				else{
+					if(checkMobileNumber(mobile_input)!=true){
+						alert("Oops! Your mobile number seems to be invalid. Please enter a valid mobile number.");
+					}
+					else{
+						checkIfNumberUnique(mobile_input);
+					}
+				}
+			}
+			
+		});
+		
+		
+		
+		
+	</script>
+	<script>
+		$('.check').click(function() {
+			var $input = $('#' + this.id).prev();
+			if ($input.val() == 0) {
+				$input.val('1');
+			} else {
+				$input.val('0');
+			}
+			
+		});
+	</script>
+</html>
+

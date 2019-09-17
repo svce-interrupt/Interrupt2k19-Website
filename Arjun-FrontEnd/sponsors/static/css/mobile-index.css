@@ -1,0 +1,47 @@
+@media only screen and (min-width: 10px) and (max-width: 767px) and (orientation: landscape),
+       only screen and (min-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+
+/************************/
+/* CSS for the HEADERS. */
+/************************/
+
+h2 {
+	margin: 6% 0% 3% 0%;
+
+	font-size: 110%;
+}
+
+/*************************/
+/* CSS for the SPONSORS. */
+/*************************/
+
+.sponsor-txt {
+	width: 90%;
+	margin: 0% 5% 4% 5%;
+	font-size: 80%;
+}
+
+.sponsor {
+	width: 20%;
+
+	margin: 2% 0.75%;
+}
+
+.sponsor p {
+	width: 90%;
+
+	padding: 5% 0%;
+
+	font-size: 110%;
+}
+
+/**********************/
+/* CSS for the TEAMS. */
+/**********************/
+
+.team .post {
+	padding: 0% 0% 5% 0%;
+	font-size: 80%;
+}
+
+}

@@ -1,0 +1,187 @@
+@media only screen and (max-width: 1000px) and (orientation: landscape) {
+
+/*************************/
+/* MOBILE-HOME-INDEX.CSS */
+/*************************/
+
+/*********************************/
+/* CSS for the INTERRUPT HEADER. */
+/*********************************/
+
+.header {
+	margin-top: 6.5%;
+	margin-bottom: 4%;
+}
+
+.header header {
+	font-size: 190%;
+}
+
+.header p {
+	width: 95%;
+
+	margin: 4% 2.5% 2% 2.5%;
+
+	font-size: 65%;
+}
+
+.header .additional-info {
+	margin: 0.5% 2.5% 0.5% 2.5%;
+}
+
+/*****************************/
+/*CSS for the GAME ELEMENTS. */
+/*****************************/
+
+/* CSS for the TITLE elements. */
+
+.game-elements .hearts {
+	display: inline-block;
+	width: 37%;
+
+	text-align: right;
+	vertical-align: middle;
+}
+
+.game-elements .hearts-title {
+	width: 38%;
+	line-height: 0;
+	background-color: orange;
+}
+
+.game-elements .score {
+	display: inline-block;
+	width: 21%;
+
+	margin-right: 37%;
+	margin-left: 1%;
+
+	color: white;
+	vertical-align: middle;
+	line-height: 0;
+}
+
+.game-elements .score .title {
+	text-align: center;
+	font-size: 95%;
+
+	color: white;
+	vertical-align: middle;
+}
+
+.game-elements .score .number {
+	text-align: center;
+	font-size: 100%;
+	color: yellow;
+}
+
+.game-elements .score-number {
+	vertical-align: middle;
+}
+
+.game-elements .score-number p {
+	margin: 0% 0% 0% 0%;
+}
+
+/* CSS for the HEARTS. */
+.game-elements .hearts img {
+	width: 15%;
+	margin: 0% 1%;
+}
+
+.game-elements .hearts .half {
+	width: 7.5%;
+	margin-left: 0%;
+}
+
+.game-elements .hearts p {
+	width: 56%;
+
+	margin: 0% 0% 0% 44%;
+
+	text-align: center;
+	font-size: 95%;
+
+	color: white;
+}
+
+/**********************/
+/* CSS for the LINKS. */
+/**********************/
+
+.links {
+	display: block;
+	width: 100%;
+
+	margin: 0.5% 0%;
+}
+
+.links a {
+	display: inline-block;
+	width: 40%;
+
+	margin: 0;
+	padding: 0.3% 0%;
+
+	font-size: 80%;
+	color: #42A5F5;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.links a:hover {
+	text-decoration: underline;
+	font-size: 95%;
+	color: yellow;
+}
+
+.links .material-icons {
+	width: 2%;
+	display: inline-block;
+
+	margin: 0% 2% 0% 38%;
+
+	color: red;
+	vertical-align: middle;
+	visibility: hidden;
+}
+
+}
+
+/* Media queries for the Galaxy series. */
+@media only screen and (min-width: 360px) and (max-width: 640px) and (orientation: landscape) {
+
+	.header p {
+		font-size: 80%;		
+	}
+
+}
+
+/* Media query for the Nexus 7. */
+@media only screen and (min-width: 600px) and (max-width: 960px) and (orientation: landscape) {
+
+	.header p {
+		font-size: 100%;
+	}
+
+}
+
+/* Media query for the iPhone series. */
+@media only screen and (min-width: 375px) and (max-width: 667px) and (orientation: landscape) {
+
+	.header p {
+		font-size: 65%;
+	}
+
+}
+
+/* Media query for the iPad. */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+	.links a {
+		width: 50%;
+	}
+
+}
+
+/* The above media queries work for the Redmi Note series, Samsung S8+ and, hopefully, other series as well. */
