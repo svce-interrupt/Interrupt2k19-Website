@@ -39,11 +39,14 @@ const Student  =  db.define('students', {
     isAdmin : {
         type : Sequelize.BOOLEAN,
         defaultValue : false
+    },
+
+    hasVoted : {
+        type : Sequelize.BOOLEAN,
+        defaultValue : false,
     }
 
 }, {
-    freezeTableName : true,
-
     hooks : {
         beforeCreate : (student) => {
             const salt = bcrypt.genSaltSync(8);
@@ -55,10 +58,6 @@ const Student  =  db.define('students', {
 //Instance methods
 Student.prototype.validatePassword = (password, passwordGiven) => {
     return bcrypt.compareSync(password, passwordGiven);
-}
-
-Student.prototype.hasAdminAccess = (student) => {
-    return student.isAdmin;
 }
 
 module.exports = Student;

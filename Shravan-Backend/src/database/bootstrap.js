@@ -6,6 +6,7 @@ module.exports = async () => {
     const EventList     =   require('./models/EventList');
     const Challenge     =   require('./models/Challenge');
     const LeaderBoard   =   require('./models/LeaderBoard');
+    const Poll          =   require('./models/Poll');
 
     await Student.hasOne(EventList,{
         as : "EventList",
@@ -22,10 +23,11 @@ module.exports = async () => {
         foreignKey : "studentId"
     });
 
+
     Challenge.sync();
     EventList.sync();
     LeaderBoard.sync();
     Student.sync();
-
+    Poll.sync();
 
 }
