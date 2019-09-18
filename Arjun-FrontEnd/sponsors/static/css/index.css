@@ -51,9 +51,13 @@ h2 {
 	color: yellow;
 }
 
+.sponsor-txt span {
+	color: white;
+}
+
 .sponsor {
 	display: inline-block;
-	width: 15%;
+	width: 17%;
 
 	margin: 2% 0.75%;
 
