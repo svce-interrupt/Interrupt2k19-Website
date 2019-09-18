@@ -86,6 +86,7 @@ app.use("/", require('./src/route/home'));
 app.use("/admin", require('./src/route/admin'));    
 app.use("/about", require('./src/route/about'));
 app.use("/login", require('./src/route/login'));
+app.use("/polling", require('./src/route/polling'));
 app.use("/events", require('./src/route/events'));
 app.use('/challenge', require('./src/route/challenge'));
 app.use("/register", require('./src/route/registration'));
