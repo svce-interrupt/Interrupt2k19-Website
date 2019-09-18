@@ -1,102 +1,79 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        label {
-            padding: 10px;
-        }
-        input {
-            margin: 5px;
-        }
-    </style>
-</head>
+<!DOCTYPE html>
 
-<body>
+	<head>
+		<title>Register | Interrupt '19</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="Official Website for SVCE's Interrupt 2k19!">
+		<meta name="keywords" content="svce,symposium,cse,interrupt,2019,2k19">
+		<meta name="author" content="Arjun Aravind">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="/styles/css/registration/register.css" rel="stylesheet">
+		<link href="/styles/css/registration/mobile-register.css" rel="stylesheet">
+	</head>
 
-    <form action="/register" method="POST">
-        <label for="name">Name</label>
-            <input  type="text" 
-                    id="name" 
-                    name="student[name]"
-                    {{#if name}}
-                        value="{{name}}"
-                    {{/if}}
-            >
-            <br>
-        <label for="email">Email</label>
-            <input  type="email" 
-                    id="email" 
-                    name="student[email]" 
-                    {{#if email}}
-                        value="{{email}}"
-                    {{/if}}
-            >
-            <br>
-        <label for="number">Number</label>
-            <input  type="number" 
-                    id="number" 
-                    name="student[number]"
-                    {{#if number}}
-                        value="{{number}}"
-                    {{/if}}            
-            >
-                    <br>
-        <label for="password">Password</label>
-            <input  type="password" 
-                    id="Password" 
-                    name="student[password]"
-                    {{#if password}}
-                        value="{{password}}"
-                    {{/if}}
-            >
-            <br>
-        <label for="college">College</label>
-            <input  type="text" 
-                    id="college" 
-                    name="student[college]"
-                    {{#if college}}
-                        value="{{college}}"
-                    {{/if}}
-            >
-            <br>
+	<body>
 
-        <label for="year">Year</label>
-            <input  type="number" 
-                    id="year" 
-                    name="student[year]"
-                    {{#if year}}
-                        value="{{year}}"
-                    {{/if   }}
-            >
-            <br>
-        <button>Submit</button>
-    </form>
+		<div class="tilt-screen">
+			<p><i class="material-icons" style="font-size: 75px;">stay_primary_landscape</i><br>This website is best viewed in landscape mode! Please tilt your phone!</p>
+		</div>
 
-    <script>
+		<h2>Registration</h2>
 
-        document.querySelector('button').addEventListener("click",(event) => {
-            event.preventDefault();
+		<form action="" method="POST">
 
-            inputTags = document.querySelectorAll('input');
+			<input type="text" name="student[name]" class="inline" placeholder="Full Name" required>
+			<input type="number" name="student[number]" class="inline" placeholder="Mobile Number" required><br>
+			<input type="text" name="student[college]" class="inline" placeholder="College" required>
+			<input type="email" name="student[email]" class="inline" placeholder="E-Mail" required><br>
+			<input type="password" name="student[password]" class="inline" placeholder="Password" required>
+			<input type="password" name="student[confirmpassword]" class="inline" placeholder="Confirm Password" required>
 
-            var vacant = false;
+			<button type="submit">Submit!</button>
+		</form>
 
-            inputTags.forEach((doc) => {
-                if(doc.value==="") vacant=true; 
-            });
+		<form>
+			<p class="text">Click on the that you'd like to register for! The that you have selected will light up. <span>X and Y are intra-college and can only be attended by SVCE students. </span></p>
 
-            if(!vacant) {
-                document.querySelector('form').submit();
+			<p class="event inline">Interrupt Challenge</p>
+			<p class="event inline">Code Con Thingy</p>
+			<p class="event inline">Paper Presentation</p><br>
+			<p class="event inline">Poster Presentation</p>
+			<p class="event inline">Stack Market</p><br>
+			<p class="event inline">Alt Tab Tech</p>
+			<p class="event inline">Mind Spar</p>
+			<p class="event inline">Now You C Me</p><br>
+			<p class="event inline">Game Of Tags</p>
+			<p class="event inline events">Win-code-ium Leviosa</p><br><br><br>
 
-                
-            }
+			<button type="submit">Submit!</button>
+
+		</form>
 
 
-        });
-    </script>
+		<script>
 
-</body>
+			document.querySelector('button').addEventListener("click",(event) => {
+				event.preventDefault();
+
+				inputTags = document.querySelectorAll('input');
+
+				var vacant = false;
+
+				inputTags.forEach((doc) => {
+					if(doc.value==="") vacant=true; 
+				});
+
+				if(!vacant) {
+					document.querySelector('form').submit();
+
+					
+				}
+
+
+			});
+
+		</script>
+
+	</body>
+
 </html>
