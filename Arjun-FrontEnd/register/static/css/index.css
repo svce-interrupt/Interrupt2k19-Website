@@ -46,6 +46,8 @@ h2 {
 form {
 	display: block;
 	width: 100%;
+	margin-bottom: 3%;
+	text-align: center;
 }
 
 form input {
@@ -68,7 +70,12 @@ form input:focus {
 	background-color: purple;
 }
 
-a, form a, form button {
+.inline {
+	display: inline-block;
+	margin: 0.5%;
+}
+
+form p, a, form a, form button {
 	display: block;
 	width: 27.3%;
 
@@ -86,16 +93,43 @@ a, form a, form button {
 	cursor: pointer;
 }
 
-a, form a {
+form button {
+	background-color: yellow;
+	color: purple;
+}
+
+form p, a, form a {
 	width: 25%;
 
 	text-decoration: none;
 	text-align: center;
 }
 
-form a:hover, form button:hover {
+form p:hover, form a:hover {
 	background-color: yellow;
 	color: purple;
+}
+
+form .text {
+	display: block;
+	width: 60%;
+
+	margin: 3% auto;
+
+	border: none;
+
+	background-color: black;
+	color: yellow;
+	cursor: pointer;
+}
+
+form .text span {
+	color: white;
+}
+
+form .text:hover {
+	background-color: black;
+	color: yellow;
 }
 
 /***********************/
