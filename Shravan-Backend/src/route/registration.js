@@ -4,10 +4,10 @@ const router    =   express.Router({mergeParams : true, strict : true});
 const db        =   require('../database/config/connection');
 const Student   =   require('../database/models/Student');
 
-const {verifyData} = require(__dirname + '/../middleware/verify');
+const {verifyData, notLoggedIn} = require(__dirname + '/../middleware/verify');
 
 router.route('/')
-    .get((req, res) => {
+    .get(notLoggedIn, (req, res) => {
         res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
         res.header('Expires', '-1');
         res.header('Pragma', 'no-cache');
@@ -27,7 +27,6 @@ router.route('/')
             password : password
         })
         .then((student) => {
-            console.log(student);
             res.set('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
             res.redirect("/");
         })

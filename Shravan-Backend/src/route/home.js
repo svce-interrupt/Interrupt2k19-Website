@@ -14,7 +14,7 @@ router.get('/logout', isAuthenticated, (req, res) => {
 
     req.logout();
     req.session.destroy(() => {
-        res.clearCookie("Interrupt_session");
+        res.clearCookie();
         res.redirect(redirectPath);
     });
 })
