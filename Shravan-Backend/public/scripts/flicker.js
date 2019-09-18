@@ -1,11 +1,12 @@
-/**********************/
-/* EVENTS-FLICKER.JS  */
-/**********************/
+/************************/
+/* SPONSORS-FLICKER.JS  */
+/************************/
 
-/* This script takes care of the flickering that happens in the event header. */
+/* This script takes care of the flickering that happens in the sponsors header. */
 
+/* We make the Interrupt Event-Header flicker with different colors. */
 var flickerIterator=0;
-var snakeHeader = document.getElementById("snake-header");
+var snakeHeader = document.getElementById("header");
 
 function flicker() {
 	if(flickerIterator == 0) snakeHeader.style.color = "white";

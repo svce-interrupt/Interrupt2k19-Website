@@ -1,11 +1,11 @@
 @font-face {
         font-family: "Barcade Brawl";
-        src: url('../../resources/fonts/barcade.ttf');
+        src: url('../../../resources/fonts/barcade.ttf');
     }
 
     @font-face {
         font-family: "Pixellari";
-        src: url('../../resources/fonts/pixellari.ttf');
+        src: url('../../../resources/fonts/pixellari.ttf');
     }
 
     body {

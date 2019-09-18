@@ -1,0 +1,231 @@
+/******************************/
+/* CSS for the BODY and HTML. */
+/******************************/
+body, html {
+	margin: 0;
+	padding: 0;
+
+	background-color: black;
+}
+
+@font-face {
+	font-family: "Barcade Brawl";
+	src: url('../../../resources/fonts/barcade.ttf');	
+}
+
+
+@font-face {
+	font-family: "Pixellari";
+	src: url('../../../resources/fonts/pixellari.ttf');
+}
+
+/*********************************/
+/* CSS for the INTERRUPT HEADER. */
+/*********************************/
+
+.header {
+	display: block;
+	width: 100%;
+
+	margin-top: 6.5%;
+	margin-bottom: 4%;
+}
+
+.header header {
+	display: block;
+	width: 100%;
+
+	text-align: center;
+	font-family: "Barcade Brawl";
+	font-size: 350%;
+	color: white;
+
+	animation-name: flicker;
+	animation-duration: 6s;
+	animation-iteration-count: infinite;
+}
+
+.header p {
+	width: 85%;
+
+	margin: 4% 7.5% 2% 7.5%;
+
+	text-align: center;
+	font-family: "Pixellari";
+	font-size: 155%;
+	color: white;
+
+	max-height: 999999px;
+}
+
+.header .additional-info {
+	margin: 0.5% 7.5% 0.5% 7.5%;
+}
+
+.header .additional-info span {
+	color: red;
+}
+
+/******************************/
+/* CSS for the GAME ELEMENTS. */
+/******************************/
+
+.game-elements {
+	display: block;
+	width: 100%;
+
+	margin: 0.5% 0% 0% 0%;
+}
+
+/*******************************/
+/* CSS for the TITLE elements. */
+/*******************************/
+
+.game-elements .hearts {
+	display: inline-block;
+	width: 30%;
+
+	text-align: right;
+	vertical-align: middle;
+}
+
+.game-elements .score {
+	display: inline-block;
+	width: 15%;
+
+	margin-right: 54%;
+
+	color: white;
+	font-family: "Pixellari";
+	vertical-align: middle;
+}
+
+.game-elements .score .title {
+	text-align: center;
+	font-family: "Pixellari";
+	font-size: 120%;
+
+	color: white;
+}
+
+.game-elements .score .number {
+	text-align: center;
+	font-family: "Barcade Brawl";
+	font-size: 150%;
+	color: yellow;
+}
+
+.game-elements .score-number {
+	vertical-align: top;
+}
+
+.game-elements .score-number p {
+	margin: 2% 0% 0% 0%;
+}
+
+/***********************/
+/* CSS for the HEARTS. */
+/***********************/
+
+.game-elements .hearts img {
+	display: inline-block;
+	width: 22%;
+	margin: 0% 1%;
+}
+
+.game-elements .hearts .half {
+	width: 11%;
+	margin-left: 0%;
+}
+
+.game-elements .hearts #reverse {
+	margin-right: 0%;
+
+	animation-name: heartFlicker;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+}
+
+.game-elements .hearts p {
+	width: 60%;
+
+	margin: 0% 8% 0% 32%;
+
+	text-align: center;
+	font-family: "Pixellari";
+	font-size: 120%;
+
+	color: white;
+}
+
+/**********************/
+/* CSS for the LINKS. */
+/**********************/
+
+.links {
+	display: block;
+	width: 100%;
+
+	margin: 0.5% 0%;
+}
+
+.links a {
+	display: inline-block;
+	width: 20%;
+
+	margin: 0;
+	padding: 0.3% 0%;
+
+	text-decoration: none;
+	font-family: "Barcade Brawl";
+	color: #42A5F5;
+	text-align: left;
+}
+
+.links a:hover {
+	text-decoration: underline;
+	font-size: 105%;
+	color: yellow;
+}
+
+.links .material-icons {
+	width: 2%;
+	display: inline-block;
+
+	margin: 0% 1% 0% 41%;
+
+	color: red;
+	vertical-align: top;
+	visibility: hidden;
+}
+
+/***********************/
+/* CSS for ANIMATIONS. */
+/***********************/
+
+@keyframes flicker {
+
+	0% { color: white; }
+	15% { color: white; }
+	16% { color: red; }
+	31% { color: red; }
+	32% { color: yellow; }
+	47% { color: yellow; }
+	48% { color: blue; }
+	63% { color: blue; }
+	64% { color: orange; }
+	81% { color: orange; }
+	82% { color: purple; }
+	100% { color: purple; }
+
+}
+
+@keyframes heartFlicker {
+
+	0% { opacity: 0; }
+	49% { opacity: 0; }
+	50% { opacity: 1; }
+	100% { opacity: 1; }
+
+
+}

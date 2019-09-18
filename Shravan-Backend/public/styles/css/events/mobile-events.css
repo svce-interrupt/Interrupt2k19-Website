@@ -1,0 +1,246 @@
+/***************************/
+/* MOBILE-EVENTS-INDEX.CSS */
+/***************************/
+
+/*********************************/
+/* This is the CSS for the iPad. */
+/*********************************/
+
+@media only screen and (min-width: 10px) and (max-width: 767px) and (orientation: landscape),
+       only screen and (min-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+
+	body, html {
+		background-color: black;
+	}
+
+	/******************************/
+	/* CSS for the SNAKE-HEADERS. */
+	/******************************/
+	.snake-headers {
+		font-size: 110%;
+	}
+
+	#snake-score {
+		top: 10%;
+
+		font-size: 90%;
+	}
+
+	/********************************/
+	/* CSS for the SNAKE-POPUP BOX. */
+	/********************************/
+	#snake-popup header {
+		font-size: 130%;
+	}
+
+	#snake-popup button {
+		width: 30%;
+
+		margin: 1% auto;
+		padding: 2%;
+
+		font-size: 100%;
+	}
+
+	#snake-popup .event header {
+		margin: 2% auto;
+
+		font-size: 80%;
+	}
+
+	#snake-popup .event p {
+		margin: 2% auto;
+
+		font-size: 70%;
+	}
+
+	/****************************/
+	/* CSS for the RULES-POPUP. */
+	/****************************/
+
+	#rules-popup {
+		width: 100%;
+		height: 100%;
+
+		top: 0%;
+		left: 0%;
+	}
+
+	#rules-popup header {
+		font-size: 135%;
+	}
+
+	#rules-popup button {
+		width: 60%;
+		
+		padding: 2% 0.5%;
+	}
+
+	#rules-popup p {
+		font-size: 78%;
+	}
+
+	/************************************/
+	/* CSS for the SNAKE-XENZIA PIXELS. */
+	/************************************/
+
+	.snake-xenzia {
+		position: fixed;
+		height: 100%;
+		width: 100%;
+
+		-webkit-overflow-scrolling: auto;
+
+		top: 0;
+		left: 0;
+
+		/* The following 2 props disenable spaces between pixels rows. */
+		font-size: 0%; 
+		line-height: 0;
+		z-index: 10;
+
+		background-color: black;
+	}
+
+	.snake-xenzia .material-icons {
+		font-size: 17px;
+	}
+
+	}
+
+/*********************************/
+/* This is the CSS for the iPad. */
+/*********************************/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+
+	/********************************/
+	/* CSS for the RULES-POPUP BOX. */
+	/********************************/
+
+	#rules-popup p {
+		width: 60%;
+		margin-left: 20%;
+		font-size: 150%;
+	}
+
+	#rules-popup button {
+		width: 60%;
+		padding: 2% 0.5%;
+		margin-bottom: 9%;
+	}
+
+	/********************************/
+	/* CSS for the SNAKE-POPUP BOX. */
+	/********************************/
+	#snake-popup header {
+		font-size: 130%;
+	}
+
+	#snake-popup button {
+		width: 30%;
+
+		margin: 1% auto;
+		padding: 2%;
+
+		font-size: 100%;
+	}
+
+	#snake-popup .event header {
+		margin: 2% auto;
+
+		font-size: 120%;
+	}
+
+	#snake-popup .event p {
+		margin: 2% auto;
+
+		font-size: 120%;
+	}
+
+	/************************************/
+	/* CSS for the SNAKE-XENZIA PIXELS. */
+	/************************************/
+
+	.snake-xenzia {
+		border-bottom: 2px solid #2196f3;
+	}
+
+	.snake-xenzia .material-icons {
+		font-size: 22px;
+	}
+
+}
+
+/* Media query for the Redmi Note series. */
+@media only screen and (min-width: 393px) and (max-width: 786px) and (orientation: landscape) {
+
+	/********************************/
+	/* CSS for the RULES-POPUP BOX. */
+	/********************************/
+
+	#rules-popup p {
+		width: 60%;
+		margin-left: 22%;
+		font-size: 120%;
+	}
+
+	#rules-popup button {
+		margin-bottom: 4%;
+	}
+
+}
+
+/* Media query for the Nexus 7. */
+@media only screen and (min-width: 600px) and (max-width: 960px) and (orientation: landscape) {
+
+	/********************************/
+	/* CSS for the RULES-POPUP BOX. */
+	/********************************/
+
+	#rules-popup p {
+		width: 55%;
+		margin-left: 26%;
+		font-size: 140%;
+	}
+
+	#rules-popup button {
+		margin-bottom: 4%;
+	}
+
+}
+
+/* Media queries for the Galaxy series. */
+@media only screen and (min-width: 360px) and (max-width: 640px) and (orientation: landscape) {
+
+	/********************************/
+	/* CSS for the RULES-POPUP BOX. */
+	/********************************/
+
+	#rules-popup p {
+		width: 65%;
+		margin-left: 22%;
+		font-size: 120%;
+	}
+
+	#rules-popup button {
+		margin-bottom: 5%;
+	}
+
+}
+
+/* Media queries for the iPhone series. */
+@media only screen and (min-width: 375px) and (max-width: 667px) and (orientation: landscape) {
+
+	/********************************/
+	/* CSS for the RULES-POPUP BOX. */
+	/********************************/
+
+	#rules-popup p {
+		width: 65%;
+		margin-left: 22%;
+		font-size: 120%;
+	}
+
+}
+
+/* The above media queries work for the Redmi Note series, Samsung S8+ and, hopefully, other series as well. */

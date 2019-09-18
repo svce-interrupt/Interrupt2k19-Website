@@ -14,12 +14,9 @@ body{
 	
 }
 #p1{
-	 display: inline-block;
-	 text-align: center;
 	 font-family: myFirstFont;
-	 width : 100%;
-	 margin: auto 0;
-	 font-size: 350%;
+	 margin-left: 21%;
+	 font-size: 400%;
 	 color: green;
 }
 
@@ -30,7 +27,7 @@ body{
 
 @font-face {
   font-family: myFirstFont;
-  src: url('../../resources/fonts/barcade-brawl.ttf');
+  src: url(barcade-brawl.ttf);
 }
 #title{
 	width: 99%;
@@ -78,7 +75,7 @@ body{
 }
 
 .lilac {
-    color: black;
+    color: black
     border: 3px dashed #edd5cd;
     background-color: #556B2F;
 }
@@ -114,7 +111,6 @@ body{
 
 }
 .form-input{
-	outline: none;
 	margin-left: 2%;
 	margin-top: 2%;
 	display: inline-block;
@@ -150,7 +146,6 @@ body{
 }
 
 .submit-butt{
-	outline: none;
 	border: none;
 	background-color: black;
 	color: white;
@@ -159,7 +154,6 @@ body{
 	margin-left: 37%;
 	margin-top: 6%;
 }
-
 @font-face {
   font-family: 'Press Start 2p';
 }
@@ -211,16 +205,6 @@ body{
 	box-shadow: none;
 	position: relative;
 	top: .2em;
-}
-
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
-}
-
-input:focus::placeholder{
-	color : #BBB;
 }
 
 @media only screen and (max-width: 1000px) {

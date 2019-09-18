@@ -10,12 +10,12 @@ body, html {
 
 @font-face {
 	font-family: "Barcade Brawl";
-	src: url('../../resources/fonts/barcade.ttf');
+	src: url('../../../resources/fonts/barcade.ttf');
 }
 
 @font-face {
-	font-family: "BIT";
-	src: url('../../resources/fonts/BIT.otf');
+	font-family: "Pixellari";
+	src: url('../../../resources/fonts/pixellari.ttf');
 }
 
 /* CSS for the SNAKE-HEADERS. */
@@ -33,6 +33,12 @@ body, html {
 	color: white;
 
 	z-index: 11;
+}
+
+#snake-header {
+	animation-name: flicker;
+	animation-duration: 6s;
+	animation-iteration-count: infinite;
 }
 
 #snake-score {
@@ -56,7 +62,7 @@ body, html {
 	z-index: 12;
 	overflow-y: scroll;
 
-	background-image: url('../../resources/images/popupbackground.png');
+	background-image: url('../../../resources/images/events/popupbackground.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 
@@ -114,7 +120,7 @@ body, html {
 
 	margin: 1% auto;
 
-	font-family: "BIT";
+	font-family: "Pixellari";
 	font-size: 140%;
 	text-align: left;
 	color: white;
@@ -135,7 +141,7 @@ body, html {
 	top: 20%;
 	left: 20%;
 
-	background-image: url('../../resources/images/rulespopupbackground.png');
+	background-image: url('../../../resources/images/events/rulespopupbackground.png');
 	background-size: cover;
 	color: white;
 
@@ -153,10 +159,10 @@ body, html {
 
 #rules-popup button {
 	display: block;
-	width: 17%;
+	width: 50%;
 
 	margin: 0 auto 4% auto;
-	padding: 1%;
+	padding: 1.5% 0.5%;
 
 	border: none;
 	border: 2px solid white;
@@ -179,7 +185,7 @@ body, html {
 	width: 95%;
 	margin: 2% 2.5%;
 
-	font-family: "BIT";
+	font-family: "Pixellari";
 	font-size: 145%;
 }
 
@@ -204,12 +210,14 @@ body, html {
 
 .snake-xenzia .pixels {
 	display: inline-block;
-	width: 2.5vw;
-	height: 2.5vw;
+	width: 2.5%; /* The original solution was to have height: 2.5em, width: 2.5em and padding-btm: 0.*/
+	height: 0;
 
 	margin: 0;
 	padding: 0;
+	padding-bottom: 2.5%;
 
+	vertical-align: top;
 	background-color: black;
 }
 
@@ -217,35 +225,46 @@ body, html {
 	width: 100%;
 }
 
-.snake-xenzia .events {
-	display: block;
-	width: 1vw;
-	height: 1vw;
+.snake-xenzia .material-icons {
+	color: white;
+	font-size: 35px;
 
-	margin: 0 auto;
-	vertical-align: middle;
-
-	border-radius: 100px;
-	background-color: white;
-	transition: all 3s;
+	cursor: pointer;
 }
 
-.snake-xenzia .events:hover {
-	background-color: transparent;
+.snake-xenzia .event-one {
+	color: red;
 }
 
-.snake-xenzia .events-one {
-	background-color: green;
+.snake-xenzia .event-two {
+	color: #2196f3;
 }
 
-.snake-xenzia .events-two {
-	background-color: purple;
+.snake-xenzia .event-three {
+	color: yellow;
 }
 
-.snake-xenzia .events-three {
-	background-color: yellow;
+.snake-xenzia .event-four {
+	color: #E1BEE7;
 }
 
-.snake-xenzia .events-four {
-	background-color: blue;
+/***********************/
+/* CSS for ANIMATIONS. */
+/***********************/
+
+@keyframes flicker {
+
+	0% { color: white; }
+	15% { color: white; }
+	16% { color: red; }
+	31% { color: red; }
+	32% { color: yellow; }
+	47% { color: yellow; }
+	48% { color: blue; }
+	63% { color: blue; }
+	64% { color: orange; }
+	81% { color: orange; }
+	82% { color: purple; }
+	100% { color: purple; }
+
 }
