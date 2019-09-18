@@ -199,6 +199,14 @@ body, html {
 	visibility: hidden;
 }
 
+/****************************/
+/* CSS for the TILT SCREEN. */
+/****************************/
+
+.tilt-screen {
+	display: none;
+}
+
 /***********************/
 /* CSS for ANIMATIONS. */
 /***********************/

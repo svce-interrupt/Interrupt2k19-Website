@@ -1,3 +1,37 @@
+@media only screen and (max-width: 800px) and (orientation: portrait) {
+
+	/****************************/
+	/* CSS for the TILT SCREEN. */
+	/****************************/
+
+	.tilt-screen {
+		display: block;
+		position: fixed;
+
+		width: 100%;
+		height: 100%;
+
+		font-family: "Pixellari";
+		color: yellow;
+
+		background-color: black;
+	}
+
+	.tilt-screen p {
+		display: block;
+		background-color: black;
+
+		font-size: 135%;
+		margin-top: 40%;
+		text-align: center;
+	}
+
+	.game-elements { display: none; }
+	.header { display: none; }
+	.links { display: none; }
+
+}
+
 @media only screen and (max-width: 1000px) and (orientation: landscape) {
 
 /*************************/
