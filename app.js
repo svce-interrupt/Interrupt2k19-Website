@@ -42,7 +42,6 @@ hbs.registerPartials(path.join(__dirname,'views/templates'));
 app.use(express.static(path.join(__dirname ,'public')));
 app.use(express.urlencoded({extended : true}));
 app.use(express.json());
-app.use(cookieParser());
 app.use(expressSanitizer());
 app.use(methodOverride("_method"));
 
