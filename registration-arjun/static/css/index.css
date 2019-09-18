@@ -1,0 +1,120 @@
+/******************************/
+/* CSS for the BODY and HTML. */
+/******************************/
+body, html {
+	margin: 0;
+	padding: 0;
+
+	background-color: black;
+}
+
+@font-face {
+	font-family: "Barcade Brawl";
+	src: url('../../../events/static/fonts/barcade.ttf');	
+}
+
+
+@font-face {
+	font-family: "Pixellari";
+	src: url('../../../home/static/fonts/pixellari.ttf');
+}
+
+/*********************************/
+/* CSS for the INTERRUPT HEADER. */
+/*********************************/
+
+h2 {
+	display: block;
+	width: 100%;
+
+	margin: 4% 0%;
+
+	text-align: center;
+	font-family: "Barcade Brawl";
+	font-size: 300%;
+	color: white;
+
+	animation-name: flicker;
+	animation-duration: 6s;
+	animation-iteration-count: infinite;
+}
+
+/******************************/
+/* CSS for the FORM ELEMENTS. */
+/******************************/
+
+form {
+	display: block;
+	width: 100%;
+}
+
+form input {
+	display: block;
+	width: 25%;
+
+	margin: 0.5% auto;
+	padding: 1%;
+
+	border: none;
+	border: 3px solid purple;
+
+	font-size: 140%;
+	font-family: "Pixellari";
+	color: yellow;
+	background-color: transparent;
+}
+
+form input:focus {
+	background-color: purple;
+}
+
+a, form a, form button {
+	display: block;
+	width: 27.3%;
+
+	margin: 0.5% auto;
+	padding: 1%;
+
+	border: none;
+	border: 3px solid purple;
+
+	font-size: 140%;
+	font-family: "Pixellari";
+	color: yellow;
+
+	background-color: purple;
+	cursor: pointer;
+}
+
+a, form a {
+	width: 25%;
+
+	text-decoration: none;
+	text-align: center;
+}
+
+form a:hover, form button:hover {
+	background-color: yellow;
+	color: purple;
+}
+
+/***********************/
+/* CSS for ANIMATIONS. */
+/***********************/
+
+@keyframes flicker {
+
+	0% { color: white; }
+	15% { color: white; }
+	16% { color: red; }
+	31% { color: red; }
+	32% { color: yellow; }
+	47% { color: yellow; }
+	48% { color: blue; }
+	63% { color: blue; }
+	64% { color: orange; }
+	81% { color: orange; }
+	82% { color: purple; }
+	100% { color: purple; }
+
+}
