@@ -10,13 +10,13 @@ body, html {
 
 @font-face {
 	font-family: "Barcade Brawl";
-	src: url('../../../events/static/fonts/barcade.ttf');	
+	src: url('../../../resources/fonts/barcade.ttf');	
 }
 
 
 @font-face {
 	font-family: "Pixellari";
-	src: url('../fonts/pixellari.ttf');
+	src: url('../../../resources/fonts/pixellari.ttf');
 }
 
 /*********************************/
