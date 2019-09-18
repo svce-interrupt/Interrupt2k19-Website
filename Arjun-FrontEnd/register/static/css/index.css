@@ -136,6 +136,14 @@ form .text:hover {
 	color: yellow;
 }
 
+/****************************/
+/* CSS for the TILT SCREEN. */
+/****************************/
+
+.tilt-screen {
+	display: none;
+}
+
 /***********************/
 /* CSS for ANIMATIONS. */
 /***********************/
