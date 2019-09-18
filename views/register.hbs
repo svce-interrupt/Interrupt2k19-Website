@@ -19,40 +19,25 @@
 
 		<h2>Registration</h2>
 
-		<form action="" method="POST">
+		<form action="/register" method="POST" id="flappy">
 
-			<input type="text" name="student[name]" class="inline" placeholder="Full Name" required>
-			<input type="number" name="student[number]" class="inline" placeholder="Mobile Number" required><br>
-			<input type="text" name="student[college]" class="inline" placeholder="College" required>
-			<input type="email" name="student[email]" class="inline" placeholder="E-Mail" required><br>
-			<input type="password" name="student[password]" class="inline" placeholder="Password" required>
-			<input type="password" name="student[confirmpassword]" class="inline" placeholder="Confirm Password" required>
-
-			<button type="submit">Submit!</button>
+			{{#unless isAuthenticated}}
+				{{> new_reg}}
+			{{/unless}}
 		</form>
 
-		<form>
-			<p class="text">Click on the that you'd like to register for! The that you have selected will light up. <span>X and Y are intra-college and can only be attended by SVCE students. </span></p>
-
-			<p class="event inline">Interrupt Challenge</p>
-			<p class="event inline">Code Con Thingy</p>
-			<p class="event inline">Paper Presentation</p><br>
-			<p class="event inline">Poster Presentation</p>
-			<p class="event inline">Stack Market</p><br>
-			<p class="event inline">Alt Tab Tech</p>
-			<p class="event inline">Mind Spar</p>
-			<p class="event inline">Now You C Me</p><br>
-			<p class="event inline">Game Of Tags</p>
-			<p class="event inline events">Win-code-ium Leviosa</p><br><br><br>
-
-			<button type="submit">Submit!</button>
-
+		<form action="/events/add" method="POST" id="subway">
+			{{#if isAuthenticated}}
+				{{> event_reg}}
+			{{/if}}
 		</form>
+
+
 
 
 		<script>
 
-			document.querySelector('button').addEventListener("click",(event) => {
+			document.querySelector('#register').addEventListener("click",(event) => {
 				event.preventDefault();
 
 				inputTags = document.querySelectorAll('input');
@@ -64,13 +49,33 @@
 				});
 
 				if(!vacant) {
-					document.querySelector('form').submit();
+					document.querySelector('#flappy').submit();
 
-					
 				}
 
+			});
+
+			document.querySelector('#add').addEventListener("click",(event) => {
+				event.preventDefault();
+
+				var eventList = document.querySelectorAll('event');
+
+
+				eventList.forEach((name, id) => {
+					console.log(id);
+					//if(name.classList.toggle('selected')) 
+				});
+
+				if(false) {
+					document.querySelector('#flappy').submit();
+
+				}
+			
 
 			});
+
+
+			document.querySelector
 
 		</script>
 
