@@ -1,0 +1,30 @@
+{
+    "development": {
+        "port" : 8000,
+        "IP" : "0.0.0.0",
+        "username": "shravan",
+        "password": "0223",
+        "database": "interrupt", 
+        "host": "127.0.0.1",
+        "dialect": "postgres"
+ 
+    },
+    "test": {
+        "port" : 8000,
+        "IP" : "0.0.0.0",
+        "username": "",
+        "password": null,
+        "database": "",
+        "host": "",
+        "dialect": "postgres"
+    },
+    "production": {
+        "port" : 8000,
+        "IP" : "0.0.0.0",
+        "username": "",
+        "password": null,
+        "database": "",
+        "host": "127.0.0.1",
+        "dialect": "postgres"
+    }
+}
