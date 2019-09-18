@@ -1,5 +1,5 @@
 const express =  require('express');
-const router  =  express.Router({strict : true, mergeParams : true});
+const router  =  express.Router({strict : false , mergeParams : true});
 
 const { isAuthenticated } = require('../middleware/verify');
 
@@ -7,6 +7,13 @@ router.get('/', (req, res) => {
 
     res.render('home');
 });
+
+router.get('/team', (req, res) => {
+    res.render('sponsor');
+});
+
+
+
 
 router.get('/logout', isAuthenticated, (req, res) => {
 

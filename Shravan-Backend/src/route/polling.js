@@ -6,7 +6,7 @@ const { isAuthenticated, hasNotVoted } = require('../middleware/verify');
 const Poll    =   require('../database/models/Poll');
 
 router.get('/', (req, res) => {
-    res.render('polling');
+    res.render('polling/vote');
 });
 
 router.post('/vote', isAuthenticated, hasNotVoted, (req, res) => {
