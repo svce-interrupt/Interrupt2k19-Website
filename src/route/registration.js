@@ -7,7 +7,7 @@ const Student   =   require('../database/models/Student');
 const {verifyData, notLoggedIn} = require(__dirname + '/../middleware/verify');
 
 router.route('/')
-    .get(notLoggedIn, (req, res) => {
+    .get((req, res) => {
         res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
         res.header('Expires', '-1');
         res.header('Pragma', 'no-cache');

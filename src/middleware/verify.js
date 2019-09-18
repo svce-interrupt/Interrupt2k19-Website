@@ -12,13 +12,13 @@ const verifyData = async (req, res, next) => {
         attributes : ['email']
     });
 
-    if(!name || !email || !number || !password || !college || !year) errors.push({message : "Please fill all the blanks"});
+    if(!name || !email || !number || !password || !college ||!year) errors.push({message : "Please fill all the blanks"});
     if(password.length < 6) errors.push({message : "Password should be atleast 6 characters"});
-    // if(password !== confirmPassword) errors.push({message : "Passwords don't match"});
+    if(password !== confirmPassword) errors.push({message : "Passwords don't match"});
     if(studentemail) errors.push({message : "Email already exists"})
 
     if(errors.length>0){
-
+        console.log(errors);
         return res.render('register', {
             name,
             email,
