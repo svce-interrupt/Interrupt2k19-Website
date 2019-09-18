@@ -1,35 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
 
-    <style>
-        label {
-            padding: 10px;
-        }
-        input {
-            margin: 5px;
-        }
-    </style>
-    
-</head>
-<body>
-        
-    <form action="" method="POST" id="tetris">
-        <label for="email">Email</label>
-            <input type="email" id="email" name="student[email]">
-            <br>
-        <label for="password">Password</label>
-            <input type="password" id="password" name="student[password]">
-            <br>
-        <button id="login">Login</button>
+	<head>
+		<title>Login | Interrupt '19</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="Official Website for SVCE's Interrupt 2k19!">
+		<meta name="keywords" content="svce,symposium,cse,interrupt,2019,2k19">
+		<meta name="author" content="Arjun Aravind">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="/styles/css/login/login.css" rel="stylesheet">
+	</head>
 
-    </form>
+	<body>
 
-    <script>
+		<div class="pacman"></div>
+		<div class="pacman mrs-pacman"></div>
+		<div class="pacman pacman-jr"></div>
+
+		<h2>Login</h2>
+
+		<form action="" method="POST" id="tetris">
+			<input type="text" name="student[email]" placeholder="Your E-Mail">
+			<input type="password" name="student[password]" placeholder="Your Password">
+			<button id="login" type="submit">Login</button>
+			<a href="/register">Create An Account!</a>
+		</form>
+
+		<span></span>
+
+		<a href="/">Home</a>
+		<a href="/events">Events</a>
+		<a href="/sponsors">Sponsors and Team</a>
+
+	    <script>
 
         document.querySelector('#login').addEventListener("click", (event) => {
             
@@ -46,6 +48,7 @@
         });
 
     </script>
-    
-</body>
+
+	</body>
+
 </html>

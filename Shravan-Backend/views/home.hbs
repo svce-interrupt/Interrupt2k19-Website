@@ -1,13 +1,51 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Interrupt 2k19</title>
-</head>
-<body>
-    {{> auth_bar}}
-    <h3>Welcome to the official interrupt home page</h3>
+<!DOCTYPE html>
 
-</body>
+	<head>
+		<title>Home | Interrupt '19</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="Official Website for SVCE's Interrupt 2k19!">
+		<meta name="keywords" content="svce,symposium,cse,interrupt,2019,2k19">
+		<meta name="author" content="Arjun Aravind">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="/styles/css/home/home.css" rel="stylesheet">
+		<link href="/styles/css/home/mobile-home.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	</head>
+
+	<body>
+
+		<div class="game-elements">
+			{{#if isAuthenticated}}
+				<div class="score"><p class="title">{{studentName}}'s HIGH SCORE</p></div>
+			{{else}}
+				<div class="score"><p class="title">HIGH SCORE</p></div>
+			{{/if}}
+			<div class="hearts hearts-title"><p>LIVES REMAINING</p></div>
+		</div>
+
+		<div class="game-elements">
+			<div class="score score-number"><p class="number">250,919</p></div>
+			<div class="hearts"><img src="/resources/images/home/hearthalfreverse.png" class="half" id="reverse"><img src="/resources/images/home/hearthalf.png" class="half"><img src="/resources/images/home/heart.png"><img src="/resources/images/home/heart.png"></div>
+		</div>
+
+		<div class="header">
+			<header id="header">Interrupt 2k19</header>
+			<p>Interrupt is a National-Level Technical Symposium conducted by the students of the Computer Science department of Sri Venkateswara College of Engineering. It is a place where engineers showcase their talent and ideas in a plethora of events across various domains of the computer world. Now in its 28th year, Interrupt is back and it's bigger and better than ever!</p>
+			<p class="additional-info"><span>Venue:</span> Sri Venkateswara College of Engineering</p>
+			<p class="additional-info"><span>Date:</span> 9AM - 3PM, 25th September, 2019</p>
+		</div>
+
+		<div class="links">
+			<i class="material-icons" id="m1">play_arrow</i><a href="/events" id="a1">Events</a>
+		</div>
+		<div class="links">
+			<i class="material-icons" id="m2">play_arrow</i><a href="/register" id="a2">Register</a>
+		</div>
+		<div class="links">
+			<i class="material-icons" id="m3">play_arrow</i><a href="/team" id="a3">Sponsors & Team</a>
+		</div>
+
+	</body>
+	<script src="/scripts/hover.js"></script>
+
 </html>

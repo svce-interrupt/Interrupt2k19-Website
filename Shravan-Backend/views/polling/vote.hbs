@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Website Polling</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" integrity="sha256-zmfNZmXoNWBMemUOo1XUGFfc0ihGGLYdgtJS3KCr/l0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/styles/css/poll/polling.css">
+</head>
+
+<body>
+    <div id="main-container">
+        <h1 id="title" class="text-center">Interrupt 2k19</h1><!-- #title -->
+        <h2 id="subtitle" class="text-center">Website Design Poll</h2><!-- #subtitle -->
+        <h3 id="prompt" class="text-center">Vote for your favorite website</h3><!-- #prompt -->
+        <div class="container" id="site-gallery">
+            <div class="row">
+
+                {{> poll_window title="Avengers" teamname="Team Interrupt" value=1 location="Site_1/Screenshot.png"}}
+                {{> poll_window title="Justice League" teamname="Team ACM" value=2 location="Site_2/Screenshot.png"}}
+                {{> poll_window title="X-men" teamname="This is spartaaaaaaaaaaa!" value=3 location="Site_3/Screenshot.png"}}
+
+
+            </div><!-- .row -->
+        </div><!-- #site-gallery.container -->
+    </div><!-- #main-container -->
+    <script>
+        
+        document.querySelectorAll('.vote').forEach((button) => {
+            
+			button.addEventListener('click', (event) => {
+				event.preventDefault();
+
+                var xhttp = new XMLHttpRequest();
+
+				xhttp.onreadystatechange = () => {
+                    if(xhttp.readyState==4){
+                        if(xhttp.status == 202) console.log("submitted");
+                        if(xhttp.status == 406) console.log("Already voted");
+
+                        console.log(JSON.parse(xhttp.response).status);
+                    }
+                }
+                    
+				xhttp.open("POST", "/polling/vote", true);
+				xhttp.setRequestHeader("Content-type", "application/json; charset=utf-8");
+				xhttp.withCredentials = true;
+				xhttp.send(JSON.stringify({
+					vote : {
+                        id : button.value
+					}
+				}));
+                
+        	});
+		});
+
+    </script>
+</body>
+</html>
