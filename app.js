@@ -38,14 +38,9 @@ app.use(session({
     secret : process.env.SESSION_SECRET,
     store : sessionStore,
     resave : false,
+    proxy : true,
     saveUninitialized : true,
-    /*
-    cookie : {
-        path : '/',
-        secure : false,
-        sameSite : false
-    }
-    */
+    
 }));
 sessionStore.sync();
 
