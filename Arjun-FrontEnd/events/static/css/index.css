@@ -248,6 +248,14 @@ body, html {
 	color: #E1BEE7;
 }
 
+/****************************/
+/* CSS for the TILT SCREEN. */
+/****************************/
+
+.tilt-screen {
+	display: none;
+}
+
 /***********************/
 /* CSS for ANIMATIONS. */
 /***********************/
