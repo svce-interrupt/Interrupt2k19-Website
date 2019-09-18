@@ -33,6 +33,19 @@ const sessionStore     =    new SequelizeStore({
     expiration : 24 * 60 * 60 * 1000
 });
 
+// express settings
+app.set('trust proxy', 1)
+app.set('view engine', 'hbs');
+hbs.registerPartials(path.join(__dirname,'views/templates'));
+
+// express middlewares
+app.use(express.static(path.join(__dirname ,'public')));
+app.use(express.urlencoded({extended : true}));
+app.use(express.json());
+app.use(cookieParser());
+app.use(expressSanitizer());
+app.use(methodOverride("_method"));
+
 app.use(session({
     name : "Interrupt_session",
     secret : process.env.SESSION_SECRET,
@@ -49,19 +62,6 @@ require('./src/auth/passport')(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
-
-// express settings
-app.set('trust proxy', 1)
-app.set('view engine', 'hbs');
-hbs.registerPartials(path.join(__dirname,'views/templates'));
-
-// express middlewares
-app.use(express.static(path.join(__dirname ,'public')));
-app.use(express.urlencoded({extended : true}));
-app.use(express.json());
-app.use(cookieParser());
-app.use(expressSanitizer());
-app.use(methodOverride("_method"));
 
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Credentials', true);

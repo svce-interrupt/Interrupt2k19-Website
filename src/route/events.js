@@ -25,7 +25,7 @@ router.route('/add')
                     res.redirect('/');
                 });
             else
-                EventList.create(events).then(event => {
+                req.user.setEventList(events).then(event => {
                     req.user.setEventList(event);
                     console.log("Added");
                     res.redirect('/');
