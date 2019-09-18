@@ -21,7 +21,7 @@ router.route('/')
                     studentId : req.user.id
                 }
             }).then((events) => {
-                console.log(events);
+                // console.log(events);
 
                 if(events){
 

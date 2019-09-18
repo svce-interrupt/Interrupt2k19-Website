@@ -22,13 +22,13 @@ router.route('/add')
             if(eventlist)
                 eventlist.update(events).then(() => {
                     console.log("updated");
-                    res.sendStatus(200);
+                    res.redirect('/');
                 });
             else
                 EventList.create(events).then(event => {
                     req.user.setEventList(event);
                     console.log("Added");
-                    res.sendStatus(200);
+                    res.redirect('/');
                 });
             
           })
