@@ -62,7 +62,7 @@ body, html {
 	z-index: 12;
 	overflow-y: scroll;
 
-	background-image: url('../img/popupbackground.png');
+	background-image: url('../../../resources/images/events/popupbackground.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 
@@ -141,7 +141,7 @@ body, html {
 	top: 20%;
 	left: 20%;
 
-	background-image: url('../img/rulespopupbackground.png');
+	background-image: url('../../../resources/images/events/rulespopupbackground.png');
 	background-size: cover;
 	color: white;
 
