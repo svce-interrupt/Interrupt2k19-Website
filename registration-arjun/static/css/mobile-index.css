@@ -1,0 +1,52 @@
+/*****************************/
+/* REGISTER-MOBILE-INDEX.CSS */
+/*****************************/
+
+@media only screen and (max-width: 1000px) and (orientation: landscape) {
+
+/*********************************/
+/* CSS for the INTERRUPT HEADER. */
+/*********************************/
+
+h2 {
+	font-size: 180%;
+}
+
+/******************************/
+/* CSS for the FORM ELEMENTS. */
+/******************************/
+
+form input {
+	width: 40%;
+
+	margin: 0.5% auto;
+	padding: 1.5%;
+
+	font-size: 110%;
+}
+
+.events {
+	width: 33%;
+}
+
+form p, a, form a, form button {
+	width: 32%;
+
+	margin: 0.5% auto;
+	padding: 1% 0.5%;
+
+	font-size: 110%;
+}
+
+form p, a, form a {
+	width: 25%;
+
+	text-decoration: none;
+	text-align: center;
+}
+
+form .text {
+	width: 60%;
+}
+
+}
