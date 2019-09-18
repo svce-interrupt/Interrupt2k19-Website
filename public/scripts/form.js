@@ -4,7 +4,7 @@
 
 /* This file takes in all the values of the form and then submits it. */
 
-var homeUrl = ""; //The URL of the page which the user is then redirected to.
+var homeUrl = "/"; //The URL of the page which the user is then redirected to.
 
 var event1 = 0;
 var event2 = 0;
@@ -149,7 +149,7 @@ document.getElementById("event10").addEventListener("click", function() {
 });
 
 /* We now add the event-listener for the form button. */
-document.getElementById("form-btn").addEventListener("click", function() {
+document.getElementById("add").addEventListener("click", function() {
 	/* We construct a string based on the values of the events. */
 	var str = "event1="+event1+"&event2="+event2+"&event3="+event3+"&event4="+event4+"&event5="+event5+"&event6="+event6+"&event7="+event7+"&event8="+event8+"&event9="+event9+"&event10="+event10;
 
