@@ -13,8 +13,8 @@ router.get("/", (req, res) => {
 router.route('/add')
     .post(isAuthenticated, (req, res) => {
 
-        const events = req.body.events;
-        console.log(req.user.id);
+        const events = req.query;
+        console.log(events);
 
         EventList.findOne({where : {studentId : req.user.id}})
           .then(eventlist => {
