@@ -34,7 +34,7 @@ const sessionStore     =    new SequelizeStore({
 });
 
 // express settings
-app.set('trust proxy', 1)
+app.set('trust proxy', 1);
 app.set('view engine', 'hbs');
 hbs.registerPartials(path.join(__dirname,'views/templates'));
 
@@ -52,6 +52,11 @@ app.use(session({
     resave : false,
     proxy : true,
     saveUninitialized : true,
+
+    cookie : {secure : true, domain : '.interrupt2k19.in'},
+
+    rolling : true,
+    unset : 'destroy',
     
 }));
 sessionStore.sync();
@@ -90,3 +95,4 @@ app.use("/register", require('./src/route/registration'));
 app.listen(process.env.PORT, process.env.IP, (err) => {
     console.log("Server is running on port",process.env.PORT);
 });
+
