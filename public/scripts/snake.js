@@ -466,10 +466,14 @@ if(screen.width <= 1000) { /* If the device is a mobile device. */
 /* This is done by changing the mamba.collision variable to 1. The event-listener declared... */
 /* before will detect this and show the popup. */
 let eventIcons = document.getElementsByClassName("event-links");
-let eventIconsFunc = function() {
+let eventIconsFunc = function(pixel) {
 	mamba.collision = 1;
+
+	if(pixel == 133) window.location.href="#coding-events";
+	else if(pixel == 500) window.location.href="#online-events";
+	else if(pixel == 187) window.location.href="#snake-popup";
 }
 
-eventIcons[0].addEventListener("click", eventIconsFunc);
-eventIcons[1].addEventListener("click", eventIconsFunc);
-eventIcons[2].addEventListener("click", eventIconsFunc);
+eventIcons[0].addEventListener("click", eventIconsFunc, 133);
+eventIcons[1].addEventListener("click", eventIconsFunc, 187);
+eventIcons[2].addEventListener("click", eventIconsFunc, 500);
