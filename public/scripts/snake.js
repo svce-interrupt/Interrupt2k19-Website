@@ -356,18 +356,21 @@ let joystickAppear = window.setTimeout( function(){
 let popupEvent = window.setInterval(function(){
 	if(mamba.collision == 1) {
 		document.getElementById('snake-popup').style.visibility = "visible";
-		clearInterval(this.slithering);
+		clearInterval(mamba.slithering);
 
 		document.getElementById('closeButton').addEventListener("click", function(){
 			document.getElementById('snake-popup').style.visibility = "hidden";
-			this.slithering = window.setInterval(startSlithering,this.speed);
+
+			mamba.slithering = window.setInterval(function() {
+				mamba.slither();
+			},80);
 		});
+
+		mamba.collision = 0;
 
 		if(mamba.snakeArray[mamba.length-1] == 133) window.location.href="#coding-events";
 		else if(mamba.snakeArray[mamba.length-1] == 500) window.location.href="#online-events";
 		else if(mamba.snakeArray[mamba.length-1] == 187) window.location.href="#snake-popup";
-
-		mamba.collision = 0;
 	}
 }, mamba.speed);
 
