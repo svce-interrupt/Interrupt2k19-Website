@@ -32,6 +32,14 @@ const verifyData = async (req, res, next) => {
     next();
 };
 
+const checkEmptyData = (req, res, next) => {
+
+    if(Object.entries(req.query).length == 0)
+	return res.redirect('back');
+    next();
+
+}
+
 const notLoggedIn = (req, res, next) => {
 
     if(req.isAuthenticated())
@@ -77,5 +85,6 @@ module.exports = {
     isAuthenticated,
     notLoggedIn,
     hasAdminAccess,
-    hasNotVoted
+    hasNotVoted,
+    checkEmptyData
 };
