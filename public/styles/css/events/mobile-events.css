@@ -39,15 +39,16 @@
 
 }
 
-/*********************************/
-/* This is the CSS for the iPad. */
-/*********************************/
+/*******************************************/
+/* This is the CSS for all mobile devices. */
+/*******************************************/
 
 @media only screen and (min-width: 10px) and (max-width: 767px) and (orientation: landscape),
        only screen and (min-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
 
 	body, html {
 		background-color: black;
+		overscroll-behavior: none;
 	}
 
 	/******************************/
