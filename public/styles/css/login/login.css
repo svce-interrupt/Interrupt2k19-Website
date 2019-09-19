@@ -27,7 +27,7 @@ h2 {
 	display: block;
 	width: 100%;
 
-	padding: 5% 0% 0% 0%;
+	padding: 2% 0% 0% 0%;
 
 	font-family: "Barcade Brawl";
 	font-size: 270%;
@@ -102,7 +102,7 @@ form a:hover, form button:hover {
 span {
 	display: block;
 	border: none;
-	margin: 6% 0%;
+	margin: 10% 0%;
 }
 
 /***************************/
@@ -118,6 +118,15 @@ a {
 a:hover {
 	background-color: purple;
 	color: yellow;
+}
+
+/****************************/
+/* CSS for the TILT-SCREEN. */
+/****************************/
+
+
+.tilt-screen {
+	display: none;
 }
 
 /***************************/
@@ -153,6 +162,13 @@ a:hover {
 	margin-top: 100%;
 
 	animation: pacman-eating 0.3s infinite, pacman-moving 30s 2 steps(20,end) 20s;
+}
+
+.pacman-mrs-jr {
+	margin-left: 5%;
+	margin-top: 120%;
+
+	animation: pacman-eating 0.3s infinite, pacman-moving 30s 2 steps(20,end) 27s;
 }
 
 /***************************/
