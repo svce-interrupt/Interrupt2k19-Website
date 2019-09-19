@@ -98,8 +98,14 @@ form p, a, form a, form button {
 }
 
 form button {
-	background-color: yellow;
-	color: purple;
+	background-color: purple;
+	color: yellow;
+	margin-top: 3%;
+}
+
+form button:hover {
+	background-color: purple;
+	color: yellow;
 }
 
 form p, a, form a {
@@ -110,8 +116,27 @@ form p, a, form a {
 }
 
 form p:hover, form a:hover {
+	background-color: purple;
+	color: yellow;
+}
+
+form .links {
 	background-color: yellow;
 	color: purple;
+}
+
+form .links:hover {
+	background-color: purple;
+	color: yellow;
+}
+
+form a .material-icons {
+	vertical-align: middle;
+}
+
+form a span {
+	display: inline-block;
+	margin: 0% 1%;
 }
 
 form .text {
@@ -134,6 +159,10 @@ form .text span {
 form .text:hover {
 	background-color: black;
 	color: yellow;
+}
+
+form .login-text {
+	margin: 1% auto;
 }
 
 /****************************/
