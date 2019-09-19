@@ -356,8 +356,11 @@ let joystickAppear = window.setTimeout( function(){
 let popupEvent = window.setInterval(function(){
 	if(mamba.collision == 1) {
 		document.getElementById('snake-popup').style.visibility = "visible";
+		clearInterval(this.slithering);
+
 		document.getElementById('closeButton').addEventListener("click", function(){
 			document.getElementById('snake-popup').style.visibility = "hidden";
+			this.slithering = window.setInterval(startSlithering,this.speed);
 		});
 
 		if(mamba.snakeArray[mamba.length-1] == 133) window.location.href="#coding-events";
