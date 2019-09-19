@@ -54,7 +54,7 @@ app.use(session({
     proxy : true,
     saveUninitialized : true,
 
-    cookie : {httpOnly : false, secure : true},
+    cookie : {maxAge : 24 * 60 * 60 * 1000, httpOnly : false, secure : true, sameSite : false},
 
     rolling : true,
     unset : 'destroy',
@@ -74,6 +74,13 @@ app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
     next();
 });
+
+
+app.use((req, res, next) => {
+    console.log(req.sessionID);
+    next();
+});
+
 
 app.use((req, res, next) => {
     res.locals.isAuthenticated  =   req.isAuthenticated();
