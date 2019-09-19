@@ -46,8 +46,11 @@ h2 {
 }
 
 .sponsor-txt {
+	width: 75%;
+	margin: 0% auto;
+
 	font-family: "Pixellari";
-	font-size: 170%;
+	font-size: 150%;
 	color: yellow;
 }
 
@@ -88,7 +91,7 @@ h2 {
 	padding: 5% 0%;
 
 	font-family: "Pixellari";
-	font-size: 160%;
+	font-size: 140%;
 }
 
 /**********************/
