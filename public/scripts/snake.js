@@ -359,6 +359,11 @@ let popupEvent = window.setInterval(function(){
 		document.getElementById('closeButton').addEventListener("click", function(){
 			document.getElementById('snake-popup').style.visibility = "hidden";
 		});
+
+		if(mamba.snakeArray[mamba.length-1] == 133) window.location.href="#coding-events";
+		else if(mamba.snakeArray[mamba.length-1] == 500) window.location.href="#online-events";
+		else if(mamba.snakeArray[mamba.length-1] == 187) window.location.href="#snake-popup";
+
 		mamba.collision = 0;
 	}
 }, mamba.speed);

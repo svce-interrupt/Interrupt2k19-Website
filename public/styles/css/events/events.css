@@ -105,14 +105,21 @@ body, html {
 	margin: 5% auto;
 }
 
-#snake-popup .event header {
+h3, #snake-popup .event header {
 	width: 95%;
 
 	margin: 2% auto;
 
+	font-family: "Barcade Brawl";
 	font-size: 140%;
 	color: yellow;
 	text-align: left;
+}
+
+h3 {
+	margin: 5% 2.5%;
+	text-align: center;
+	font-size: 150%;
 }
 
 #snake-popup .event p {
