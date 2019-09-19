@@ -120,6 +120,15 @@ a:hover {
 	color: yellow;
 }
 
+a span {
+	display: inline-block;
+	margin: 0% 1%;
+}
+
+a .material-icons {
+	vertical-align: middle;
+}
+
 /****************************/
 /* CSS for the TILT-SCREEN. */
 /****************************/

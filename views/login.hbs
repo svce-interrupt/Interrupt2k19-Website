@@ -8,6 +8,7 @@
 		<meta name="author" content="Arjun Aravind">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="/styles/css/login/login.css" rel="stylesheet">
+		<link href="/styles/css/login/mobile-login.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 
@@ -28,14 +29,14 @@
 			<input type="text" name="student[email]" placeholder="Your E-Mail">
 			<input type="password" name="student[password]" placeholder="Your Password">
 			<button id="login" type="submit">Login</button>
-			<a href="/register">Register</a>
+			<a href="/register">Register<span></span><i class="material-icons">arrow_right_alt</i></a>
 		</form>
 
 		<span></span>
 
-		<a href="/">Home</a>
-		<a href="/events">Events</a>
-		<a href="/team">Sponsors and Team</a>
+		<a href="/">Home<span></span><i class="material-icons">arrow_right_alt</i></a>
+		<a href="/events">Events<span></span><i class="material-icons">arrow_right_alt</i></a>
+		<a href="/team">Sponsors and Team<span></span><i class="material-icons">arrow_right_alt</i></a>
 
 	    <script>
 
@@ -52,8 +53,6 @@
             if(inputFieldIsNotNull) document.querySelector('#tetris').submit();
 
         });
-
-	alert("Hey there! We're currently facing some issues with login. Try again later, please!");
 
     </script>
 
