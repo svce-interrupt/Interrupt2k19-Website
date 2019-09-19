@@ -25,7 +25,7 @@ class Snake {
 
 		this.eventsPixels = [187,327,133,500]; /* The pixels containing the events. */
 		this.food = 0; /* The pixel with the food when in game mode. */
-		this.collision = 0; /* Has there been a collision with a food/event or not? */
+		this.collision = 0; /* Has there been a collision with a food/event or not? 2 is a sort of locking state. */
 		this.gameOver = 0; /* Is the game over or not? */
 
 		displayRulesForMode(this.mode);
@@ -99,7 +99,7 @@ class Snake {
 			/* If the snake collides with the home icon, we redirect. */	
 			if(this.snakeArray[this.length-1] == 327) window.location.href="/";
 			/* If there is a collision, we flag a variable. */
-			else if(this.eventsPixels.includes(this.snakeArray[this.length-1])) this.collision = 1;
+			else if(this.eventsPixels.includes(this.snakeArray[this.length-1]) && this.collision != 2) this.collision = 1;
 			/* We now check if the game controller*/
 			else if(this.snakeArray[this.length-1] == 275 && this.joystickAppear == 1) {
 
@@ -356,17 +356,12 @@ let joystickAppear = window.setTimeout( function(){
 let popupEvent = window.setInterval(function(){
 	if(mamba.collision == 1) {
 		document.getElementById('snake-popup').style.visibility = "visible";
-		clearInterval(mamba.slithering);
-
 		document.getElementById('closeButton').addEventListener("click", function(){
 			document.getElementById('snake-popup').style.visibility = "hidden";
-
-			mamba.slithering = window.setInterval(function() {
-				mamba.slither();
-			},80);
+			mamba.collision = 0;
 		});
 
-		mamba.collision = 0;
+		mamba.collision = 2;
 
 		if(mamba.snakeArray[mamba.length-1] == 133) window.location.href="#coding-events";
 		else if(mamba.snakeArray[mamba.length-1] == 500) window.location.href="#online-events";

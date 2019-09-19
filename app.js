@@ -22,7 +22,7 @@ db.authenticate()
   .then(() => console.log("Server is connected to database"))
   .catch(err => console.log(err));
 
-// Create tables and sync 
+// Create tables and sync
 const bootstrap        =    require('./src/database/bootstrap');
 bootstrap();
 
@@ -54,11 +54,11 @@ app.use(session({
     proxy : true,
     saveUninitialized : true,
 
-    cookie : {secure : true},
+    cookie : {httpOnly : false, secure : true},
 
     rolling : true,
     unset : 'destroy',
-    
+
 }));
 sessionStore.sync();
 
