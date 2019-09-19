@@ -52,7 +52,7 @@ h2 {
 form input {
 	width: 40%;
 
-	margin: 0.5% auto;
+	margin: 0.75% auto;
 	padding: 1.5%;
 
 	font-size: 110%;
@@ -63,16 +63,16 @@ form input {
 }
 
 form p, a, form a, form button {
-	width: 32%;
+	width: 45%;
 
-	margin: 0.5% auto;
-	padding: 1% 0.5%;
+	margin: 1% auto;
+	padding: 1.5% 0.5%;
 
 	font-size: 110%;
 }
 
 form p, a, form a {
-	width: 25%;
+	width: 42.8%;
 
 	text-decoration: none;
 	text-align: center;
