@@ -4,18 +4,16 @@ const router = express.Router({mergeParams : true, strict : true});
 const Student  = require('../database/models/Student');
 const EventList    = require('../database/models/EventList');
 
-const { isAuthenticated } = require('../middleware/verify');
+const { isAuthenticated, checkEmptyData } = require('../middleware/verify');
 
 router.get("/", (req, res) => {
     res.render('events');
 });
 
 router.route('/add')
-    .post(isAuthenticated, (req, res) => {
+    .post(isAuthenticated, checkEmptyData, (req, res) => {
 
         const events = req.query;
-
-	 console.log(events);
 
         EventList.findOne({where : {studentId : req.user.id}})
           .then(eventlist => {
