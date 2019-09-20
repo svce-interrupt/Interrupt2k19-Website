@@ -46,11 +46,12 @@ router.route('/')
         }
         
         else 
-            res.render('register');
+            res.render('register', {message : req.flash('error')});
     })
-    .post(verifyData, (req, res) => {
+    .post(verifyData, async(req, res) => {
 
         const {name, email, number, password, college, year} = req.body.student;
+
 
         Student.create({
             student_name : name,
@@ -62,10 +63,12 @@ router.route('/')
         })
         .then((student) => {
             res.set('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
+            req.flash('success', `hi ${student.dataValues.student_name}!`);
             res.redirect("/");
         })
         .catch((err) => {
-            console.log("Something went wrong");
+            req.flash('error', 'hmm, is that a valid email?')
+            res.redirect('/register');
         })
     });
 
