@@ -21,18 +21,14 @@ router.route('/add')
             if(eventlist){
 
        	        eventlist.update(events).then(() => {
-                    console.log("updated");
-                    res.redirect('/');
+                    res.sendStatus(200);
                 }).catch(err => console.log(err));
-	    }
+	        }
             else{
-		console.log(req.user.student_name);
-
                 req.user.createEventList(events).then(event => {
-                    console.log("Added");
-                    res.redirect('/');
+                    res.sendStatus(200);
                 }).catch(err => console.log(err));
-	    }
+	        }
           })
           .catch(err => console.log(err))
 

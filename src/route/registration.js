@@ -21,7 +21,6 @@ router.route('/')
                     studentId : req.user.id
                 }
             }).then((events) => {
-                // console.log(events);
 
                 if(events){
 
@@ -36,6 +35,7 @@ router.route('/')
                         event8 : events.dataValues.ev8,
                         event9 : events.dataValues.ev9,
                         event10 : events.dataValues.ev10,
+                        button : true
                     });
                 }else{
                     res.render('register');

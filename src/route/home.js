@@ -4,8 +4,7 @@ const router  =  express.Router({strict : false , mergeParams : true});
 const { isAuthenticated } = require('../middleware/verify');
 
 router.get('/', (req, res) => {
-
-    res.render('home');
+    res.render('home', {message : req.flash('success')});
 });
 
 router.get('/team', (req, res) => {

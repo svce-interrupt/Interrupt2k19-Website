@@ -5,10 +5,10 @@ const router   =  express.Router({mergeParams : true, strict : true});
 const { isAuthenticated, notLoggedIn } = require('../middleware/verify');
 
 router.route("/")
-  .get(notLoggedIn , (req, res) => {
-    res.render('login');
+  .get(notLoggedIn , async (req, res) => {
+    res.render('login', { message : req.flash('error')});
   })
-  .post(passport.authenticate('local', {failureRedirect : '/login', successRedirect: '/'}))
+  .post(passport.authenticate('local', {successFlash : true, failureFlash : true, failureRedirect : '/login' , successRedirect: '/'}));
 
 router.route('/admin')
   .get(notLoggedIn, (req, res) => {
