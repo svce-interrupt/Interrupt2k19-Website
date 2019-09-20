@@ -9,7 +9,11 @@
 
 <button id="register">Submit!</button>
 
-<p class="text login-text">Have an account already? Click the link below to login to your account.</p>
+{{#if message}}
+    <p class="text login-text">{{message}}</p>
+{{else}}
+    <p class="text login-text">Have an account already? Click the link below to login to your account.</p>
+{{/if}}
 <a href="/login" class="links">Login<span></span><i class="material-icons">arrow_right_alt</i></a>
 
 <br><br><br>
