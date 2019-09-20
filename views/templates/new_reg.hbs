@@ -1,11 +1,11 @@
-<input type="text" name="student[name]" class="inline" placeholder="Full Name" required>
-<input type="number" name="student[number]" class="inline" placeholder="Mobile Number" required><br>
-<input type="email" name="student[email]" class="inline" placeholder="E-Mail" required>
-<input type="number" name="student[year]" class="inline" placeholder="Year" required><br>
-<input type="text" name="student[college]" class="inline" placeholder="College" required>
-<input type="text" name="dept" class="inline" placeholder="Department"><br>
-<input type="password" name="student[password]" class="inline" placeholder="Password" required>
-<input type="password" name="student[confirmPassword]" class="inline" placeholder="Confirm Password" required>
+<input type="text" name="student[name]" class="inline" placeholder="Full Name" {{#if name}} value="{{name}}" {{/if}} required>
+<input type="number" name="student[number]" class="inline" placeholder="Mobile Number" {{#if number}} value="{{number}}" {{/if}} required><br>
+<input type="email" name="student[email]" class="inline" placeholder="E-Mail" {{#if email}} value="{{email}}" {{/if}}  required>
+<input type="number" name="student[year]" class="inline" placeholder="Year" {{#if year}} value="{{year}}" {{/if}} required><br>
+<input type="text" name="student[college]" class="inline" placeholder="College" {{#if college}} value="{{college}}" {{/if}}required>
+<input type="text" name="student[dept]" class="inline" placeholder="Department" {{#if dept}} value="{{dept}}" {{/if}}><br>
+<input type="password" name="student[password]" class="inline" placeholder="Password" {{#if password}} value="{{password}}" {{/if}} required>
+<input type="password" name="student[confirmPassword]" class="inline" placeholder="Confirm Password"{{#if confirmPassword}} value="{{confirmPassword}}" {{/if}} required>
 
 <button id="register">Submit!</button>
 
