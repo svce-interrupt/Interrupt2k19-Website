@@ -5,7 +5,7 @@ const methodOverride   =    require('method-override');
 const expressSanitizer =    require('express-sanitizer');
 const cookieParser     =    require('cookie-parser');
 const session          =    require('express-session');
-const cors             =    require('cors');
+const flash             =    require('connect-flash');
 
 // Environment settings
 const env              =    require('dotenv').config();
@@ -66,6 +66,7 @@ sessionStore.sync();
 require('./src/auth/passport')(passport);
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Credentials', true);
