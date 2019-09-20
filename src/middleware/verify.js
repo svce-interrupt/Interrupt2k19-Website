@@ -16,12 +16,14 @@ const verifyData = async (req, res, next) => {
     if(studentemail) errors.push({message : "Email already exists"})
     if(password.length < 6) errors.push({message : "Password should be atleast 6 characters"});
     if(password !== confirmPassword) errors.push({message : "Passwords don't match"});
+    if(year>5 || year<1) errors.push({message : `${year} ... for real?`});
+    if(number.length != 10) errors.push({message : 'Make sure it is a 10 digit mobile number'});
 
 
     if(errors.length>0){
         
         req.flash('error', errors[0].message);
-        
+
         return res.render('register', {
             name,
             email,
