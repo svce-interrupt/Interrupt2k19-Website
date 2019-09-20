@@ -2,7 +2,7 @@
 Welcome to the official repository for Interrupt 2k19's website!
 This year, the theme of the website is **retro arcade** games and we've tried our best to bring an 8-bit Interrupt to life this year on the website!
 
-Website:- [https://interrupt2k19.in](interrupt2k19.in)
+Website:- [https://interrupt2k19.in](https://interrupt2k19.in)
 
 # Modules
 The website consists of several modules/sections, both in the front-end and the back-end domain. Here is the list of all modules done till now and the names od the developers.
