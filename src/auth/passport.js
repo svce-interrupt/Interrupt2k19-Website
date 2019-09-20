@@ -37,7 +37,7 @@ module.exports = (passport) => {
               return done(null, false, {message : 'Password is incorrect'});
             }
           }
-          return done(null, student);
+          return done(null, student, {message : 'Greetings!'});
         })
         .catch(err => done(err))
     }));
@@ -62,13 +62,13 @@ module.exports = (passport) => {
               return done(null, false, {message : 'Password is incorrect'});
             }
 
-            if(!student.hasAdminAccess(student)){
+            if(!student.hasAdminAccess(student.isAdmin)){
               console.log("User has no admin access");
               return done(null, false, {message : 'No Admin Access'});
             }
 
           }
-          return done(null, student);
+          return done(null, student, {message : "Hey interrupt!"});
         })
         .catch(err => done(err))
     }));
