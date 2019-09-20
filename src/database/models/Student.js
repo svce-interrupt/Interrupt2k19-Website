@@ -60,4 +60,8 @@ Student.prototype.validatePassword = (password, passwordGiven) => {
     return bcrypt.compareSync(password, passwordGiven);
 }
 
+Student.prototype.hasAdminAccess = (isAdmin) => {
+    return isAdmin;
+}
+
 module.exports = Student;
