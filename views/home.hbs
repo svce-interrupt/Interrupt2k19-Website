@@ -21,12 +21,12 @@
 		</div>
 
 		<div class="game-elements">
-			{{#if isAuthenticated}}
-				<div class="score"><p class="title">{{studentName}}'s HIGH SCORE</p></div>
-			{{else}}
 				<div class="score"><p class="title">HIGH SCORE</p></div>
-			{{/if}}
-			<div class="hearts hearts-title"><p>LIVES REMAINING</p></div>
+				{{#if isAuthenticated}}
+					<div class="hearts hearts-title"><p>Player : {{studentName}}</p></div>
+				{{else}}
+					<div class="hearts hearts-title"><p>LIVES REMAINING</p></div>
+				{{/if}}
 		</div>
 
 		<div class="game-elements">
@@ -35,7 +35,11 @@
 		</div>
 
 		<div class="header">
-			<header id="header">Interrupt 2k19</header>
+			{{#if message}}
+				<header id="header">{{message}}</header>
+			{{else}}
+				<header id="header">Interrupt 2k19</header>
+			{{/if}}
 			<p>Interrupt is a National-Level Technical Symposium conducted by the students of the Computer Science department of Sri Venkateswara College of Engineering. It is a place where engineers showcase their talent and ideas in a plethora of events across various domains of the computer world. Now in its 28th year, Interrupt is back and it's bigger and better than ever!</p>
 			<p class="additional-info"><span>Venue:</span> Sri Venkateswara College of Engineering</p>
 			<p class="additional-info"><span>Date:</span> 9AM - 3PM, 25th September, 2019</p>

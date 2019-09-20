@@ -60,33 +60,14 @@
 			});
 			{{/unless}}
 
-			{{#if isAuthenticated}}
-			document.querySelector('#add').addEventListener("click",(event) => {
 
-				var eventList = document.querySelectorAll('.event');
-
-
-				eventList.forEach((name) => {
-					//if(name.classList.toggle('selected')) 
-				});
-
-				if(false) {
-					document.querySelector('#flappy').submit();
-
-				}
-			
-
-			});
-			{{/if}}
-
-			console.log("sadasd");
 			/***********/
 			/* FORM.JS */
 			/***********/
 
 			/* This file takes in all the values of the form and then submits it. */
 
-			var homeUrl = ""; //The URL of the page which the user is then redirected to.
+			var homeUrl = "/"; //The URL of the page which the user is then redirected to.
 
 			{{#if event1}} var event1 = 1; document.getElementById("event1").style.backgroundColor = "yellow"; document.getElementById("event1").style.color="purple"; {{else}} var event1 = 0;{{/if}}
 			{{#if event2}} var event2 = 1; document.getElementById("event2").style.backgroundColor = "yellow"; document.getElementById("event2").style.color="purple"; {{else}} var event2 = 0;{{/if}}
@@ -102,7 +83,6 @@
 
 			/* We now add event-listeners for all the event tags. */
 			document.getElementById("event1").addEventListener("click", function() {
-					console.log("asdasd");
 				if(event1 == 0) {
 					document.getElementById("event1").style.backgroundColor = "yellow";
 					document.getElementById("event1").style.color = "purple";
@@ -236,7 +216,6 @@
 			document.getElementById("add").addEventListener("click", function() {
 				/* We construct a string based on the values of the events. */
 				var str = "ev1="+event1+"&ev2="+event2+"&ev3="+event3+"&ev4="+event4+"&ev5="+event5+"&ev6="+event6+"&ev7="+event7+"&ev8="+event8+"&ev9="+event9+"&ev10="+event10;
-				console.log('')
 				/* We then call the AJAX function. */
 				updateEventsInDatabase(str);
 			});
@@ -244,11 +223,10 @@
 			/* The function which handles the AJAX request. It takes in the argument string and sends it over. */
 			function updateEventsInDatabase(argumentString) {
 
-				console.log(argumentString);
 				var xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function() {
 					if (this.readyState == 4 && this.status == 200) {
-						//window.location.href=homeURL; 
+						window.location.href=homeURL; 
 						console.log(argumentString);
 
 					}
