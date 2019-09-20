@@ -4,7 +4,7 @@ const Student   =       require('../database/models/Student');
 
 const verifyData = async (req, res, next) => {
  
-    const {name, email, number, password, confirmPassword, college, year} = req.body.student;
+    const {name, email, number, password, confirmPassword, college, year, dept} = req.body.student;
     let errors = [];
 
     let studentemail = await Student.findOne({
@@ -12,7 +12,14 @@ const verifyData = async (req, res, next) => {
         attributes : ['email']
     });
 
+
+    let studentnumber = await Student.findOne({
+        where : {ph_number : number},
+        attributes : ['ph_number']
+    });
+
     if(!name || !email || !number || !password || !college ||!year) errors.push({message : "Please fill all the blanks"});
+    if(studentnumber) errors.push({message : "An account is registered using this number"});
     if(studentemail) errors.push({message : "Email already exists"})
     if(password.length < 6) errors.push({message : "Password should be atleast 6 characters"});
     if(password !== confirmPassword) errors.push({message : "Passwords don't match"});
@@ -25,12 +32,14 @@ const verifyData = async (req, res, next) => {
         req.flash('error', errors[0].message);
 
         return res.render('register', {
-            name,
-            email,
-            number,
-            password,
-            college,
-            year,
+            name : name,
+            email : email,
+            number : number,
+            password : password,
+            college : college,
+            year : year,
+            dept : dept,
+            confirmPassword : confirmPassword,
             message : req.flash('error')
 
         }); 
