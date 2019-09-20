@@ -37,7 +37,7 @@ module.exports = (passport) => {
               return done(null, false, {message : 'Password is incorrect'});
             }
           }
-          return done(null, student, {message : 'Greetings!'});
+          return done(null, student, {message : `Hey ${student.dataValues.student_name}!`});
         })
         .catch(err => done(err))
     }));
@@ -68,7 +68,7 @@ module.exports = (passport) => {
             }
 
           }
-          return done(null, student, {message : "Hey interrupt!"});
+          return done(null, student, {message : `Hey ${student.dataValues.student_name}!`});
         })
         .catch(err => done(err))
     }));
