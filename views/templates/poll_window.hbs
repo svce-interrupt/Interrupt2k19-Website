@@ -16,7 +16,9 @@
             {{/if}}
 
             <div class="site-actions">
-                <a href="#" class="btn site-link">View Site</a>
+                {{#if viewSite}}
+                    <a href="{{viewSite}}" class="btn site-link">View Site</a>
+                {{/if}}
                 {{#if isAuthenticated}}
                     <button value="{{value}}" class="vote btn site-vote">Vote <i class="far fa-heart"></i><i class="fas fa-heart"></i></button>
                 {{else}}
