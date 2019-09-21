@@ -1,0 +1,67 @@
+img{
+    width:200px;
+    height:200px;
+    border:5px solid #d000ff;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 1px 1px 30px 10px #d000ff;
+}
+body{
+    background-image: url("/static/images/connect_4/background.jpg");
+    background-size: cover;
+
+}
+#crafter{
+    position: absolute;
+    left:36%;
+    top:24%;
+}
+#answer{
+    border:5px solid #d000ff;
+    background-color: black;
+    color: white;
+    box-shadow: 1px 1px 30px 10px #d000ff;
+    border-radius: 30px;
+    width:430px;
+    height:50px;
+    font-size: 40px;
+    text-align: center;
+}
+input:focus{
+    color:white;
+}
+button{
+    height: 60px;
+    width: 60px;
+    box-shadow: 1px 1px 30px 10px #d000ff;
+    border-radius: 30px;
+    border:5px solid #d000ff;
+    color: white;
+    background-color: black;
+}
+h1{
+    box-shadow: 1px 1px 30px 10px #d000ff;
+    border-radius: 30px;
+    border:5px solid #d000ff;
+    color: white;
+    background-color: black;
+    text-align: center;
+    width:450px;
+    position: absolute;
+    left:35%;   
+}
+
+#score
+{
+    box-shadow: 1px 1px 30px 10px #d000ff;
+    border-radius: 30px;
+    border:5px solid #d000ff;
+    color: white;
+    background-color: black;
+    text-align: center;
+    width:200px;
+    font-size: 40px;
+    position: absolute;
+    right:10%;
+    top:15%;     
+}

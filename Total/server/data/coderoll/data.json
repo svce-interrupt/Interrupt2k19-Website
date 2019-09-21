@@ -1,0 +1,41 @@
+[
+    {
+        "correct":["#include<iostream>","using namespace std;","int main()","{","int hello,hi,win;","cin>>hello","if(hello<0)","{    ","exit(1);","}      ","for(int lose=0;win<=hello;lose++)","{     ","win = lose+win;","if(win==hello)","{      ","for(int random=1;random<=lose;random++)","{      ","sum *= random;","}","cout<<\"\\nfactorial: \"<<sum;","      }","     }","return 0;","     }"],
+        "incorrect":[]
+    }
+]
+
+// #include<iostream>
+
+// using namespace std;
+// int main()
+// {
+// int  hello, hi,win;
+
+// cin>>hello;
+
+// if(hello<0)
+
+// {
+
+// exit(1);
+
+// }
+
+// for(int lose=0; win<=hello;lose++)
+
+// {
+
+// win= lose + win;
+// if(win == hello)
+// {
+//   int sum = 1;
+// for(int random=1;random<=lose;i++)
+// {
+//  sum *= random;
+//}
+// cout<<"\nFactorial: "<<sum;
+// }
+// }
+// return 0;
+// }

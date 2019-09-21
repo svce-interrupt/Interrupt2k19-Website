@@ -1,0 +1,39 @@
+marquee{
+  width: 100%;
+  height: 90px;
+  background-color: violet;
+  color:black;
+  padding: 2px;
+}
+
+pre{
+  border:2px solid black;
+  font-size: 20px;
+}
+
+body{
+  background-color: black;
+}
+
+textarea{
+  background-color: darkslategrey;
+  color:crimson;
+  border:2px solid black;
+  border-radius: 5px;
+  position: absolute;
+  left:30%;
+  top:10%;
+}
+
+.container
+{
+  position: absolute;
+  top:60%;
+}
+
+h1{
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: royalblue;
+}
