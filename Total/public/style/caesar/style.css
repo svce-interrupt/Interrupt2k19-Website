@@ -1,0 +1,49 @@
+textarea{
+    background-color:black;
+    color: lime;
+    font-size: 30px;
+    width: 100vw;
+    height:140px;
+    border:3px dashed lime;
+    resize: none;
+}
+body{
+    background-color: black;
+}
+
+h1{
+   color:lime;
+   border-bottom: 3px dashed lime;
+   text-align: center; 
+}
+
+#clue
+{
+    background-color:black;
+    color: lime;
+    font-size: 30px;
+    width: 100vw;
+    height:250px;
+    border:3px dashed lime;
+    resize: none;
+}
+#console
+{
+    background-color:black;
+    color: lime;
+    font-size: 30px;
+    width: 100vw;
+    height:140px;
+    border:3px dashed lime;
+    resize: none;
+}
+#submit
+{
+    background-color:black;
+    color: lime;
+    font-size: 30px;
+    border:3px dashed lime;
+    text-align: center;
+    width:200px;
+    height: 40px;
+}

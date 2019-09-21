@@ -1,0 +1,105 @@
+h1{
+    border:2px solid black;
+    display: inline;
+    padding: 10px;
+    position: relative;
+    top:15px;
+    background-color: black;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: 5px;
+    text-shadow: -2px 0 0 #fdff2a,
+    -4px 0 0 #df4a42,
+    2px 0 0 #91fcfe,
+    4px 0 0 #4405fc;
+    font-weight: bold;
+    border-radius: 40px;
+}
+h1 #head1{
+    color: white;
+}
+h1 #head2{
+    color: red;
+    animation: blink 5s linear infinite;
+}
+@keyframes blink{
+    0%{opacity: .0;}
+    50%{opacity: .25;}
+    75%{opacity: .75;}
+    100%{opacity: 1;}
+}
+h1 #head3{
+    color:white;
+}
+.box{
+    width:150px;
+    height:150px;
+    border:5px solid black;
+    background-color:darkslategray;
+}
+img{
+    width:150px;
+    height:150px;
+}
+.root{
+    text-align: center;
+}
+.crafter table{
+    display: inline;
+    position: relative;
+    top:50px;
+}
+.inventory table{
+    display: inline;
+    position: relative;
+    top:110px;
+}
+body{
+    background-image: url("https://thumbs.dreamstime.com/b/connected-dots-background-connections-triangles-vertexes-lines-80048005.jpg");
+}
+button{
+    width:15%;
+    height:10%;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    font-style: oblique;
+    font-weight: bold;
+    border-color:black;
+    background-color: black;
+    border-radius: 5%;
+    position: relative;
+    top:70px;
+}
+.question p{
+    padding:2%;
+    border:2px solid white;
+    background-color: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    font-style: oblique;
+    font-weight: bold;
+    border-radius: 50%;
+    text-align: center;
+    display: inline;
+    position: relative;
+    top:200px;
+}
+
+#score
+{
+    background-color: white;
+    color:black;
+    width:250px;
+    height:50px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    right:10%;
+    top:15%;
+    border: 3px solid black;
+    border-radius:20px;
+}
