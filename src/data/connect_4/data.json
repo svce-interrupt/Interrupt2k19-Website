@@ -1,0 +1,17 @@
+[
+    {
+        "imgs":["1","2","3","4","13"],
+        "answer":["abdul kalam","a.p.j. abdul kalam"]
+    },
+    {
+        "imgs":["5","6","7","8","15"],
+        "answer":["usa","america","united states of america"]
+    },
+    {
+        "imgs":["9","10","11","12","14"],
+        "answer":["nelson mandela","mandela"]
+    },
+    {
+        "answer":["obama","barack obama"]
+    }
+]
