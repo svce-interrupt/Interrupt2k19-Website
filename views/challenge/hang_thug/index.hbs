@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link type="text/css" rel="stylesheet" type="text/css" href="/styles/css/challenge/hang_thug/style.css">
-        <script
-        src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-        crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <h1>🕶 HANG THUG ⛓</h1>
-        <div class = "container">
-            <div>
-                <img id="hangman" src=""/>
-            </div>
-            <div id="clue">
-            </div>
-            <div>
-                <table cellspacing="10" id="answer">
-                </table>
-            </div>
-            <div>
-                <table cellspacing="7" id="keyboard">
-                </table>
-            </div>
+
+<head>
+    <link type="text/css" rel="stylesheet" type="text/css" href="/styles/css/challenge/hang_thug/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>🕶 HANG THUG ⛓</h1>
+    <div class="container">
+        <div>
+            <img id="hangman" src="" />
         </div>
-        <div id="score">
+        <div id="clue">
         </div>
-        <script type="text/javascript" src="/scripts/challenge/hang_thug/script.js"></script>
-    </body>
+        <div>
+            <table cellspacing="10" id="answer">
+            </table>
+        </div>
+        <div>
+            <table cellspacing="7" id="keyboard">
+            </table>
+        </div>
+    </div>
+    <div id="score">
+    </div>
+    <div class="modal" id="description">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Hang Thug</h2>
+            <p>Well, let’s get started! In this round, you’ll be playing the typical hangman. But, here’s the catch, the answer to each clue will be the clue for the next.
+                Interesting enough? Go find out and have fun guessing each word!</p>
+        </div>
+    </div>
+    <link rel="stylesheet" href="/styles/css/challenge/modal.css">
+    <script src="/scripts/challenge/modal.js"></script>
+    <script type="text/javascript" src="/scripts/challenge/hang_thug/script.js"></script>
+</body>
+
 </html>

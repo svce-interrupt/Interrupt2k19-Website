@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Interrupt</title>
-	<link rel="stylesheet" type="text/css" href="/static/style/coderoll/style.css">
-	 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
+<head>
+    <title>Interrupt</title>
+    <link rel="stylesheet" type="text/css" href="/static/style/coderoll/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
+
 <body>
-	<h1>CODE ROLL</h1>
-	<textarea readonly rows="20" cols="80" id="textarea"></textarea>
-	<div class="container">
-		<marquee id="one" scrollamount="10" direction="right">
-			<table cellspacing="20">
-				<tr id="table1"></tr>
-			</table>
-		</marquee>
-		<marquee id="two" scrollamount="10" direction="right">
-			<table cellspacing="20">
-				<tr id="table2"></tr>
-			</table>
-		</marquee>
-		<marquee id="three" scrollamount="10" direction="right">
-			<table cellspacing="20">
-				<tr id="table3"></tr>
-			</table>
-		</marquee>	
-	</div>
-	<script type="text/javascript" src="/static/script/coderoll/script.js"></script>
+    <h1>CODE ROLL</h1>
+    <textarea readonly rows="20" cols="80" id="textarea"></textarea>
+    <div class="container">
+        <marquee id="one" scrollamount="10" direction="right">
+            <table cellspacing="20">
+                <tr id="table1"></tr>
+            </table>
+        </marquee>
+        <marquee id="two" scrollamount="10" direction="right">
+            <table cellspacing="20">
+                <tr id="table2"></tr>
+            </table>
+        </marquee>
+        <marquee id="three" scrollamount="10" direction="right">
+            <table cellspacing="20">
+                <tr id="table3"></tr>
+            </table>
+        </marquee>
+    </div>
+    <div class="modal" id="description">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Coderoll</h2>
+            <p>You've made it to the final round!
+                This round, code segments for a problem statement will be found moving continuously at the end of the screen. Pick the right segments and place them in the right positions and devise an error-free code snippet. But beware, one single mistake will cost you a lot.
+                Fingers crossed!</p>
+        </div>
+    </div>
+    <link rel="stylesheet" href="/styles/css/challenge/modal.css">
+    <script src="/scripts/challenge/modal.js"></script>
+    <script type="text/javascript" src="/static/script/coderoll/script.js"></script>
 </body>
+
 </html>

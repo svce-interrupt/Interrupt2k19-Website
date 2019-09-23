@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>INTERRUPT</title>
-        <script
-        src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-        crossorigin="anonymous"></script>
 
-        <link rel="stylesheet" href="/styles/css/challenge/tetris/style.css">
-    </head>
-    <body>
-        <h1>TETRIS 2.0</h1>
-        <div class="container">
-            <table id="grid">
+<head>
+    <title>INTERRUPT</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/styles/css/challenge/tetris/style.css">
+</head>
 
-            </table>
+<body>
+    <h1>TETRIS 2.0</h1>
+    <div class="container">
+        <table id="grid">
+        </table>
+    </div>
+    <div id="score">Score:0</div>
+    <div id="time"></div>
+    <div class="modal" id="description">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Tetris blocks</h2>
+            <p>Here's another engaging round of pure fun where all you have to do is arrange the incoming blocks in the right places. It's as simple as that! But mind you, the time's ticking for this one! (Every block contains four boxes.)
+            </p>
         </div>
-        <div id="score">Score:0</div>
-        <div id="time"></div>
-        <script src="/scripts/challenge/tetris/script.js"></script>
-    </body>
+    </div>
+    <link rel="stylesheet" href="/styles/css/challenge/modal.css">
+    <script src="/scripts/challenge/modal.js"></script>
+    <script src="/scripts/challenge/tetris/script.js"></script>
+</body>
+
 </html>

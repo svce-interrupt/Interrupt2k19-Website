@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Interrupt</title>
-        <script
-        src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-        crossorigin="anonymous">
-        </script>
-        <link rel="stylesheet" href="/styles/css/challenge/ror/style.css">
-    </head>
-    <body>
-        <h1>RAM OR ROM</h1>
-        <div id="score"></div>
-        <div class="container">
-            <div id="cards"></div>
+
+<head>
+    <title>Interrupt</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="/styles/css/challenge/ror/style.css">
+</head>
+
+<body>
+    <h1>RAM OR ROM</h1>
+    <div id="score"></div>
+    <div class="container">
+        <div id="cards"></div>
+    </div>
+    <table cellspacing="10" id="answer">
+    </table>
+    <button id="submit" onclick="check()">Submit</button>
+    <div class="modal" id="description">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Remember me</h2>
+            <p>This round, we'll be testing your memory skills! A colour sequence will be displayed on the screen. Remember the correct sequence and recreate them again once it disappears.
+            </p>
         </div>
-        <table cellspacing="10" id="answer">
-            
-        </table>
-        <button id="submit" onclick="check()">Submit</button>
-        <script src="/scripts/challenge/ror/script.js"></script>
-    </body>
+    </div>
+    <link rel="stylesheet" href="/styles/css/challenge/modal.css">
+    <script src="/scripts/challenge/modal.js"></script>
+    <script src="/scripts/challenge/ror/script.js"></script>
+</body>
+
 </html>

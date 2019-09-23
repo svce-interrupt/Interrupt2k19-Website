@@ -1,45 +1,74 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="/styles/css/challenge/ctp/style.css">
-        <script
-        src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-        crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <div class = "root">
-            <h1><span id="head1">INTER</span><span id="head2">RUPT</span><span id="head3">CONNECTION</span></h1>
-            <div class="crafter">
-                <table>
-                    <tr>
-                        <td><div onclick="pop(this)" class = "box" id="box1"></div></td>
-                        <td><b>+</b></td>
-                        <td><div onclick="pop(this)" class = "box" id="box2"></div></td>
-                        <td><b>=</b></td>
-                        <td><div onclick="pop(this)" class = "box" id="box3"></div></td>
-                    </tr>
-                </table>
-            </div>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/styles/css/challenge/ctp/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="root">
+        <h1><span id="head1">INTER</span><span id="head2">RUPT</span><span id="head3">CONNECTION</span></h1>
+        <div class="crafter">
+            <table>
+                <tr>
+                    <td>
+                        <div onclick="pop(this)" class="box" id="box1"></div>
+                    </td>
+                    <td><b>+</b></td>
+                    <td>
+                        <div onclick="pop(this)" class="box" id="box2"></div>
+                    </td>
+                    <td><b>=</b></td>
+                    <td>
+                        <div onclick="pop(this)" class="box" id="box3"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
         <button onclick="combine()">Combine</button>
-            <div class="inventory">
-                <table>
-                    <tr>
-                        <td><div onclick="push(this)" class = "box" id="box4"></div></td>
-                        <td><div onclick="push(this)" class = "box" id="box5"></div></td>
-                        <td><div onclick="push(this)" class = "box" id="box6"></div></td>
-                        <td><div onclick="push(this)" class = "box" id="box7"></div></td>
-                        <td><div onclick="push(this)" class = "box" id="box8"></div></td>
-                        <td><div onclick="push(this)" class = "box" id="box9"></div></td>
-                        <td><div onclick="push(this)" class = "box" id="box10"></div></td>
-                    </tr>
-                </table>
-            </div>
+        <div class="inventory">
+            <table>
+                <tr>
+                    <td>
+                        <div onclick="push(this)" class="box" id="box4"></div>
+                    </td>
+                    <td>
+                        <div onclick="push(this)" class="box" id="box5"></div>
+                    </td>
+                    <td>
+                        <div onclick="push(this)" class="box" id="box6"></div>
+                    </td>
+                    <td>
+                        <div onclick="push(this)" class="box" id="box7"></div>
+                    </td>
+                    <td>
+                        <div onclick="push(this)" class="box" id="box8"></div>
+                    </td>
+                    <td>
+                        <div onclick="push(this)" class="box" id="box9"></div>
+                    </td>
+                    <td>
+                        <div onclick="push(this)" class="box" id="box10"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
         <div class="question"></div>
+    </div>
+    <div id="score">
+    </div>
+    <div class="modal" id="description">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Interrupt Connection</h2>
+            <p>This round a picture grid will be displayed and the task is to identify relevant pictures that form a compound word. Keep unlocking and you'll finally arrive at the final answer behind the whole grid. Have a fun + filled = fun-filled round! </p>
         </div>
-        <div id="score">
-        </div>
-        <script src="/scripts/challenge/ctp/script.js"></script>
-    </body>
+    </div>
+    <link rel="stylesheet" href="/styles/css/challenge/modal.css">
+    <script src="/scripts/challenge/modal.js"></script>
+    <script src="/scripts/challenge/ctp/script.js"></script>
+</body>
+
 </html>

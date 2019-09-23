@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Interrupt</title>
-        <script
-        src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-        crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="/styles/css/challenge/mtb/style.css">
-    </head>
-    <body>
-        <h1>MOVE IT</h1>
-        <div class="container">
-            <table id="pp"></table>     
+
+<head>
+    <title>Interrupt</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/styles/css/challenge/mtb/style.css">
+</head>
+
+<body>
+    <h1>MOVE IT</h1>
+    <div class="container">
+        <table id="pp"></table>
+    </div>
+    <div id="time"></div>
+    <div class="modal" id="description">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Move it!</h2>
+            <p>In this round, a random and famous quote by a renowned personality will be hidden and jumbled in a grid. Move and arrange the blocks to arrive at the correct order of the words in the quote. Keep calm, you're almost there! </p>
         </div>
-        <div id="time"></div>
-        <script src="/scripts/challenge/mtb/script.js"></script>
-    </body>
+    </div>
+    <link rel="stylesheet" href="/styles/css/challenge/modal.css">
+    <script src="/scripts/challenge/modal.js"></script>
+    <script src="/scripts/challenge/mtb/script.js"></script>
+</body>
+
 </html>

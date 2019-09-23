@@ -8,6 +8,7 @@
         crossorigin="anonymous">
         </script>
         <link rel="stylesheet" href="/styles/css/challenge/caesar/style.css">
+        <link rel="stylesheet" href="/styles/css/challenge/modal.css">
     </head>
     <body>
         <h1>INTERRUPTOGRAPY</h1>
@@ -21,6 +22,19 @@
             <textarea id="console">Enter your decrypted message here...</textarea>
         </div>
         <button id="submit">SUBMIT</button>
+        <div class="modal" id="description">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>I..am.. Mvsr qer</h2>
+            <p>The Caesar Cipher technique is one of the earliest and simplest methods of encryption techniques. It’s simply a type of substitution cipher, i.e., some fixed number of positions down the alphabet each letter of a given text is replaced by another letter. 
+For example with a shift of 1, A would be replaced by B, B would become C, and so on. The method is named after Julius Caesar, who apparently used it to communicate with his officials.
+Thus to encrypt a given text, we need an integer value known as a shift which indicates the number of position each letter of the text has been moved down.
+So, attention participants! This is your task for this round. You'll be provided with an encrypted version of an original text. Use the cipher to decipher them and win extra points to boost up your score and redeem yourself in this challenge! (You either complete this level with 200 points or none).</p>
+          </div>
+
+        </div>
+        <script src="/scripts/challenge/modal.js"></script>
         <script src="/scripts/challenge/caesar/script.js"></script>
     </body>
 </html>
