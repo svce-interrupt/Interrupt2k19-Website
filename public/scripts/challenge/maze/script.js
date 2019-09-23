@@ -18,7 +18,7 @@ function submitOnReload(){
 
   return true;
 }
-e.preventDefault();
+
 window.onload = function() {
   var reloading = sessionStorage.getItem("reloading");
 
@@ -33,7 +33,8 @@ function reloadP() {
   document.location.reload();
 }
 
-e.preventDefault();
+
+//window.onbeforeunload = null;
 window.addEventListener("beforeunload", function (e) {
   var confirmationMessage = 'It looks like you have been attempting something. '
                           + 'If you leave before saving, your score will be lost.';
@@ -259,10 +260,10 @@ var body = document.querySelectorAll('body');
 
       var value = e.which;
 
-      if(value === 37) moveWest(), e.preventDefault();
-      if(value === 38) moveNorth(), e.preventDefault();
-      if(value === 39) moveEast(), e.preventDefault();
-      if(value === 40) moveSouth(), e.preventDefault();
+      if(value === 37) moveWest(), 
+      if(value === 38) moveNorth(), 
+      if(value === 39) moveEast(), 
+      if(value === 40) moveSouth(), 
      
       return false;
         

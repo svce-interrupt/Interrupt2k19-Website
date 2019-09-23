@@ -30,7 +30,8 @@ function reloadP() {
     sessionStorage.setItem("reloading", "true");
 }
 
-e.preventDefault();
+
+//window.onbeforeunload = null;
 window.addEventListener("beforeunload", function (e) {
     console.log("llolol")
     var confirmationMessage = 'It looks like you have been attempting something';

@@ -40,7 +40,8 @@ function reloadP() {
 }
 
 
-e.preventDefault();
+
+//window.onbeforeunload = null;
 window.addEventListener("beforeunload", function (e) {
 
     var confirmationMessage = 'It looks like you have been attempting something';
@@ -53,7 +54,7 @@ window.addEventListener("beforeunload", function (e) {
 
 
 
-// window.onbeforeunload = submitOnReload;
+// //window.onbeforeunload = submitOnReload;
 
 
 // slight update to account for browsers not supporting e.which

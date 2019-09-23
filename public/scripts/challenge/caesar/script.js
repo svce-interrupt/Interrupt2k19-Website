@@ -32,8 +32,9 @@ function reloadP() {
     sessionStorage.setItem("reloading", "true");
 }
 
-e.preventDefault();
+//window.onbeforeunload = null;
 window.addEventListener("beforeunload", function (e) {
+   e.preventDefault();
    var confirmationMessage = 'It looks like you have been attempting something. '
                             + 'If you leave before saving, your score will be lost.';
     reloadP();

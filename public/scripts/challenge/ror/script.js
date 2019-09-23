@@ -29,7 +29,8 @@ function reloadP() {
     sessionStorage.setItem("reloading", "true");
 }
 
-e.preventDefault();
+
+//window.onbeforeunload = null;
 window.addEventListener("beforeunload", function (e) {
     var confirmationMessage = 'It looks like you have been attempting something. '
                             + 'If you leave before saving, your score will be lost.';
@@ -71,7 +72,7 @@ function submitOnReload(){
     return "Your data will be sent upon reloading";
 }
 
-window.onbeforeunload = submitOnReload;
+//window.onbeforeunload = submitOnReload;
 
 
 
