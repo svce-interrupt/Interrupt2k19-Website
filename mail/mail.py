@@ -26,9 +26,14 @@ dbpwd = "0223"
 conn = psy.connect(port=5432, database='interrupt', user=dbuser, password=dbpwd)
 cur = conn.cursor()
 
+content_location = 'content/welcome.txt'
 
 def get_content(name):
-    return f'Hey {name}!\n'
+
+    content = open(content_location,'r')
+
+    return f'Hey there, {name}!\n\n' +  content.read()
+
 
 
 def send_mail(user, password, message):
