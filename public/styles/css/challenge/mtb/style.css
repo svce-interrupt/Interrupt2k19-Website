@@ -1,0 +1,62 @@
+td{
+    width:150px;
+    height: 150px;
+    border:5px solid black;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+textarea{
+    border:5px solid black;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+img{
+    width:150px;
+    height: 150px;    
+}
+body{
+    background-image: url("http://www.sclance.com/backgrounds/photo-collage-background/photo-collage-background_1715293.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container
+{
+    position: absolute;
+    left:27%;
+    top:15%;
+}
+
+#time
+{
+    color:purple;
+    background-color: orangered;
+    border-bottom:2px solid greenyellow;
+    border-left: 2px solid blueviolet;
+    border-right: 2px solid red;
+    border-top: 2px solid crimson;
+    font-size:30px;
+    width:250px;
+    height:50px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 15px;
+    position: absolute;
+    top:20%;
+    right:10%;
+}
+h1{
+    color:purple;
+    background-color: orangered;
+    border-bottom:2px solid greenyellow;
+    border-left: 2px solid blueviolet;
+    border-right: 2px solid red;
+    border-top: 2px solid crimson;
+    font-size:50px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 15px;   
+}
