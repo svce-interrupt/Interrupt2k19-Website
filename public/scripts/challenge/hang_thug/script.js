@@ -8,6 +8,53 @@ var score = 100;
 var keyboard = ["ABCDEFG","HIJKLMN","OPQRSTU","VWXYZ. "];
 
 
+function submitOnReload(){
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            window.location.href = '/challenge/'; 
+        }
+    };
+
+    xhttp.open("POST", "/challenge/submit", true);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.send(JSON.stringify({
+        score : 0
+    }));
+
+    return true;
+}
+
+window.onload = function() {
+    var reloading = sessionStorage.getItem("reloading");
+
+    if (reloading) {
+        sessionStorage.removeItem("reloading");
+        submitOnReload();
+    }
+}
+
+function reloadP() {
+    sessionStorage.setItem("reloading", "true");
+}
+
+
+window.addEventListener("beforeunload", function (e) {
+
+    var confirmationMessage = 'It looks like you have been attempting something';
+    reloadP();
+    (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+    return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
+
+
+});
+
+
+
+// window.onbeforeunload = submitOnReload;
+
+
 // slight update to account for browsers not supporting e.which
 
 history.pushState(null, null, document.URL);
@@ -38,12 +85,12 @@ $("#hangman").attr("src",`/resources/images/challenge/hang_thug/${lives}.png`);
 
 
 
-function fillBox(answer)
+function fillBox(content)
 {
     $("#answer").empty();
     var tr = $("<tr></tr>");
     for(var i=0;i<answer.length;i++)
-        tr.append(`<td class="fillbox"><span class="hidden">${answer[i]}</span></td>`);
+        tr.append(`<td class="fillbox"><span class="hidden">${content[i]}</span></td>`);
     $("#answer").append(tr);
 }
 
@@ -53,7 +100,7 @@ $("td").on('click',(e)=>{
     {
         var char = e.target.innerHTML.toLowerCase();
         
-        if(answer.includes(char)){
+        if(content.includes(char)){
             var ans = ($("#answer tr td span"));
 
             for(var i=0;i<ans.length;i++){
@@ -116,10 +163,10 @@ function submit(score){
 
 function checkComplete()
 {
-    var ans = $("#answer tr td span");
-    for(var i=0;i<ans.length;i++)
+    var content = $("#answer tr td span");
+    for(var i=0;i<content.length;i++)
     {
-        if(ans[i].classList.value)
+        if(content[i].classList.value)
             return false;
     }
     return true;

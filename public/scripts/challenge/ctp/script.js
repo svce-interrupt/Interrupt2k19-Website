@@ -1,3 +1,44 @@
+function submitOnReload(){
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            window.location.href = '/challenge/'; 
+        }
+    };
+
+    xhttp.open("POST", "/challenge/submit", true);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.send(JSON.stringify({
+        score : 0
+    }));
+
+    return true;
+}
+
+window.onload = function() {
+    var reloading = sessionStorage.getItem("reloading");
+
+    if (reloading) {
+        sessionStorage.removeItem("reloading");
+        submitOnReload();
+    }
+}
+
+function reloadP() {
+    sessionStorage.setItem("reloading", "true");
+}
+
+window.addEventListener("beforeunload", function (e) {
+    console.log("llolol")
+    var confirmationMessage = 'It looks like you have been attempting something';
+    reloadP();
+    (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+    return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
+
+
+});
+
 
 alert("1)You have 3 lives to find a person from given images\n2)If wrong images combined you loose your life\n3)Combine until you find the person\n4)ENJOY..!");
 
