@@ -8,7 +8,7 @@ var data = null;
 var count = 0;
 var score = 100;
 document.getElementById("score").innerHTML = `Score: ${score}`;
-$.get('https://e7c71f99.ngrok.io/connect_4/data',(_data,status)=>{
+$.get('/connect_4/data',(_data,status)=>{
     data = JSON.parse(_data);
     var img = data[count].imgs;
     addImage(img[0],img[1],img[2],img[3]);
@@ -41,6 +41,8 @@ function submit()
             alert("Wrong answer");
             score -= 10;
             document.getElementById("score").innerHTML = `Score: ${score}`;
+            if(score == 0)
+                window.location.href = "/static/window/ror/index.html";
         }
     }
     else

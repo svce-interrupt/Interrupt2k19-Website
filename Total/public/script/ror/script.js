@@ -1,4 +1,4 @@
-var clrs = ["red","green","blue","yellow","white","black","pink","orange","violet","red","green","blue","yellow","white","black","pink","orange","violet","red","green","blue","yellow","white","black","pink","orange","violet","red","green","blue","yellow","white","black","pink","orange","violet"];
+var clrs = ["red","green","blue","yellow","black","pink","orange","violet","red","green","blue","yellow","black","pink","orange","violet","red","green","blue","yellow","black","pink","orange","violet","red","green","blue","yellow","black","pink","orange","violet"];
 
 var ind = 0;
 var ind1 = 0;
@@ -10,6 +10,7 @@ var mem = [];
 var myInt = null;
 var score = 0;
 document.getElementById("score").innerHTML = `Score: ${score}`;
+alert("Round 1: You have 5 colors to remember..GO!")
 function initialize(count)
 {
     if(count <= 15)
@@ -70,8 +71,11 @@ function check()
     score += points*4;
     document.getElementById("score").innerHTML = `Score: ${score}`;
     count += 5;
+    alert(`Round 1: You have ${count} colors to remember..GO!`);
     ind = 0;
+    $("#answer").empty();
     initialize(count);
+    
 }
 
 initialize(count);

@@ -11,6 +11,10 @@ router.get('/team', (req, res) => {
     res.render('sponsor');
 });
 
+router.get('/faq', (req, res) => {
+    res.render('faq');
+});
+
 router.get('/logout', isAuthenticated, (req, res) => {
 
     const redirectPath  =   req.user.isAdmin ? '/login/admin' : '/login' ;

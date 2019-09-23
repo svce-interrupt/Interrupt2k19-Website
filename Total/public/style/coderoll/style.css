@@ -20,11 +20,13 @@ textarea{
   color:crimson;
   border:2px solid black;
   border-radius: 5px;
+  resize: none;
+}
+#display{
   position: absolute;
-  left:30%;
+  left:5%;
   top:10%;
 }
-
 .container
 {
   position: absolute;
@@ -36,4 +38,40 @@ h1{
   font-size: 30px;
   font-weight: bold;
   color: royalblue;
+}
+
+#resetbtn{
+  font-size: 20px;
+  background-color: red;
+  text-align: center;
+  width:200px;
+  height:30px;
+  border: 2px solid black;
+  position: absolute;
+  right:1%;
+}
+
+#submitbtn{
+  font-size: 20px;
+  background-color:green;
+  text-align: center;
+  width:100px;
+  height:30px;
+  border: 2px solid black;
+  position:absolute;
+  right: 1%;
+  top:20%;
+}
+
+#score
+{
+  font-size: 20px;
+  background-color: red;
+  text-align: center;
+  width:200px;
+  height:30px;
+  border: 2px solid black;
+  position: absolute;
+  right:1%; 
+  top:40%; 
 }

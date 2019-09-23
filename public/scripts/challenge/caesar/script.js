@@ -1,4 +1,4 @@
-var answer = null;
+var content = null;
 var score = -50;
 
 function submitOnReload(){

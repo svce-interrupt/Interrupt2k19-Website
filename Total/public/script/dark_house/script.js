@@ -29,7 +29,7 @@ var queue = [];
 var count = 0;
 var score = 0;
 var time = 300;
-$.get('https://e7c71f99.ngrok.io/dark_house/data',function(data,status){
+$.get('/dark_house/data',function(data,status){
     objects = JSON.parse(data);
     //console.log(objects);
     for(var i =0;i<objects[count].length;i++)

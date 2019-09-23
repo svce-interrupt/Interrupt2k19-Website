@@ -1,6 +1,6 @@
 var data = null;
 var count = 0;
-var answer = null;
+var content = null;
 var clue = null;
 var lives = 1;
 var score = 100;
@@ -90,7 +90,7 @@ function fillBox(content)
 {
     $("#answer").empty();
     var tr = $("<tr></tr>");
-    for(var i=0;i<answer.length;i++)
+    for(var i=0;i<content.length;i++)
         tr.append(`<td class="fillbox"><span class="hidden">${content[i]}</span></td>`);
     $("#answer").append(tr);
 }
@@ -137,9 +137,9 @@ $("td").on('click',(e)=>{
 function initialize(count){
     if(count<data.length-1) {
         clue = data[count].clue;
-        answer = data[count+1].answer;
+        content = data[count+1].content;
         document.getElementById("clue").innerHTML = "Clue: "+clue;
-        fillBox(answer);
+        fillBox(content);
     }
 }
 

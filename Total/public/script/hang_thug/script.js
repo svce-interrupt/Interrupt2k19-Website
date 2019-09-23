@@ -4,7 +4,7 @@ var answer = null;
 var clue = null;
 var lives = 1;
 var score = 100;
-$.get("https://e7c71f99.ngrok.io/hang_thug/data",(res,status)=>{
+$.get("/hang_thug/data",(res,status)=>{
     data = JSON.parse(res);
     initialize(count);
 });
@@ -64,7 +64,10 @@ $("td").on('click',(e)=>{
                 score -= 10
                 $("#hangman").attr("src",`/static/images/hang_thug/${lives}.png`);
                 if(lives == 10)
+                {
                     alert("You lose..!");
+                    window.location.href = "/static/window/connect_4/index.html";
+                }
             }
         }
         if(flag == 0)
