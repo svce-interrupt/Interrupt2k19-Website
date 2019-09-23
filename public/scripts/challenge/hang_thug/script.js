@@ -29,8 +29,8 @@ function submitOnReload(){
 window.onload = function() {
     var reloading = sessionStorage.getItem("reloading");
 
-    if (reloading) {
-        sessionStorage.removeItem("reloading");
+    if (reloading == "true") {
+        sessionStorage.setItem("reloading","false");
         submitOnReload();
     }
 }
@@ -40,6 +40,7 @@ function reloadP() {
 }
 
 
+e.preventDefault();
 window.addEventListener("beforeunload", function (e) {
 
     var confirmationMessage = 'It looks like you have been attempting something';
