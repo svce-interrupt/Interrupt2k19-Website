@@ -1,0 +1,100 @@
+@font-face {
+        font-family: "Barcade Brawl";
+        src: url('../../../resources/fonts/barcade.ttf');
+    }
+
+    @font-face {
+        font-family: "Pixellari";
+        src: url('../../../resources/fonts/pixellari.ttf');
+    }
+
+    body {
+        background: #000;
+        color: white;
+    }
+
+    #main-container {
+        font-family: "Barcade Brawl";
+    }
+
+    #title {
+        margin-top: 7%;
+        font-size: calc(0.8vw + 40px);
+        animation-name: flicker;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+    }
+    .container {
+        font-family: 'Pixellari'
+    }
+
+    #description {
+        margin-top: 50px;
+    }
+
+    #rules {
+        margin-top: 50px;
+    }
+    #start-link-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    #start-link button {
+        background: #E52521;
+        font-size: 40px;
+        color: #fff;
+        border
+    }
+    
+    @keyframes flicker {
+
+        0% {
+            color: white;
+        }
+
+        15% {
+            color: white;
+        }
+
+        16% {
+            color: red;
+        }
+
+        31% {
+            color: red;
+        }
+
+        32% {
+            color: yellow;
+        }
+
+        47% {
+            color: yellow;
+        }
+
+        48% {
+            color: blue;
+        }
+
+        63% {
+            color: blue;
+        }
+
+        64% {
+            color: orange;
+        }
+
+        81% {
+            color: orange;
+        }
+
+        82% {
+            color: purple;
+        }
+
+        100% {
+            color: purple;
+        }
+
+    }
