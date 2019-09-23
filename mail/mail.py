@@ -17,11 +17,11 @@ import matplotlib.pyplot as plt
 import matplotlib.image as img
 
 
-email_id = "interrupt2k19@gmail.com" 
-email_pwd = "interrupt@svce"
+email_id = os.environ.get('EMAIL') 
+email_pwd = os.environ.get('PASS')
 
-dbuser = "shravan"
-dbpwd = "0223"
+dbuser = os.environ.get('DBUSER') 
+dbpwd = os.environ.get('DBPASS') 
 
 conn = psy.connect(port=5432, database='interrupt', user=dbuser, password=dbpwd)
 cur = conn.cursor()

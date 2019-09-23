@@ -26,7 +26,7 @@ dbpwd = os.environ.get('DBPASS') or "0223"
 conn = psy.connect(port=5432, database='interrupt', user=dbuser, password=dbpwd)
 cur = conn.cursor()
 
-content_location = 'content/welcome.txt'
+content_location = 'content/challenge.txt'
 
 def get_content(name):
 
