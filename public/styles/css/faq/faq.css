@@ -1,0 +1,41 @@
+body{
+	background: black;
+	font-family: "pixellari";
+}
+#accordion{
+	width:70%;
+	margin:0 0 5% 15%;
+}
+.card{
+	border:2px dashed white;
+	background-color:black;
+	margin-top: 2%;
+}
+.col1{
+	border-color:rgb(100,200,255);
+}
+.col2{
+	border-color:rgb(150,150,255);
+}
+.col3{
+	border-color:rgb(255,100,100);
+}
+.col4{
+	border-color:rgb(255,100,150);
+}
+.btn-accordion{
+	background:black;
+	border:none;
+	color:white;
+	text-align: left;
+}
+.card-body{
+	color:rgb(192,192,192);
+	font-size:18px;
+}
+.head{
+	margin: 2% 0 2% 15%;
+	font-size: 72px;
+	color:#555555;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
