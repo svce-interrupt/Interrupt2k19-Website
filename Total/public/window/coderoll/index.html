@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Interrupt</title>
+	<link rel="stylesheet" type="text/css" href="/static/style/coderoll/style.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+</head>
+
+<body>
+	<h1>CODE ROLL</h1>
+	<table id="display">
+		<tr>
+			<td><textarea style="color: white" readonly rows="20" cols="80" id="question"></textarea></td>
+			<td><textarea  rows="20" cols="80" id="textarea"></textarea></td>
+		</tr>
+	</table>
+	<div id="score"></div>
+	<div class="container">
+		<marquee id="one" scrollamount="10" direction="right">
+			<table cellspacing="20">
+				<tr id="table1"></tr>
+			</table>
+		</marquee>
+		<marquee id="two" scrollamount="10" direction="right">
+			<table cellspacing="20">
+				<tr id="table2"></tr>
+			</table>
+		</marquee>
+		<marquee id="three" scrollamount="10" direction="right">
+			<table cellspacing="20">
+				<tr id="table3"></tr>
+			</table>
+		</marquee>
+	</div>
+	<button id="resetbtn">RESET CODE</button>
+	<button id="submitbtn">SUBMIT</button>
+	<script type="text/javascript" src="/static/script/coderoll/script.js"></script>
+</body>
+
+</html>
