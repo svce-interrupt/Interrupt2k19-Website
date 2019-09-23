@@ -1,6 +1,6 @@
 <div class="col-md-6">
     <div class="card site">
-        <a href="#"><img src="/resources/images/polling/{{location}}" class="card-img-top"></a>
+        <a href="#"><img src="/GoT/{{teamId}}/Screenshot.png" class="card-img-top"></a>
         <div class="card-body">
             
             {{#if title}}
@@ -16,8 +16,8 @@
             {{/if}}
 
             <div class="site-actions">
-                {{#if viewSite}}
-                    <a href="{{viewSite}}" class="btn site-link">View Site</a>
+                {{#if teamId}}
+                    <a href="/GoT/{{teamId}}/index.html" class="btn site-link">View Site</a>
                 {{/if}}
                 {{#if isAuthenticated}}
                     <button value="{{value}}" class="vote btn site-vote">Vote <i class="far fa-heart"></i><i class="fas fa-heart"></i></button>
