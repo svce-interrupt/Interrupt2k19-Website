@@ -3,20 +3,7 @@ const db        =       require('../database/config/connection');
 const Student   =       require('../database/models/Student');
 const Challenge =       require('../database/models/Challenge');
 
-const mapping = {
-    1 : '/challenge/hang_thug',
-    2 : '/challenge/connect_4',
-    3 : '/challenge/ror',
-    4 : '/challenge/dark_house',
-    5 : '/challenge/ctp', 
-    6 : '/challenge/tetris',
-    7 : '/challenge/caesar',
-    8 : '/challenge/maze',
-    9 : '/challenge/mtb',
-    10: '/challenge/coderoll'
-
-
-};
+const mapping   =       require('../data/map.json');
 
 const verifyData = async (req, res, next) => {
  
@@ -81,30 +68,39 @@ const notLoggedIn = (req, res, next) => {
 
 }
 
-const checkLevel = (req, res , next) => {
+const getLevel = (req, res , next) => {
+
+    if(req.method == "POST")
+        return next();  
 
     Challenge.findOne({
+        where : {studentId : req.user.id},
         attributes : ['level', 'score']
     }).then((user) => {
+        
         if(user){
             const {level, score} = user.dataValues;
-            req.session.level = level;
-            req.session.score = score;
-            next();
+
+            if(level == 11) return next();
+                        
+            if(req.url == mapping[level])
+                next();
+            else if(req.url.includes(mapping[level]))
+                next();
+            else res.redirect(mapping[level]);
         }
+        
         else{
-            user.createChallenge({level : 1, score : 0})
-                .then(user => {
-                    const {level, score} = user.dataValues;
-                    req.session.level = level;
-                    req.session.score = score;        
+            req.user.createChallenge({level : 1, score : 0})
+                .then(user => {        
                     next();
-                });
+                })
+                .catch(err => console.log(err));
         }
 
     })
 
-}
+};
 
 const isAuthenticated = (req, res, next) => {
     
@@ -143,5 +139,6 @@ module.exports = {
     notLoggedIn,
     hasAdminAccess,
     hasNotVoted,
-    checkEmptyData
+    checkEmptyData,
+    getLevel
 };
