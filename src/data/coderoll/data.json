@@ -1,41 +1,89 @@
 [
     {
-        "correct":["#include<iostream>","using namespace std;","int main()","{","int hello,hi,win;","cin>>hello","if(hello<0)","{    ","exit(1);","}      ","for(int lose=0;win<=hello;lose++)","{     ","win = lose+win;","if(win==hello)","{      ","for(int random=1;random<=lose;random++)","{      ","sum *= random;","}","cout<<\"\\nfactorial: \"<<sum;","      }","     }","return 0;","     }"],
-        "incorrect":[]
+        "question":"Check whether the number is Triangular or not. A number is termed as triangular number if we can represent it in the form of triangular grid of points such that the points form an equilateral triangle and each row contains as many points as the row number, i.e., the first row has one point, second row has two points, third row has three points and so on. The starting triangular numbers are 1, 3 (1+2), 6 (1+2+3), 10 (1+2+3+4).",
+        "inputDesc":"The first line of input contains an integer denoting the number.",
+        "outputDesc":"If the number is Triangular then generate the factorial of the row at which it is verified as triangular number.",
+        "sampleInput":"10",
+        "sampleOutput":"24",
+        "explanation":"10\n1+2+3+4\n4! = 24\n",
+        "answer":"#include<iostream>\nusing namespace std;\nint main()\n{\nint hello,hi=1,win;\ncin>>hello;\nif(hello<0)\n{\nexit(1);\n}\nwin = 0;\nfor(int lose=1; win<=hello;lose++)\n{\nwin = lose + win;\nif(win == hello)\n{\nfor(int i = 1; i <= lose; ++i)\n{\nhi*=i;\n}\ncout<<hi;\n}\n}\nreturn 0;\n}",
+        "tokens": [
+            "#include&ltiostream&gt",
+            "using namespace std;",
+            "int main()",
+            "{",
+            "int hello,hi,win;",
+            "cin&gt&gthello",
+            "if(hello&lt0)",
+            "{",
+            "exit(1);",
+            "}",
+            "for(int lose=0;win&lt=hello;lose++)",
+            "{",
+            "win = lose+win;",
+            "if(win==hello)",
+            "{     ",
+            "for(int random=1;random&lt=lose;random++)",
+            "{",
+            "sum *= random;",
+            "}",
+            "cout&lt&lt\"\\nfactorial: \"&lt&ltsum;",
+            "}     ",
+            "}",
+            "return 0;",
+            "}",
+            "#include&ltstdio.h&gt",
+            "using namespaces std;",
+            "void main()",
+            "int hello,hi;win;",
+            "cin&lt&lthello",
+            "if(hello&lt==0)",
+            "exit('1');",
+            "for(int lose=0,win&lt=hello,lose++)",
+            "win =+ lose+win;",
+            "if(win=hello)",
+            "for(random=1;random&lt=lose;random++)",
+            "sum *= random",
+            "cout&gt&gt\"\\nfactorial: \"&gt&gtsum;",
+            "returns 0;",
+            "#include&ltiostream&gt",
+            "using namespace std;",
+            "int main()",
+            "{",
+            "int hello,hi,win;",
+            "cin&gt&gthello",
+            "if(hello&lt0)",
+            "{",
+            "exit(1);",
+            "}",
+            "for(int lose=0;win&lt=hello;lose++)",
+            "{",
+            "win = lose+win;",
+            "if(win==hello)",
+            "{     ",
+            "for(int random=1;random&lt=lose;random++)",
+            "{",
+            "sum *= random;",
+            "}",
+            "cout&lt&lt\"\\nfactorial: \"&lt&ltsum;",
+            "}     ",
+            "}",
+            "return 0;",
+            "}",
+            "#include&ltstdio.h&gt",
+            "using namespaces std;",
+            "void main()",
+            "int hello,hi;win;",
+            "cin&lt&lthello",
+            "if(hello&lt==0)",
+            "exit('1');",
+            "for(int lose=0,win&lt=hello,lose++)",
+            "win =+ lose+win;",
+            "if(win=hello)",
+            "for(random=1;random&lt=lose;random++)",
+            "sum *= random",
+            "cout&gt&gt\"\\nfactorial: \"&gt&gtsum;",
+            "returns 0;"
+        ]
     }
 ]
-
-// #include<iostream>
-
-// using namespace std;
-// int main()
-// {
-// int  hello, hi,win;
-
-// cin>>hello;
-
-// if(hello<0)
-
-// {
-
-// exit(1);
-
-// }
-
-// for(int lose=0; win<=hello;lose++)
-
-// {
-
-// win= lose + win;
-// if(win == hello)
-// {
-//   int sum = 1;
-// for(int random=1;random<=lose;i++)
-// {
-//  sum *= random;
-//}
-// cout<<"\nFactorial: "<<sum;
-// }
-// }
-// return 0;
-// }
