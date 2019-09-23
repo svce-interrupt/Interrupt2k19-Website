@@ -53,28 +53,6 @@ var myInt = null;
 var score = 0;
 
 
-function submitOnReload(){
-
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            window.location.href = '/challenge/'; 
-        }
-    };
-
-    xhttp.open("POST", "/challenge/submit", true);
-    xhttp.setRequestHeader("Content-Type", "application/json");
-    xhttp.send(JSON.stringify({
-        score : 0
-    }));
-
-    return "Your data will be sent upon reloading";
-}
-
-window.onbeforeunload = submitOnReload;
-
-
-
 document.getElementById("score").innerHTML = `Score: ${score}`;
 
 function initialize(count){
