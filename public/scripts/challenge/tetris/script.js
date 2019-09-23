@@ -75,7 +75,7 @@ function createBlock(id,cur_pat)
 }
 var block = Block();
 var score = 0;
-var time = 1rs0;
+var time = 10;
 
 setInterval(()=>{
     document.getElementById("score").innerHTML = "Score: "+score;

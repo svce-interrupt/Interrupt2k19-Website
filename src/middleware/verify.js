@@ -91,7 +91,7 @@ const getLevel = (req, res , next) => {
         }
         
         else{
-            req.user.createChallenge({level : 1, score : 0})
+            req.user.createChallenge({level : 0, score : 0})
                 .then(user => {        
                     next();
                 })
