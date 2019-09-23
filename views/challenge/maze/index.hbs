@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>INTERRUPT</title>
-        <link rel="stylesheet" href="/styles/css/challenge/maze/style.css">
-    </head>
-    <body>
-        <h1 style="text-align:center"><span style="color:red;">MAZE </span><span style="color:blue">RUNNER</span></h1>
-        <div id="score"></div>
-        <script src="/scripts/challenge/maze/script.js"></script>
-    </body>
+
+<head>
+    <title>INTERRUPT</title>
+    <link rel="stylesheet" href="/styles/css/challenge/maze/style.css">
+</head>
+
+<body>
+    <h1 style="text-align:center"><span style="color:red;">MAZE </span><span style="color:blue">RUNNER</span></h1>
+    <div id="score"></div>
+    <div class="modal" id="description">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Maze</h2>
+            <p>Wow! Kudos on making it this far!
+                And now for a classic round of finding your way through a maze. Reach the endpoint from the start position of the maze displayed on the screen as fast as you can and win points! </p>
+        </div>
+    </div>
+    <link rel="stylesheet" href="/styles/css/challenge/modal.css">
+    <script src="/scripts/challenge/modal.js"></script>
+    <script src="/scripts/challenge/maze/script.js"></script>
+</body>
+
 </html>

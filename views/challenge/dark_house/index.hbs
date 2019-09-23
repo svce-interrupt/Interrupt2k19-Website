@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>INTERRUPT</title>
-        <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-        crossorigin="anonymous"></script> 
-        <link type="text/css" rel="stylesheet" href="/styles/css/challenge/dark_house/style.css"/> 
-    </head>
-    <body>
-        <video autoplay muted loop id="myVideo">
-            <source src="https://d1f2m3p6x2t7p9.cloudfront.net/preview-155309-VSeK8VU1II-low.mp4" type="video/mp4">
-        </video>
-        <h1>DARK HOUSE</h1>
-        <div id="canvas" class="container bg-image">
-            <div class="overlay"></div>
-            <div class="img bg-image"> </div>
+
+<head>
+    <title>INTERRUPT</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <link type="text/css" rel="stylesheet" href="/styles/css/challenge/dark_house/style.css" />
+</head>
+
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="https://d1f2m3p6x2t7p9.cloudfront.net/preview-155309-VSeK8VU1II-low.mp4" type="video/mp4">
+    </video>
+    <h1>DARK HOUSE</h1>
+    <div id="canvas" class="container bg-image">
+        <div class="overlay"></div>
+        <div class="img bg-image"> </div>
+    </div>
+    <div id="timer"></div>
+    <table id="queue">
+    </table>
+    <div id="score"></div>
+    <div class="modal" id="description">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Crime Case</h2>
+            <p>We present you the perfect opportunity to bring out the detective in you. The task is to find the hidden objects in the screen from the given list.
+                Focus, concentrate, because the closer you think you are, the less you see.</p>
         </div>
-        <div id="timer"></div>
-        <table id="queue">
-        </table>
-        <div id="score"></div>
-        <script type="text/javascript" src="/scripts/challenge/dark_house/script.js"></script>
-    </body>
+    </div>
+    <link rel="stylesheet" href="/styles/css/challenge/modal.css">
+    <script src="/scripts/challenge/modal.js"></script>
+    <script type="text/javascript" src="/scripts/challenge/dark_house/script.js"></script>
+</body>
+
 </html>

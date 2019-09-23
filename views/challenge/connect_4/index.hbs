@@ -1,38 +1,47 @@
 <html>
-    <head>
-        <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="/styles/css/challenge/connect_4/style.css">
-    </head>
-    <body>
-        <h1>CONNECT - 4</h1>
-        <div id="crafter">
-            <table>
-                <tr>
-                    <td><img id="img1" src=""/></td>
-                    <td><img id="img2" src=""/></td>
-                </tr>
-                <tr>
-                    <td><img id="img3" src=""/></td>
-                    <td><img id="img4" src=""/></td>
-                </tr>
-            </table><br>
-            <input id="answer" type="text"/>
-            <button onclick="submit()">Check</button>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/styles/css/challenge/connect_4/style.css">
+</head>
+
+<body>
+    <h1>CONNECT - 4</h1>
+    <div id="crafter">
+        <table>
+            <tr>
+                <td><img id="img1" src="" /></td>
+                <td><img id="img2" src="" /></td>
+            </tr>
+            <tr>
+                <td><img id="img3" src="" /></td>
+                <td><img id="img4" src="" /></td>
+            </tr>
+        </table><br>
+        <input id="answer" type="text" />
+        <button onclick="submit()">Check</button>
+    </div>
+    <table id="result_table">
+        <tr>
+            <td><img id="0" src="" /></td>
+            <td><img id="1" src="" /></td>
+        </tr>
+        <tr>
+            <td><img id="2" src="" /></td>
+            <td><img id="3" src="" /></td>
+        </tr>
+    </table>
+    <div id="score"></div>
+    <div class="modal" id="description">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Connectogether</h2>
+            <p>And now for the next task. You will be shown picture snippets in sequence. Identify the connection between them in each and use them to reveal the final answer! </p>
         </div>
-        <table id="result_table">
-            <tr>
-                <td><img id="0" src=""/></td>
-                <td><img id="1" src=""/></td>
-            </tr>
-            <tr>
-                <td><img id="2" src=""/></td>
-                <td><img id="3" src=""/></td>
-            </tr>
-        </table>
-        <div  id="score"></div>
-        <script src="/scripts/challenge/connect_4/script.js"></script>
-    </body>
+    </div>
+    <link rel="stylesheet" href="/styles/css/challenge/modal.css">
+    <script src="/scripts/challenge/modal.js"></script>
+    <script src="/scripts/challenge/connect_4/script.js"></script>
+</body>
+
 </html>
