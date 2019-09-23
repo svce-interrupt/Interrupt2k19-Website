@@ -1,7 +1,7 @@
 var answer = null;
 var score = -50;
 
-$.get('https://e7c71f99.ngrok.io/caesar/data',(res,status)=>{
+$.get('/caesar/data',(res,status)=>{
     answer = JSON.parse(res);
     var data = answer[0].data;
     data = data.split(" ").reverse().join(" ");

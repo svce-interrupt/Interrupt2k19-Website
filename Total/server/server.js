@@ -123,6 +123,14 @@ app.get('/caesar/data', (req, res) => {
     });
 })
 
+app.get('/coderoll/data',(req,res)=>{
+    fs.readFile(path.join(__dirname,"data","coderoll","data.json"),(err,data)=>{
+        if(err)console.log(err)
+        res.send(data.toString());
+        res.end();
+    });    
+});
+
 app.listen(80,'localhost',()=>{
     console.log('Listening');
 });

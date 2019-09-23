@@ -9,6 +9,11 @@ var time = 0;
 setInterval(()=>{
   time += 1;
   document.getElementById("score").innerHTML = `Time taken: ${time}`;
+  if(time == 300)
+  {
+    alert("You exceeded the time limit");
+    window.location.href = "/static/window/mtb/index.html"; 
+  }
 },1000);
 
 var x = w.innerWidth || e.clientWidth || g.clientWidth,

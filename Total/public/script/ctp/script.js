@@ -1,7 +1,7 @@
 
 alert("1)You have 3 lives to find a person from given images\n2)If wrong images combined you loose your life\n3)Combine until you find the person\n4)ENJOY..!");
 
-$.get('https://e7c71f99.ngrok.io/ctp/data',(data,status)=>{
+$.get('/ctp/data',(data,status)=>{
         var obj = JSON.parse(data);
         for(var i=0;i<obj.length;i++)
         {
@@ -14,10 +14,10 @@ $.get('https://e7c71f99.ngrok.io/ctp/data',(data,status)=>{
 
 var result = null,answers = null,score = 100;
 document.getElementById("score").innerHTML = `Score: ${score}`;
-$.get('https://e7c71f99.ngrok.io/ctp/result',(data,status)=>{
+$.get('/ctp/result',(data,status)=>{
     result = JSON.parse(data);
 });
-$.get('https://e7c71f99.ngrok.io/ctp/answers',(data,status)=>{
+$.get('/ctp/answers',(data,status)=>{
     answers = JSON.parse(data);
 });
 function push(ptr)
@@ -83,6 +83,8 @@ function combine()
             alert("Can't able to combine..!");
             score -= 10;
             document.getElementById("score").innerHTML = `Score: ${score}`;
+            if(score == 0)
+                window.location.href = "/static/window/tetris/index.html";  
         }
     } 
     else
@@ -90,6 +92,8 @@ function combine()
         alert("Can't be combined");
         score -= 10;
         document.getElementById("score").innerHTML = `Score: ${score}`;
+        if(score == 0)
+            window.location.href = "/static/window/tetris/index.html";
     }  
 }
 

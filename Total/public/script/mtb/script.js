@@ -15,6 +15,11 @@ var time = 0;
 setInterval(() => {
     time += 1;
     document.getElementById("time").innerHTML = `Time taken: ${time}`;
+    if(time == 400)
+    {
+        alert("You exceeded the time limit");
+        window.location.href = "/static/window/coderoll/index.html"
+    }
 }, 1000);
 
 var question = [`Being`,`The richest man`,`In the cemetery`,`Doesn't matter to me.`,`Going to`,`The bed at night saying`,`We've done`,`Something`,`Wonderful,`,`That's what`,`Matters`,`To me.`,`---`,`<img src="/static/images/mtb/1.jpg"/>`,`<img src="/static/images/mtb/2.jpg"/>`];
