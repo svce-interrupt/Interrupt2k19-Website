@@ -19,8 +19,8 @@ function submitOnReload(){
 window.onload = function() {
     var reloading = sessionStorage.getItem("reloading");
 
-    if (reloading) {
-        sessionStorage.removeItem("reloading");
+    if (reloading == "true") {
+        sessionStorage.setItem("reloading","false");
         submitOnReload();
     }
 }
@@ -30,6 +30,7 @@ function reloadP() {
 }
 
 
+//window.onbeforeunload = null;
 window.addEventListener("beforeunload", function (e) {
     var confirmationMessage = 'It looks like you have been attempting something. '
                             + 'If you leave before saving, your score will be lost.';
@@ -51,6 +52,28 @@ var count = 5;
 var mem = [];
 var myInt = null;
 var score = 0;
+
+
+function submitOnReload(){
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            window.location.href = '/challenge/'; 
+        }
+    };
+
+    xhttp.open("POST", "/challenge/submit", true);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.send(JSON.stringify({
+        score : 0
+    }));
+
+    return "Your data will be sent upon reloading";
+}
+
+//window.onbeforeunload = submitOnReload;
+
 
 
 document.getElementById("score").innerHTML = `Score: ${score}`;
@@ -128,4 +151,3 @@ function check()
 }
 
 initialize(count);
-
