@@ -24,7 +24,7 @@ router.route('/')
         });
 
         if(count) console.log(count);
-        count = (count <= 40)? 40 - count: 0;
+        count = (count <= 10)? 10 - count: 0;
         
          
         const events = await EventList.findOne({
