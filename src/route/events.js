@@ -40,7 +40,9 @@ router.route('/add')
         else{
             Workshop.create({
                 workshop,
-                studentId : req.user.id
+                studentId : req.user.id,
+                name : req.user.student_name,
+                email : req.user.email
             }).then(event => {
                 if(!res.headersSent) res.sendStatus(200);
             }).catch(err => console.log(err));
