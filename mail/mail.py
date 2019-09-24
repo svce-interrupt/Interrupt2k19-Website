@@ -23,7 +23,7 @@ email_pwd = os.environ.get('PASS')
 dbuser = os.environ.get('DBUSER') 
 dbpwd = os.environ.get('DBPASS') 
 
-conn = psy.connect(port=5432, database='interrupt', user=dbuser, password=dbpwd)
+conn = psy.connect(host="localhost", port=5432, database='interrupt2k19', user=dbuser, password=dbpwd)
 cur = conn.cursor()
 
 content_location = 'content/welcome.txt'
@@ -51,7 +51,6 @@ def send_mail(user, password, message):
 def welcome_mail():
 
     try :
-
         cur.execute("select student_name, id, email from students")
         rows = cur.fetchall()
 

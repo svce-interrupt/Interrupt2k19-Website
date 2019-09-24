@@ -89,6 +89,12 @@ app.use((req, res, next) => {
     next();
 });
 
+
+const { isAuthenticated, getLevel}    = require('./src/middleware/verify');
+
+app.all('/challenge/*', isAuthenticated);
+app.all('/challenge/*', getLevel);
+
 // Routes
 app.use("/", require('./src/route/home'));
 app.use("/admin", require('./src/route/admin'));    
