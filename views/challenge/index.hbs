@@ -8,6 +8,7 @@
     <meta name="author" content="Arjun Aravind">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="icon" href="/resources/images/favicon.png">
     <link rel="apple-touch-icon" href="/resources/images/favicon.png">
     <link rel="stylesheet" href="/styles/css/challenge/index.css">
@@ -68,6 +69,24 @@
         border
     }
     </style>
+    <script>
+        document.getElementById('start-link').addEventListener('click', (event) => {
+
+             var xhttp = new XMLHttpRequest();
+            
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    window.location.href = '/challenge/hang_thug';
+                }
+            };
+            xhttp.open("POST", "/challenge/submit", true);
+            xhttp.setRequestHeader("Content-Type", "application/json");
+            xhttp.send(JSON.stringify({
+                score : 0
+            }));                    
+
+        })
+    </script>
 </body>
 
 </html>
