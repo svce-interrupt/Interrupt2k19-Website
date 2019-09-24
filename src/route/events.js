@@ -26,7 +26,7 @@ router.route('/add')
         const eventlist = await EventList.findOne({where : {studentId : req.user.id}});
         const workshoplist = await Workshop.findOne({where : {studentId : req.user.id}});
 
-        if(count > 40 && workshop) workshop = false;
+        if(count > 10 && workshop) workshop = false;
 
         if(eventlist){
             eventlist.update(events).then(() => {
