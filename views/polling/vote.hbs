@@ -9,6 +9,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" integrity="sha256-zmfNZmXoNWBMemUOo1XUGFfc0ihGGLYdgtJS3KCr/l0=" crossorigin="anonymous" />
     <link rel="stylesheet" href="/styles/css/poll/polling.css">
+    <link rel="icon" href="/resources/images/favicon.png">
+    <link rel="apple-touch-icon" href="/resources/images/favicon.png">	
 </head>
 
 <body>
@@ -60,8 +62,8 @@
 
 				xhttp.onreadystatechange = () => {
                     if(xhttp.readyState==4){
-                        if(xhttp.status == 202) console.log("submitted");
-                        if(xhttp.status == 406) console.log("Already voted");
+                        if(xhttp.status == 202) alert("You've voted! Thanks a lot!");
+                        if(xhttp.status == 406) alert("You've already voted! You are allowed to vote only once.");
 
                         console.log(JSON.parse(xhttp.response).status);
                     }
