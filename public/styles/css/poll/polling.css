@@ -36,6 +36,14 @@
         margin-bottom: 25px;
     }
 
+/****************************/
+/* CSS for the TILT SCREEN. */
+/****************************/
+
+.tilt-screen {
+	display: none;
+}
+
     #site-gallery {
         font-family: "Pixellari";
     }
@@ -140,3 +148,49 @@
         }
 
     }
+
+@media only screen and (max-width: 800px) and (orientation: portrait) {
+
+	/****************************/
+	/* CSS for the TILT SCREEN. */
+	/****************************/
+
+	.tilt-screen {
+		display: block;
+		position: fixed;
+
+		width: 100%;
+		height: 100%;
+
+		font-family: "Pixellari";
+		color: yellow;
+
+		background-color: black;
+	}
+
+	.tilt-screen p {
+		display: block;
+		background-color: black;
+
+		font-size: 135%;
+		margin-top: 40%;
+		text-align: center;
+	}
+
+	#main-container {
+		display: none;
+	}
+
+	#title {
+		display: none;
+	}
+
+	#subtitle {
+		display: none;
+	}
+
+	#prompt {
+		display: none;
+	}
+
+}
