@@ -52,7 +52,7 @@ router.route('/')
                         event8 : events.dataValues.ev8,
                         event9 : events.dataValues.ev9,
                         event10 : events.dataValues.ev10,
-                        count : (count) ? count : 40,
+                        count : (count) ? count : 0,
                         event11 : (workshop) ? workshop.dataValues.workshop : 0 ,
                         button : true
                     });
