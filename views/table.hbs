@@ -30,6 +30,9 @@
 		</div>
 
         <div class="header">
+
+			<header id="header">{{name}}</header><br><br><br>
+			
             {{#each students}}
                 <p class="additional-info">{{this.dataValues.id}} &nbsp; {{this.dataValues.student_name}} &nbsp; {{this.dataValues.email}} &nbsp; {{this.dataValues.ph_number}} &nbsp; {{this.dataValues.college}}</p><br>
             {{/each}}

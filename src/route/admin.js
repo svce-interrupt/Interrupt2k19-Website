@@ -42,7 +42,8 @@ router.route('/display')
 
             res.render("table", {
                 students,
-                count
+                count,
+                name : "Overall!"
             });
         })
     })
@@ -78,7 +79,8 @@ router.route('/display/challenge')
 
             res.render("table", {
                 students,
-                count
+                count,
+                name : "Challenge"
             });
         })
 
@@ -112,7 +114,8 @@ router.route('/display/connoisseur')
 
             res.render("table", {
                 students,
-                count
+                count,
+                name : "Code Con thingy"
             });
         })
 
@@ -146,7 +149,8 @@ router.route('/display/paper')
 
             res.render("table", {
                 students,
-                count
+                count,
+                name : "Paper presentation"
             });
         })
 
@@ -180,7 +184,8 @@ router.route('/display/poster')
 
             res.render("table", {
                 students,
-                count
+                count, 
+                name : "Poster presentation"
             });
         })
 
@@ -214,7 +219,8 @@ router.route('/display/stack')
 
             res.render("table", {
                 students,
-                count
+                count, 
+                name : "Stack market"
             });
         })
 
@@ -248,7 +254,8 @@ router.route('/display/alt')
 
             res.render("table", {
                 students,
-                count
+                count,
+                name : "Alt + tab + tech"
             });
         })
 
@@ -282,7 +289,8 @@ router.route('/display/mind')
 
             res.render("table", {
                 students,
-                count
+                count,
+                name : "Mind spar"
             });
         })
 
@@ -317,7 +325,8 @@ router.route('/display/now')
 
             res.render("table", {
                 students,
-                count
+                count,
+                name : "Now u c me"
             });
         })
 
@@ -351,7 +360,8 @@ router.route('/display/got')
 
             res.render("table", {
                 students,
-                count
+                count,
+                name : "Game of Tags"
             });
         })
 
@@ -385,7 +395,8 @@ router.route('/display/win')
 
             res.render("table", {
                 students,
-                count
+                count,
+                name : "win-code-ium"
             });
         })
 
