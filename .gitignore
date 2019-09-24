@@ -3,5 +3,9 @@ node_modules/
 .env
 src/database/config/config.json
 public/GoT
+
+# QR
+mail/QRcodes
+
 # Metadata Files
 .DS_Store
