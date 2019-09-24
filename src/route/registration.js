@@ -4,11 +4,12 @@ const router    =   express.Router({mergeParams : true, strict : true});
 const db        =   require('../database/config/connection');
 const Student   =   require('../database/models/Student');
 const EventList =   require('../database/models/EventList');
+const Workshop  =   require('../database/models/Workshop');
 
 const {verifyData, notLoggedIn} = require(__dirname + '/../middleware/verify');
 
 router.route('/')
-    .get((req, res) => {
+    .get(async (req, res) => {
         res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
         res.header('Expires', '-1');
         res.header('Pragma', 'no-cache');
@@ -16,11 +17,17 @@ router.route('/')
         
         if(req.isAuthenticated()){
          
-            EventList.findOne({
+        const events = await EventList.findOne({
                 where : {
                     studentId : req.user.id
                 }
-            }).then((events) => {
+            })
+
+        const workshop = await Workshop.findOne({
+                where : {
+                    studentId : req.user.id
+                }
+            });
 
                 if(events){
 
@@ -35,16 +42,13 @@ router.route('/')
                         event8 : events.dataValues.ev8,
                         event9 : events.dataValues.ev9,
                         event10 : events.dataValues.ev10,
+                        event11 : (workshop) ? workshop.dataValues.workshop : 0 ,
                         button : true
                     });
                 }else{
                     res.render('register');
                 }
-            })
-
-
         }
-        
         else 
             res.render('register', {message : req.flash('error')});
     })

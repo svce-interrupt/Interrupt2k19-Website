@@ -53,8 +53,8 @@ const verifyData = async (req, res, next) => {
 
 const checkEmptyData = (req, res, next) => {
 
-    if(Object.entries(req.query).length == 0)
-	return res.redirect('back');
+    if(Object.entries(req.query).length == 0 || req.body == undefined)
+        return res.redirect('back');
     next();
 
 }

@@ -79,7 +79,8 @@
 			{{#if event8}} var event8 = 1; document.getElementById("event8").style.backgroundColor = "yellow"; document.getElementById("event8").style.color="purple"; {{else}} var event8 = 0;{{/if}}
 			{{#if event9}} var event9 = 1; document.getElementById("event9").style.backgroundColor = "yellow"; document.getElementById("event9").style.color="purple"; {{else}} var event9 = 0;{{/if}}
 			{{#if event10}} var event10 = 1;document.getElementById("event10").style.backgroundColor = "yellow"; document.getElementById("event10").style.color="purple";  {{else}} var event10 = 0;{{/if}}
-
+			{{#if event11}} var event11 = 1;document.getElementById("event11").style.backgroundColor = "yellow"; document.getElementById("event11").style.color="purple";  {{else}} var event11 = 0;document.getElementById("event11").style.backgroundColor = "blue"; document.getElementById("event11").style.color="white"; {{/if}}
+			
 
 			/* We now add event-listeners for all the event tags. */
 			document.getElementById("event1").addEventListener("click", function() {
@@ -212,6 +213,19 @@
 				}
 			});
 
+			document.getElementById("event11").addEventListener("click", function() {
+				if(event11 == 0) {
+					document.getElementById("event11").style.backgroundColor = "yellow";
+					document.getElementById("event11").style.color = "purple";
+					event11 = 1;
+				}
+				else {
+					document.getElementById("event11").style.backgroundColor = "blue";
+					document.getElementById("event11").style.color = "white";
+					event11 = 0;
+				}
+			});
+
 			/* We now add the event-listener for the form button. */
 			document.getElementById("add").addEventListener("click", function() {
 				/* We construct a string based on the values of the events. */
@@ -230,7 +244,10 @@
 					}
 				};
 				xhttp.open("POST", "/events/add?"+argumentString, true);
-				xhttp.send();
+				xhttp.setRequestHeader("Content-type", "application/json; charset=utf-8");				
+				xhttp.send(JSON.stringify({
+					workshop : event11
+				}));
 
 			}			
 		</script>

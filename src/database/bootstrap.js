@@ -8,6 +8,7 @@ module.exports = async () => {
     const LeaderBoard   =   require('./models/LeaderBoard');
     const Mail          =   require('./models/Mail');
     const Poll          =   require('./models/Poll');
+    const Workshop      =   require('./models/Workshop');
 
     await Student.hasOne(EventList,{
         as : "EventList",
@@ -27,7 +28,12 @@ module.exports = async () => {
     await Mail.belongsTo(Student, {
         as : "Student",
         foreignKey : "studentId"
-    })
+    });
+
+    await Workshop.belongsTo(Student, {
+        as : "Student",
+        foreignKey : "studentId"
+    });
 
 
     Challenge.sync();
@@ -36,5 +42,6 @@ module.exports = async () => {
     Student.sync();
     Mail.sync();
     Poll.sync();
+    Workshop.sync();
 
 }

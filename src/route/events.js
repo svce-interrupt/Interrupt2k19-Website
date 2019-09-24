@@ -3,6 +3,7 @@ const router = express.Router({mergeParams : true, strict : true});
 
 const Student  = require('../database/models/Student');
 const EventList    = require('../database/models/EventList');
+const Workshop  =   require('../database/models/Workshop');
 
 const { isAuthenticated, checkEmptyData } = require('../middleware/verify');
 
@@ -11,26 +12,40 @@ router.get("/", (req, res) => {
 });
 
 router.route('/add')
-    .post(isAuthenticated, checkEmptyData, (req, res) => {
+    .post(isAuthenticated, checkEmptyData, async (req, res) => {
 
         const events = req.query;
+        const {workshop} = req.body;
 
-        EventList.findOne({where : {studentId : req.user.id}})
-          .then(eventlist => {
+        const eventlist = await EventList.findOne({where : {studentId : req.user.id}});
+        const workshoplist = await Workshop.findOne({where : {studentId : req.user.id}});
 
-            if(eventlist){
 
-       	        eventlist.update(events).then(() => {
-                    res.sendStatus(200);
-                }).catch(err => console.log(err));
-	        }
-            else{
-                req.user.createEventList(events).then(event => {
-                    res.sendStatus(200);
-                }).catch(err => console.log(err));
-	        }
-          })
-          .catch(err => console.log(err))
+        if(eventlist){
+            eventlist.update(events).then(() => {
+              if(!res.headersSent) res.sendStatus(200);
+            }).catch(err => console.log(err));
+	    }
+        else{
+            req.user.createEventList(events).then(event => {
+              if(!res.headersSent) res.sendStatus(200);
+            }).catch(err => console.log(err));
+        }
+
+        if(workshoplist){
+            workshoplist.update({workshop}).then((work) => {
+                if(!res.headersSent) res.sendStatus(200);
+            }).catch(err => console.log(err));
+	    }
+        else{
+            Workshop.create({
+                workshop,
+                studentId : req.user.id
+            }).then(event => {
+                if(!res.headersSent) res.sendStatus(200);
+            }).catch(err => console.log(err));
+        }
+        
 
     })
 module.exports = router;
