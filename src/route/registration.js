@@ -16,6 +16,16 @@ router.route('/')
         res.set('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
         
         if(req.isAuthenticated()){
+
+        var count = await Workshop.count({
+            where :{
+                workshop : true
+            }
+        });
+
+        if(count) console.log(count);
+        count = (count <= 40)? 40 - count: 0;
+        
          
         const events = await EventList.findOne({
                 where : {
@@ -42,6 +52,7 @@ router.route('/')
                         event8 : events.dataValues.ev8,
                         event9 : events.dataValues.ev9,
                         event10 : events.dataValues.ev10,
+                        count : (count) ? count : 40,
                         event11 : (workshop) ? workshop.dataValues.workshop : 0 ,
                         button : true
                     });
