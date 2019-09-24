@@ -23,7 +23,7 @@ email_pwd = os.environ.get('PASS')
 dbuser = os.environ.get('DBUSER')
 dbpwd = os.environ.get('DBPASS')
 
-conn = psy.connect(port=5432, database='interrupt', user=dbuser, password=dbpwd)
+conn = psy.connect(host="localhost", port=5432, database='interrupt2k19', user=dbuser, password=dbpwd)
 cur = conn.cursor()
 
 content_location = 'content/challenge.txt'
