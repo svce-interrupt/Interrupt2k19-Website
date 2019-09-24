@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+	<head>
+		<title> Admin | Interrupt '19</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="Official Website for SVCE's Interrupt 2k19!">
+		<meta name="keywords" content="svce,symposium,cse,interrupt,2019,2k19">
+		<meta name="author" content="Arjun Aravind">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="/styles/css/home/home.css" rel="stylesheet">
+		<link href="/styles/css/home/mobile-home.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="icon" href="/resources/images/favicon.png">
+		<link rel="apple-touch-icon" href="/resources/images/favicon.png">
+	</head>
+
+	<body>
+        <div class="game-elements">
+				<div class="score"><p class="title">COUNT</p></div>
+				{{#if isAuthenticated}}
+					<div class="hearts hearts-title"><p>Player : {{studentName}}</p></div>
+				{{else}}
+					<div class="hearts hearts-title"><p>LIVES REMAINING</p></div>
+				{{/if}}
+		</div>
+
+		<div class="game-elements">
+			<div class="score score-number"><p class="number">{{count}}</p></div>
+			<div class="hearts"><img src="/resources/images/home/hearthalfreverse.png" class="half" id="reverse"><img src="/resources/images/home/hearthalf.png" class="half"><img src="/resources/images/home/heart.png"><img src="/resources/images/home/heart.png"></div>
+		</div>
+
+        <div class="header">
+            {{#each students}}
+                <p class="additional-info">{{this.dataValues.id}} &nbsp; {{this.dataValues.student_name}} &nbsp; {{this.dataValues.email}} &nbsp; {{this.dataValues.ph_number}} &nbsp; {{this.dataValues.college}}</p><br>
+            {{/each}}
+        </div>
+
+	</body>
+</html>

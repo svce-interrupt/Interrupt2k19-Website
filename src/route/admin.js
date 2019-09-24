@@ -37,15 +37,21 @@ router.route('/display')
             }]
         })
         .then((students) => {
-            res.send(students);
-        })
 
+            const count =  students.length;
+
+            res.render("table", {
+                students,
+                count
+            });
+        })
     })
 
 //Events
 
 router.route('/display/challenge')
     .get(hasAdminAccess, (req, res) => {
+
 
         Student.findAll({
             attributes : ["id", "student_name", "year", "email", "ph_number", "college"],
@@ -67,7 +73,13 @@ router.route('/display/challenge')
             }]
         })
         .then((students) => {
-            res.send(students);
+
+            const count =  students.length;
+
+            res.render("table", {
+                students,
+                count
+            });
         })
 
     })
@@ -95,7 +107,13 @@ router.route('/display/connoisseur')
             }]
         })
         .then((students) => {
-            res.send(students);
+
+            const count =  students.length;
+
+            res.render("table", {
+                students,
+                count
+            });
         })
 
     })
@@ -123,7 +141,13 @@ router.route('/display/paper')
             }]
         })
         .then((students) => {
-            res.send(students);
+
+            const count =  students.length;
+
+            res.render("table", {
+                students,
+                count
+            });
         })
 
     })
@@ -151,7 +175,13 @@ router.route('/display/poster')
             }]
         })
         .then((students) => {
-            res.send(students);
+
+            const count =  students.length;
+
+            res.render("table", {
+                students,
+                count
+            });
         })
 
     })
@@ -179,7 +209,13 @@ router.route('/display/stack')
             }]
         })
         .then((students) => {
-            res.send(students);
+
+            const count =  students.length;
+
+            res.render("table", {
+                students,
+                count
+            });
         })
 
     })
@@ -207,7 +243,13 @@ router.route('/display/alt')
             }]
         })
         .then((students) => {
-            res.send(students);
+
+            const count =  students.length;
+
+            res.render("table", {
+                students,
+                count
+            });
         })
 
     });
@@ -235,8 +277,15 @@ router.route('/display/mind')
             }]
         })
         .then((students) => {
-            res.send(students);
+
+            const count =  students.length;
+
+            res.render("table", {
+                students,
+                count
+            });
         })
+
 
     })
 
@@ -263,7 +312,13 @@ router.route('/display/now')
             }]
         })
         .then((students) => {
-            res.send(students);
+
+            const count =  students.length;
+
+            res.render("table", {
+                students,
+                count
+            });
         })
 
     })
@@ -291,7 +346,13 @@ router.route('/display/got')
             }]
         })
         .then((students) => {
-            res.send(students);
+
+            const count =  students.length;
+
+            res.render("table", {
+                students,
+                count
+            });
         })
 
     })
@@ -319,7 +380,13 @@ router.route('/display/win')
             }]
         })
         .then((students) => {
-            res.send(students);
+
+            const count =  students.length;
+
+            res.render("table", {
+                students,
+                count
+            });
         })
 
     })

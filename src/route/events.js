@@ -17,9 +17,16 @@ router.route('/add')
         const events = req.query;
         const {workshop} = req.body;
 
+        const count = await Workshop.count({
+            where :{
+                workshop : true
+            }
+        });
+
         const eventlist = await EventList.findOne({where : {studentId : req.user.id}});
         const workshoplist = await Workshop.findOne({where : {studentId : req.user.id}});
 
+        if(count > 40 && workshop) workshop = false;
 
         if(eventlist){
             eventlist.update(events).then(() => {
@@ -32,11 +39,12 @@ router.route('/add')
             }).catch(err => console.log(err));
         }
 
+    
         if(workshoplist){
             workshoplist.update({workshop}).then((work) => {
                 if(!res.headersSent) res.sendStatus(200);
             }).catch(err => console.log(err));
-	    }
+        }
         else{
             Workshop.create({
                 workshop,
