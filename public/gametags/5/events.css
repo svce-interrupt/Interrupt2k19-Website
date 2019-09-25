@@ -1,0 +1,11 @@
+header {background-color:#000000;}
+h1{
+    color:aquamarine;
+}
+img { margin:10px;padding-right:10px; width:15%; height:30%; }
+ul {float:left;}
+div {background-color:#D4D6D9; margin:6px; padding:4px;}
+address{
+border-color: coral;
+}
+footer {background-color:#000000;}

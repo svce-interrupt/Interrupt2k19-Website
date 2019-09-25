@@ -1,43 +1,38 @@
 function submitOnReload(){
-
+    
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            window.location.href = '/challenge/'; 
+            console.log('well played');
         }
     };
 
     xhttp.open("POST", "/challenge/submit", true);
     xhttp.setRequestHeader("Content-Type", "application/json");
     xhttp.send(JSON.stringify({
-        score : 0
+        score : 0,
+        level : 5
     }));
 
     return true;
 }
 
+
 window.onload = function() {
     var reloading = sessionStorage.getItem("reloading");
+    console.log(reloading)
 
     if (reloading == "true") {
         sessionStorage.setItem("reloading","false");
         submitOnReload();
     }
-}
 
-function reloadP() {
-    sessionStorage.setItem("reloading", "true");
-}
-
-e.preventDefault();
-window.addEventListener("beforeunload", function (e) {
-    console.log("llolol")
     var confirmationMessage = 'It looks like you have been attempting something';
-    reloadP();
-    (e || window.event).returnValue = confirmationMessage; //Gecko + IE
-    return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
+    return confirmationMessage;
+}
 
-
+window.addEventListener("beforeunload", function () {
+    sessionStorage.setItem("reloading", "true");
 });
 
 
@@ -166,7 +161,8 @@ setInterval(()=>{
         xhttp.open("POST", "/challenge/submit", true);
         xhttp.setRequestHeader("Content-Type", "application/json");
         xhttp.send(JSON.stringify({
-            score : score
+            score : score,
+            level : 5
         }));
     }
 },1000);

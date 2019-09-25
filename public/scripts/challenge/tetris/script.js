@@ -1,47 +1,41 @@
 var N = 15;
 
 function submitOnReload(){
-
+    
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            window.location.href = '/challenge/'; 
+            console.log('well played');
         }
     };
 
     xhttp.open("POST", "/challenge/submit", true);
     xhttp.setRequestHeader("Content-Type", "application/json");
     xhttp.send(JSON.stringify({
-        score : 0
+        score : 0,
+        level : 6
     }));
 
     return true;
 }
 
+
 window.onload = function() {
     var reloading = sessionStorage.getItem("reloading");
+    console.log(reloading)
 
     if (reloading == "true") {
         sessionStorage.setItem("reloading","false");
         submitOnReload();
     }
+
+    var confirmationMessage = 'It looks like you have been attempting something';
+    return confirmationMessage;
 }
 
-function reloadP() {
+window.addEventListener("beforeunload", function () {
     sessionStorage.setItem("reloading", "true");
-}
-
-e.preventDefault();
-window.addEventListener("beforeunload", function (e) {
-    var confirmationMessage = 'It looks like you have been attempting something. '
-                            + 'If you leave before saving, your score will be lost.';
-    reloadP();
-    (e || window.event).returnValue = confirmationMessage; //Gecko + IE
-    return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
-
-
 });
-
 
 function createCanvas()
 {
@@ -75,7 +69,7 @@ function createBlock(id,cur_pat)
 }
 var block = Block();
 var score = 0;
-var time = 10;
+var time = 100;
 
 setInterval(()=>{
     document.getElementById("score").innerHTML = "Score: "+score;
@@ -92,7 +86,9 @@ setInterval(()=>{
         xhttp.open("POST", "/challenge/submit", true);
         xhttp.setRequestHeader("Content-Type", "application/json");        
         xhttp.send(JSON.stringify({
-            score : score
+            score : score,
+            level : 6
+
         }));
     }
 

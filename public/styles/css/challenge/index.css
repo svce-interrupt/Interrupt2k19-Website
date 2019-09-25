@@ -44,7 +44,7 @@
         background: #E52521;
         font-size: 40px;
         color: #fff;
-        border
+        border : none;
     }
     
     @keyframes flicker {

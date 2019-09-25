@@ -2,45 +2,48 @@ const width = 200,
 height = 200;
 
 function submitOnReload(){
-
+    
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            window.location.href = '/challenge/'; 
+            console.log('well played');
         }
     };
 
     xhttp.open("POST", "/challenge/submit", true);
     xhttp.setRequestHeader("Content-Type", "application/json");
     xhttp.send(JSON.stringify({
-        score : 0
+        score : 0,
+        level : 4
     }));
 
     return true;
 }
 
+
 window.onload = function() {
     var reloading = sessionStorage.getItem("reloading");
+    console.log(reloading)
 
     if (reloading == "true") {
         sessionStorage.setItem("reloading","false");
         submitOnReload();
     }
+
+    var confirmationMessage = 'It looks like you have been attempting something';
+    return confirmationMessage;
 }
 
-function reloadP() {
+window.addEventListener("beforeunload", function () {
     sessionStorage.setItem("reloading", "true");
-}
+});
 
-e.preventDefault();
+
 window.addEventListener("beforeunload", function (e) {
-    console.log("llolol")
     var confirmationMessage = 'It looks like you have been attempting something';
     reloadP();
     (e || window.event).returnValue = confirmationMessage; //Gecko + IE
     return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
-
-
 });
 
 
@@ -71,7 +74,8 @@ var objects = null;
 var queue = [];
 var count = 0;
 var score = 0;
-var time = 10;
+var time = 300;
+
 $.get('/challenge/dark_house/data',function(data,status){
     objects = JSON.parse(data);
     //console.log(objects);
@@ -101,7 +105,8 @@ $.get('/challenge/dark_house/data',function(data,status){
             xhttp.open("POST", "/challenge/submit", true);
             xhttp.setRequestHeader("Content-Type", "application/json");
             xhttp.send(JSON.stringify({
-                score : score
+                score : score,
+                level : 4
             }));
         }
     },1000);
@@ -143,7 +148,8 @@ $(document).ready(function() {
                         xhttp.open("POST", "/challenge/submit", true);
                         xhttp.setRequestHeader("Content-Type", "application/json");
                         xhttp.send(JSON.stringify({
-                            score : score
+                            score : score,
+                            level : 4
                         }));                    }
                 }
             }

@@ -1,0 +1,16 @@
+h1
+{
+    color: greenyellow;
+    text-decoration-color:chartreuse;
+}
+p
+{
+color: snow;
+font-size:100%;
+font-family:Lucida Console; 
+}
+iframe
+{
+border-color:crimson;
+padding: inherit;
+}
