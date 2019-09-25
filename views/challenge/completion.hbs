@@ -1,16 +1,72 @@
 <html lang="en">
+
 <head>
-    <title> Completed | Interrupt '19</title>
-		<meta charset="UTF-8">
-		<meta name="description" content="Official Website for SVCE's Interrupt 2k19!">
-		<meta name="keywords" content="svce,symposium,cse,interrupt,2019,2k19">
-		<meta name="author" content="Arjun Aravind">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link rel="icon" href="/resources/images/favicon.png">
-		<link rel="apple-touch-icon" href="/resources/images/favicon.png">
+    <title> I-Challenge | Interrupt '19</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Official Website for SVCE's Interrupt 2k19!">
+    <meta name="keywords" content="svce,symposium,cse,interrupt,2019,2k19">
+    <meta name="author" content="Arjun Aravind">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="icon" href="/resources/images/favicon.png">
+    <link rel="apple-touch-icon" href="/resources/images/favicon.png">
+    <link rel="stylesheet" href="/styles/css/challenge/index.css">
 </head>
+
 <body>
-    
+	<div id="main-container">
+        <h1 id="title" class="text-center">Thank you</h1><!-- #title -->
+        <!-- <h3 id="prompt" class="text-center">Vote for your favorite website</h3>#prompt -->
+        <div class="container">
+            <div id="start-link-container">
+                <a href="/" id="start-link"><button class="btn">Go back</button></a>
+            </div><!-- .start-link-container -->
+        </div><!-- #site-gallery.container -->
+    </div><!-- #main-container -->
+    <style>
+    .container {
+        font-family: 'Pixellari'
+    }
+
+    #description {
+        margin-top: 50px;
+    }
+
+    #rules {
+        margin-top: 50px;
+    }
+    #start-link-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    #start-link button {
+        background: #E52521;
+        font-size: 40px;
+        color: #fff;
+        border
+    }
+    </style>
+    <script>
+        document.getElementById('start-link').addEventListener('click', (event) => {
+
+             var xhttp = new XMLHttpRequest();
+            
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    window.location.href = '/challenge/hang_thug';
+                }
+            };
+            xhttp.open("POST", "/challenge/submit", true);
+            xhttp.setRequestHeader("Content-Type", "application/json");
+            xhttp.send(JSON.stringify({
+                score : 0,
+                level : 1
+            }));                    
+
+        })
+    </script>
 </body>
+
 </html>

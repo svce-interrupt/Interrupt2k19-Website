@@ -6,7 +6,7 @@ const path    = require('path');
 const Challenge  =  require('../database/models/Challenge');
 
 router.get('/', (req, res)=> {
-    res.sendStatus(200);
+    res.render('challenge/index');
 });
 
 
@@ -107,13 +107,22 @@ router.get('/caesar/data', (req, res) => {
 
 router.post('/submit', async (req, res) => {
 
-    const {score} = req.body;
-    const addedScore = await req.user.getChallenge({ attribures : ['score']});
+    var {level, score} = req.body;
+    var challen = await req.user.getChallenge({ attribures : ['score', 'level']});
 
-    var finalScore = addedScore.dataValues.score + score;
+    var finalScore = challen.dataValues.score + score;
 
-    const update1 = await Challenge.update({score : finalScore},{ where : {studentId : req.user.id}});    
-    const update2 = await Challenge.increment(['level'],{ where : {studentId : req.user.id}});
+    if(challen.dataValues.level == 10)
+        return res.sendStatus(200);
+    
+    console.log(req.body);
+
+
+
+
+    var update1 = await Challenge.update({score : finalScore},{ where : {studentId : req.user.id}});    
+    var update2 = await Challenge.update({level : level},{ where : {studentId : req.user.id}});
+
 
     if(update1 && update2) res.sendStatus(200);
     else res.sendStatus(403);
@@ -126,3 +135,4 @@ router.get('/end', (req, res) => {
 
 
 module.exports = router;
+

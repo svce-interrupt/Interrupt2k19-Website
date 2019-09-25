@@ -82,7 +82,8 @@
             xhttp.open("POST", "/challenge/submit", true);
             xhttp.setRequestHeader("Content-Type", "application/json");
             xhttp.send(JSON.stringify({
-                score : 0
+                score : 0,
+                level : 1
             }));                    
 
         })

@@ -68,37 +68,36 @@ const notLoggedIn = (req, res, next) => {
 
 }
 
-const getLevel = (req, res , next) => {
+const getLevel = async (req, res , next) => {
 
-    if(req.method == "POST")
-        return next();  
 
-    Challenge.findOne({
-        where : {studentId : req.user.id},
-        attributes : ['level', 'score']
-    }).then((user) => {
+    if (req.method == "POST"){
+        console.log("Post req")
+        return next();
+
+    };
+    
+    const data = await Challenge.findOne({where : {studentId : req.user.id},attributes : ['level', 'score']});  
+    
+    if(!data){
+        req.user.createChallenge({level : 0, score : 0})
+            .then(user => {        
+              return next();
+            })
+            .catch(err => console.log(err));
+    }
+
         
-        if(user){
-            const {level, score} = user.dataValues;
+    // if(data.dataValues.level == 11) return next();
 
-            if(level == 11) return next();
+    const level = (data) ? data.dataValues.level : 0;
                         
-            if(req.url == mapping[level])
-                next();
-            else if(req.url.includes(mapping[level]))
-                next();
-            else res.redirect(mapping[level]);
-        }
-        
-        else{
-            req.user.createChallenge({level : 0, score : 0})
-                .then(user => {        
-                    next();
-                })
-                .catch(err => console.log(err));
-        }
+    if(req.url == mapping[level]  || req.url.includes(mapping[level])) {
+        // console.log("passing through");
+        next();
+    }
+    else res.redirect(mapping[level]);
 
-    })
 
 };
 

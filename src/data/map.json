@@ -2,13 +2,11 @@
     "0" : "/challenge",
     "1" : "/challenge/hang_thug",
     "2" : "/challenge/connect_4",
-    "3" : "/challenge/ror" ,
-    "4" : "/challenge/dark_house",
-    "5" : "/challenge/ctp", 
-    "6" : "/challenge/tetris",
-    "7" : "/challenge/caesar",
-    "8" : "/challenge/maze",
-    "9" : "/challenge/mtb",
-    "10": "/challenge/coderoll",
-    "11": "/challenge/end"
+    "3" : "/challenge/dark_house",
+    "4" : "/challenge/ctp", 
+    "5" : "/challenge/tetris",
+    "6" : "/challenge/caesar",
+    "7" : "/challenge/maze",
+    "8" : "/challenge/mtb",
+    "9": "/challenge/end"
 }
