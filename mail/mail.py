@@ -63,6 +63,10 @@ def welcome_mail():
                 cur.execute(query, (row[1],))
                 
                 if cur.fetchone() is None:
+                    
+
+                    if row[1] == 589:
+                        continue
 
                     message = EmailMessage()
                     message['Subject'] = "SVCE-INTERRUPT 2K19 | welcome"
